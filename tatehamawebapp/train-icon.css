@@ -1,5 +1,18 @@
 ﻿
-
+/* 上り普通 */
+.train-u-exp {
+    background-image: url("icons/u_local.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+/* 上り準急 */
+.train-u-exp {
+    background-image: url("icons/u_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
 /* 上り急行 */
 .train-u-exp {
     background-image: url("icons/u_exp.png");
