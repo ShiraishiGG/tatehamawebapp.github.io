@@ -1,0 +1,17 @@
+﻿
+
+/* 上り急行 */
+.train-u-exp {
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+}
+
+/* 下り準急 */
+.train-d-sexp {
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+}
