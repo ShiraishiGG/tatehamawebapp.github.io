@@ -1,0 +1,130 @@
+body {
+	font-family: 'M PLUS 1', sans-serif;
+	text-align: center;
+	margin: 30px;
+	background-color: #fff;
+}
+
+h1 {
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
+.divider {
+	border: none;
+	height: 4px;
+	background-color: black;
+	margin: 20px auto 40px auto;
+	width: 90%;
+}
+
+.station-list {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	max-width: 300px;
+	margin: 0 auto 50px auto;
+	text-align: left;
+}
+
+.station-item {
+	display: flex;
+	align-items: center;
+	font-size: 1.4em;
+}
+
+.routename-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.7em;
+}
+
+.subtitle-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.0em;
+}
+
+.color-box {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+/* 各路線の色 */
+.otebashi {
+	background-color: #8B0000;
+}
+/* 濃い赤 */
+.takaido {
+	background-color: #FFB6FF;
+}
+/* ピンク */
+.shincho {
+	background-color: #F08080;
+}
+/* 薄い赤 */
+.dairoku {
+	background-color: #FF8C00;
+}
+/* オレンジ */
+.akayamacho {
+	background-color: #006400;
+}
+/* 深緑 */
+.daidoji {
+	background-color: #3B5998;
+}
+/* 青 */
+
+.mukkaichi {
+	background-color: #e0e0e0;
+}
+/* グレー*/
+.daishi {
+	background-color: #555;
+}
+/* 濃いグレー*/
+
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Google Fonts */
+.wf-mplus1 {
+	font-family: "M PLUS 1", sans-serif;
+}
+
+.thin {
+	font-weight: 100;
+}
+
+.light {
+	font-weight: 300;
+}
+
+.regular {
+	font-weight: 400;
+}
+
+.medium {
+	font-weight: 500;
+}
+
+.bold {
+	font-weight: 700;
+}
+
+.extrabold {
+	font-weight: 800;
+}
+
+.black {
+	font-weight: 900;
+}
+  

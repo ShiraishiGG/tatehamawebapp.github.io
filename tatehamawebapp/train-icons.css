@@ -1,0 +1,229 @@
+﻿
+
+/* 上り列車アイコン1つ */
+.train-icon-up1 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 70px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+/* 上り列車アイコン2つ目 横に配置 退避駅などに使用 */
+.train-icon-up2 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 120px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+/* 上り列車アイコン3つ目 横に配置 退避駅などに使用 */
+.train-icon-up3 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 170px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+/* 上り列車アイコン4つ目 横に配置 退避駅などに使用 */
+.train-icon-up4 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 220px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+
+/* 下り列車アイコン1つ */
+.train-icon-down1 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 0px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+/* 下り列車アイコン2つ目 横に配置 退避駅などに使用 */
+.train-icon-down2 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -50px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+/* 下り列車アイコン3つ目 横に配置 退避駅などに使用 */
+.train-icon-down3 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -100px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+/* 下り列車アイコン4つ目 横に配置 退避駅などに使用 */
+.train-icon-down4 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -150px);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+
+/* 駅間在線4本 上り列車アイコン1つ目 */
+.train-icon-ss4-up1 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 70px);
+    transform: translateY(-130%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+/* 駅間在線4本 上り列車アイコン2つ目 */
+.train-icon-ss4-up2 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 120px);
+    transform: translateY(-90%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+/* 駅間在線4本 上り列車アイコン3つ目 */
+.train-icon-ss4-up3 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 170px);
+    transform: translateY(-45%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+/* 駅間在線4本 上り列車アイコン4つ目 */
+.train-icon-ss4-up4 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 220px);
+    transform: translateY(0%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/u_exp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    z-index: 4;
+}
+
+/* 駅間在線4本 下り列車アイコン1つ目 */
+.train-icon-ss4-down1 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 0px);
+    transform: translateY(30%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+/* 駅間在線4本 下り列車アイコン2つ目 */
+.train-icon-ss4-down2 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -50px);
+    transform: translateY(-15%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+/* 駅間在線4本 下り列車アイコン3つ目 */
+.train-icon-ss4-down3 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -100px);
+    transform: translateY(-60%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}
+/* 駅間在線4本 下り列車アイコン4つ目 */
+.train-icon-ss4-down4 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -150px);
+    transform: translateY(-100%);
+    width: 70px;
+    height: 40px;
+    background-image: url("icons/d_sexp.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center right;
+    z-index: 4;
+}

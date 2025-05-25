@@ -1,0 +1,233 @@
+﻿body {
+    margin: 0;
+    font-family: "M PLUS 1", sans-serif;
+    background-color: #f9f9f9;
+}
+.stations-wrapper {
+    width: 100%;
+    padding: 60px 0;
+    position: relative;
+}
+
+.station-group {
+    position: relative;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 20px;
+}
+
+.station-row {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 0 20px;
+    height: 80px;
+}
+
+
+.station-node {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: 4px solid #3a86ff;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+
+/* 背景専用レイヤー */
+.station-background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.station-group:nth-of-type(even) .station-background {
+    background-color: #ffffff;
+}
+
+.station-group:nth-of-type(odd) .station-background {
+    background-color: #eeeeee;
+}
+
+/* 中央線を最前面に */
+.central-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    background-color: #3a86ff;
+    z-index: 1;
+}
+
+.station-name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    z-index: 1;
+}
+
+.kanji {
+    font-family: "M PLUS 1", sans-serif;
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.kana-romaji {
+    display: flex;
+    flex-direction: column;
+    font-family: "M PLUS 1", sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.kana {
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+.romaji {
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+}
+
+
+/* アイコン画像パス */
+/* 上り臨時 */
+.u_ex_exp {
+    background-image: url("icons/d_ex_exp.png");
+}
+
+.u_ex_local {
+    background-image: url("icons/d_ex_local.png");
+}
+
+.u_ex_ltd {
+    background-image: url("icons/d_ex_ltd.png");
+}
+
+.u_ex_rpd {
+    background-image: url("icons/d_ex_rap.png");
+}
+
+.u_ex_sexp {
+    background-image: url("icons/d_ex_sexp.png");
+}
+
+/* 上り定期 */
+.u_exp {
+    background-image: url("icons/d_exp.png");
+}
+
+.u_local {
+    background-image: url("icons/d_local.png");
+}
+
+.u_ltd {
+    background-image: url("icons/d_ltd.png");
+}
+
+.u_rpd {
+    background-image: url("icons/d_rap.png");
+}
+
+.u_sexp {
+    background-image: url("icons/d_sexp.png");
+}
+
+.u_outserv {
+    background-image: url("icons/d_outserv.png");
+}
+
+/* 下り臨時 */
+
+.d_ex_exp {
+    background-image: url("icons/d_ex_exp.png");
+}
+.d_ex_local {
+    background-image: url("icons/d_ex_local.png");
+}
+.d_ex_ltd {
+background-image: url("icons/d_ex_ltd.png");
+}
+.d_ex_rpd {
+    background-image: url("icons/d_ex_rap.png");
+}
+.d_ex_sexp {
+    background-image: url("icons/d_ex_sexp.png");
+}
+
+/* 下り定期 */
+
+.d_exp {
+    background-image: url("icons/d_exp.png");
+}
+.d_local {
+    background-image: url("icons/d_local.png");
+}
+.d_ltd {
+    background-image: url("icons/d_ltd.png");
+}
+.d_rpd {
+    background-image: url("icons/d_rap.png");
+}
+.d_sexp {
+    background-image: url("icons/d_sexp.png");
+}
+.d_outserv {
+    background-image: url("icons/d_outserv.png");
+}
+
+
+/* Google Fonts */
+.wf-mplus1 {
+    font-family: "M PLUS 1", sans-serif;
+}
+
+.thin {
+    font-weight: 100;
+}
+
+.light {
+    font-weight: 300;
+}
+
+.regular {
+    font-weight: 400;
+}
+
+.medium {
+    font-weight: 500;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.extrabold {
+    font-weight: 800;
+}
+
+.black {
+    font-weight: 900;
+}
