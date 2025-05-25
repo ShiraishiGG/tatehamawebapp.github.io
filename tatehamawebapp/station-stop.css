@@ -1,0 +1,23 @@
+﻿.stop-stop {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    margin-left: 60px;
+}
+.stop-name {
+    transform: translateY(-7%);
+    z-index: 2;
+}
+.stop-local {
+    font-size: 18px;
+    font-weight: 300;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 23px;
+    height: 23px;
+    background-color: #202020;
+    border-radius: 4px;
+    color: #ffffff;
+    z-index: 1;
+}
