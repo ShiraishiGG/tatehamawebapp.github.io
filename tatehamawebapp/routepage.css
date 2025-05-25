@@ -91,14 +91,11 @@
     margin-bottom: auto;
     justify-content: left;
     width: 30%;
-    height: 100%;
     z-index: 2;
 }
 
 .station-name {
-    position: absolute;
     top: 50%;
-    transform: translateY(-50%);
     display: flex;
     align-items: center;
     gap: 8px;
