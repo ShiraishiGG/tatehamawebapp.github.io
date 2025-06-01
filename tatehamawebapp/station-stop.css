@@ -74,3 +74,18 @@
     color: #ffffff;
     z-index: 1;
 }
+
+.stop-ltd-white {
+    font-size: 15px;
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    background-color: transparent; /* ← 背景を透明に */
+    border: 1px solid #ff0000; /* ← 赤い縁線だけ表示 */
+    border-radius: 4px;
+    color: #ff0000; /* ← テキストも赤に揃える */
+    z-index: 1;
+}

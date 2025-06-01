@@ -167,6 +167,9 @@
 }
 
 
+
+
+
 /* 駅間在線3本 上り列車アイコン1つ目 */
 .train-icon-ss2-up1 {
     position: absolute;
@@ -211,6 +214,9 @@
     z-index: 4;
     background-position: center right;
 }
+
+
+
 
 
 /* 駅間在線4本 上り列車アイコン1つ目 */

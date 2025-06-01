@@ -1,7 +1,7 @@
 ﻿
 /* 上り普通 */
-.train-u-exp {
-    background-image: url("icons/u_local.png");
+.train-up-1 {
+    background-image: url("icons/up_1.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
