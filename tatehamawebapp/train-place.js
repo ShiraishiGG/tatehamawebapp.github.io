@@ -5,38 +5,45 @@ function TrainPlace(sta1, sta2, updown, count, position, type, dianame) {
 
 
 
-    //İüˆÊ’u‚ğ’T‚·//
-  
-    if (sta2 == null) {  //‰w‚Éİü‚µ‚Ä‚é//
+    //åœ¨ç·šä½ç½®ã‚’æ¢ã™//
+
+    if (sta2 == null) {  //é§…ã«åœ¨ç·šã—ã¦ã‚‹æ™‚//
         Place_name = sta1
     }
 
-    else {   //‰wŠÔ‚Éİü‚µ‚Ä‚é(nextsta‚ªnull‚Ì‚Æ‚«)//
+    else {   //é§…é–“ã«åœ¨ç·šã—ã¦ã‚‹æ™‚(nextstaãŒnullã®ã¨ã)//
         Place_name = sta1 + '-' + sta2
     }
 
 
 
-    //’u‚­êŠ‚ğ’T‚·//
+    //ç½®ãå ´æ‰€ã‚’æ¢ã™//
     Train_icon_container = document.getElementById(Place_name);
-    Train_icon_position = 'train-icon-ss' + count + '-' + updown + position; //—á: train-icon-ss1-up1
 
 
-    //’u‚­ƒAƒCƒRƒ“‚ğŒˆ‚ß‚é//
+    if (sta2 == null) {  //é§…ã«åœ¨ç·šã—ã¦ã‚‹æ™‚//
+        Train_icon_position = 'train-icon-' + updown + position; //ä¾‹: train-icon-up1
+    }
+
+    else {   //é§…é–“ã«åœ¨ç·šã—ã¦ã‚‹æ™‚(nextstaãŒnullã®ã¨ã)//
+        Train_icon_position = 'train-icon-ss' + count + '-' + updown + position; //ä¾‹: train-icon-ss1-up1
+    }
+
+
+    //ç½®ãã‚¢ã‚¤ã‚³ãƒ³ã‚’æ±ºã‚ã‚‹//
     Train_icon = 'train-' + updown + '-' + type;
 
-
-
-
-    //’T‚µ‚½êŠ‚ÉƒAƒCƒRƒ“‚ğ’u‚­//
 
     console.log('Place_name: ' + Place_name);
     console.log('Train_icon_position: ' + Train_icon_position);
     console.log('Train_icon: ' + Train_icon)
     console.log('Train_icon_container: ' + Train_icon_container);
 
+
+
+    //æ¢ã—ãŸå ´æ‰€ã«ã‚¢ã‚¤ã‚³ãƒ³ã‚’ç½®ã//
     Train_icon_container.innerHTML += '<div class="' + Train_icon + ' ' + Train_icon_position + '"></div>';
 
 
-    // <div class="train-icon-ss1-up1"></div>   <!-- ã‚è1-1 -->
+    // <div class="train-icon-ss1-up1"></div>   <!-- ä¸Šã‚Š1-1 -->
 }

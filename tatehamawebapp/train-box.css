@@ -171,44 +171,66 @@
 
 
 /* 駅間在線3本 上り列車アイコン1つ目 */
-.train-icon-ss2-up1 {
+.train-icon-ss3-up1 {
     position: absolute;
     top: 50%;
     left: calc(50% - 70px);
-    transform: translateY(-85%);
+    transform: translateY(-100%);
     width: 70px;
     height: 40px;
     z-index: 4;
     background-position: center left;
 }
 /* 駅間在線3本 上り列車アイコン2つ目 */
-.train-icon-ss2-up2 {
+.train-icon-ss3-up2 {
     position: absolute;
     top: 50%;
     left: calc(50% - 120px);
-    transform: translateY(-20%);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    z-index: 4;
+    background-position: center left;
+}
+/* 駅間在線3本 上り列車アイコン3つ目 */
+.train-icon-ss3-up3 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - 170px);
+    transform: translateY(0%);
     width: 70px;
     height: 40px;
     z-index: 4;
     background-position: center left;
 }
 /* 駅間在線3本 下り列車アイコン1つ目 */
-.train-icon-ss2-down1 {
+.train-icon-ss3-down1 {
     position: absolute;
     top: 50%;
     left: calc(50% - 0px);
-    transform: translateY(-15%);
+    transform: translateY(0%);
     width: 70px;
     height: 40px;
     z-index: 4;
     background-position: center right;
 }
 /* 駅間在線3本 下り列車アイコン2つ目 */
-.train-icon-ss2-down2 {
+.train-icon-ss3-down2 {
     position: absolute;
     top: 50%;
     left: calc(50% - -50px);
-    transform: translateY(-80%);
+    transform: translateY(-50%);
+    width: 70px;
+    height: 40px;
+    z-index: 4;
+    background-position: center right;
+}
+/* 駅間在線3本 下り列車アイコン3つ目 */
+.train-icon-ss3-down3 {
+    position: absolute;
+    top: 50%;
+    left: calc(50% - -100px);
+    transform: translateY(-100%);
     width: 70px;
     height: 40px;
     z-index: 4;

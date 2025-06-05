@@ -20,87 +20,71 @@
 		}
 	],
 	"TrainInfos":{
-		"":{
-			"Name":"",
-			"CarStates":[
-				{
-					"CarModel":"50000",
-					"HasPantograph":,
-					"HasDriverCab":,
-					"HasConductorCab":,
-					"HasMotor":,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
-				}
-			]
-			"TrainClass":"",
-			"Destinaton":""
-		},
+	
 		"1206A":{
 			"Name":"1206A",
-			"CarStates":[
+			"CarStates": [
 				{
-					"CarModel":"50000",
-					"HasPantograph":false,
-					"HasDriverCab":true,
-					"HasConductorCab":true,
-					"HasMotor":false,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
+					"CarModel": "50000",
+					"HasPantograph": false,
+					"HasDriverCab": true,
+					"HasConductorCab": true,
+					"HasMotor": false,
+					"DoorClose": true,
+					"BC_Press": 0.0,
+					"Ampare": 0.0
 				},
 				{
-					"CarModel":"50000",
-					"HasPantograph":true,
-					"HasDriverCab":false,
-					"HasConductorCab":false,
-					"HasMotor":true,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
+					"CarModel": "50000",
+					"HasPantograph": true,
+					"HasDriverCab": false,
+					"HasConductorCab": false,
+					"HasMotor": true,
+					"DoorClose": true,
+					"BC_Press": 0.0,
+					"Ampare": 0.0
 				},
 				{
-					"CarModel":"50000",
-					"HasPantograph":false,
-					"HasDriverCab":false,
-					"HasConductorCab":false,
-					"HasMotor":true,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
+					"CarModel": "50000",
+					"HasPantograph": false,
+					"HasDriverCab": false,
+					"HasConductorCab": false,
+					"HasMotor": true,
+					"DoorClose": true,
+					"BC_Press": 0.0,
+					"Ampare": 0.0
 				},
 				{
-					"CarModel":"50000",
-					"HasPantograph":true,
-					"HasDriverCab":false,
-					"HasConductorCab":true,
-					"HasMotor":true,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
+					"CarModel": "50000",
+					"HasPantograph": true,
+					"HasDriverCab": false,
+					"HasConductorCab": true,
+					"HasMotor": true,
+					"DoorClose": true,
+					"BC_Press": 0.0,
+					"Ampare": 0.0
 				},
 				{
-					"CarModel":"50000",
-					"HasPantograph":true,
-					"HasDriverCab":false,
-					"HasConductorCab":false,
-					"HasMotor":true,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
+					"CarModel": "50000",
+					"HasPantograph": true,
+					"HasDriverCab": false,
+					"HasConductorCab": false,
+					"HasMotor": true,
+					"DoorClose": true,
+					"BC_Press": 0.0,
+					"Ampare": 0.0
 				},
 				{
-					"CarModel":"50000",
-					"HasPantograph":false,
-					"HasDriverCab":true,
-					"HasConductorCab":true,
-					"HasMotor":false,
-					"DoorClose":true,
-					"BC_Press":0.0,
-					"Ampare":0.0
+					"CarModel": "50000",
+					"HasPantograph": false,
+					"HasDriverCab": true,
+					"HasConductorCab": true,
+					"HasMotor": false,
+					"DoorClose": true,
+					"BC_Press": 0.0,
+					"Ampare": 0.0
 				}
-			]
+			],
 			"TrainClass":"LtdExp",
 			"Destinaton":"TH01"
 		},
