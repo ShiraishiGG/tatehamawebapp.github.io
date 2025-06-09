@@ -1,4 +1,10 @@
 ﻿
+/* 上り回送 */
+.train-up-0 {
+    background-image: url("icons/u_extra.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 /* 上り普通 */
 .train-up-1 {
     background-image: url("icons/u_local.png");
@@ -101,9 +107,9 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-/* 上り回送 */
+/* 上り臨時 */
 .train-up-19 {
-    background-image: url("icons/u_outserv.png");
+    background-image: url("icons/u_extra.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
@@ -114,6 +120,14 @@
 
 
 
+
+
+/* 下り回送 */
+.train-down-0 {
+    background-image: url("icons/d_outserv.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 /* 下り普通 */
 .train-down-1 {
     background-image: url("icons/d_local.png");
@@ -216,9 +230,10 @@
     background-size: contain;
     background-repeat: no-repeat;
 }
-/* 下り回送 */
+/* 下り臨時 */
 .train-down-19 {
-    background-image: url("icons/d_outserv.png");
+    background-image: url("icons/d_extra.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
+

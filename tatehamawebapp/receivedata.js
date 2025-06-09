@@ -145,7 +145,7 @@ function Gettest() {
                "Ampare": 0
             }
          ],
-         "TrainClass": 3,
+         "TrainClass": 0,
          "FromStation": "TH76",
          "Destinaton": "TH65",
          "Delay": 7
@@ -352,7 +352,7 @@ function Gettest() {
                "Ampare": 0
             }
          ],
-         "TrainClass": "ExtraLtdExp",
+         "TrainClass": "17",
          "FromStation": "TH76",
          "DestinatonStation": "TH14",
          "Delay": 0
