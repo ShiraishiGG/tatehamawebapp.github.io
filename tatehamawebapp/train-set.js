@@ -140,25 +140,13 @@ function getTrainTypeByClass(trainClass) {
             kind = "臨時快速急行";
             break;
         case "10":
-            kind = "D特";
-            break;
         case "11":
-            kind = "C特1";
-            break;
         case "12":
-            kind = "C特2";
-            break;
         case "13":
-            kind = "C特3";
-            break;
         case "14":
-            kind = "C特4";
-            break;
         case "15":
-            kind = "B特";
-            break;
         case "16":
-            kind = "A特";
+            kind = "特急";
             break;
         case "17":
             kind = "臨時";

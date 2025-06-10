@@ -1,478 +1,492 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>列車走行位置（大道寺～館浜）</title>
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
-<link rel="stylesheet" href="routepage.css">
-<link rel="stylesheet" href="train-box.css">
-<link rel="stylesheet" href="train-icon.css">
-<link rel="stylesheet" href="station-stop.css">
-<link rel="stylesheet" href="fixed-tab.css">
-<script type="text/javascript" src="setting.js" charset="utf-8"></script>
-<script type="text/javascript" src="train-place.js" charset="utf-8"></script>
-<script type="text/javascript" src="receivedata.js" charset="utf-8"></script>
-<script type="text/javascript" src="location-to-place.js" charset="utf-8"></script>
-<script type="text/javascript" src="train-set.js" charset="utf-8"></script>
-<script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
+    <meta charset="UTF-8">
+    <title>列車走行位置（大道寺～館浜）</title>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="routepage.css">
+    <link rel="stylesheet" href="train-box.css">
+    <link rel="stylesheet" href="train-icon.css">
+    <link rel="stylesheet" href="station-stop.css">
+    <link rel="stylesheet" href="fixed-tab.css">
+    <link rel="stylesheet" href="train-detail-modal.css">
+    <script type="text/javascript" src="setting.js" charset="utf-8"></script>
+    <script type="text/javascript" src="train-place.js" charset="utf-8"></script>
+    <script type="text/javascript" src="receivedata.js" charset="utf-8"></script>
+    <script type="text/javascript" src="location-to-place.js" charset="utf-8"></script>
+    <script type="text/javascript" src="train-set.js" charset="utf-8"></script>
+    <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
+    <script type="text/javascript" src="train-detail-modal.js" charset="utf-8"></script>
 </head>
 <body>
 
-<!-- 追加: 固定タブ -->
-<div id="fixed-tab">
-<a href="index.html" id="fixed-home-link">戻る</a>
-<span id="fixed-message" class="fixed-message-absolute">
-    館浜電鉄 列車走行位置（大道寺～館浜）
-    <span class="fixed-update-row">
-        <span class="fixed-update-label"></span>
-        <span id="fixed-time"></span><span id="fixed-time-label"></span>
-    </span>
-</span>
-</div>
+    <!-- 追加: 固定タブ -->
+    <div id="fixed-tab">
+        <a href="index.html" id="fixed-home-link">戻る</a>
+        <span id="fixed-message" class="fixed-message-absolute">
+            館浜電鉄 列車走行位置（大道寺～館浜）
+            <span class="fixed-update-row">
+                <span class="fixed-update-label"></span>
+                <span id="fixed-time"></span><span id="fixed-time-label"></span>
+            </span>
+        </span>
+    </div>
 
-<!-- 駅 -->
+    <!-- 駅 -->
 
-<div class="stations-data">
+    <div class="stations-data">
 
-<div class="station-group">
-    <a href="Akayamacho.html" class="station-link-btn station-link-btn-absolute">
-        赤山町方面
-    </a>
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-</div>
+        <div class="station-group">
+            <a href="Akayamacho.html" class="station-link-btn station-link-btn-absolute">
+                赤山町方面
+            </a>
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+        </div>
 
-<!-- 大道寺 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">大道寺</div>
-            <div class="kana-romaji">
-                <div class="kana">だいどうじ</div>
-                <div class="romaji">Daidoji</div>
+        <!-- 大道寺 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">大道寺</div>
+                    <div class="kana-romaji">
+                        <div class="kana">だいどうじ</div>
+                        <div class="romaji">Daidoji</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                    <div class="stop-semiexp">
+                        <div class="stop-name">準</div>
+                    </div>
+                    <div class="stop-exp">
+                        <div class="stop-name">急</div>
+                    </div>
+                    <div class="stop-rpd">
+                        <div class="stop-name">快</div>
+                    </div>
+                    <div class="stop-ltd-white">
+                        <div class="stop-name">特</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH65">
+                <!-- 生成する -->
             </div>
         </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-            <div class="stop-semiexp">
-                <div class="stop-name">準</div>
-            </div>
-            <div class="stop-exp">
-                <div class="stop-name">急</div>
-            </div>
-            <div class="stop-rpd">
-                <div class="stop-name">快</div>
-            </div>
-            <div class="stop-ltd-white">
-                <div class="stop-name">特</div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH65-TH66">
+                <!-- 生成する -->
             </div>
         </div>
-    </div>
-    <div class="train-icon-container" id="TH65">
-        <!-- 生成する -->
-    </div>
-</div>
 
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH65-TH66">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 江ノ原 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">江ノ原</div>
-            <div class="kana-romaji">
-                <div class="kana">えのはら</div>
-                <div class="romaji">Enohara</div>
+        <!-- 江ノ原 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">江ノ原</div>
+                    <div class="kana-romaji">
+                        <div class="kana">えのはら</div>
+                        <div class="romaji">Enohara</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                    <div class="stop-semiexp">
+                        <div class="stop-name">準</div>
+                    </div>
+                    <div class="stop-exp">
+                        <div class="stop-name">急</div>
+                    </div>
+                    <div class="train-icon-container" id="TH66">
+                        <!-- 生成する -->
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
+
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH66-TH67">
+                <!-- 生成する -->
             </div>
-            <div class="stop-semiexp">
-                <div class="stop-name">準</div>
+        </div>
+
+        <!-- 新野崎 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">新野崎</div>
+                    <div class="kana-romaji">
+                        <div class="kana">しんのざき</div>
+                        <div class="romaji">Shin-Nozaki</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                    <div class="stop-semiexp">
+                        <div class="stop-name">準</div>
+                    </div>
+                    <div class="stop-exp">
+                        <div class="stop-name">急</div>
+                    </div>
+                    <div class="stop-rpd">
+                        <div class="stop-name">快</div>
+                    </div>
+                    <div class="train-icon-container" id="TH67">
+                        <!-- 生成する -->
+                    </div>
+                </div>
             </div>
-            <div class="stop-exp">
-                <div class="stop-name">急</div>
+        </div>
+
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH67-TH68">
+                <!-- 生成する -->
             </div>
-            <div class="train-icon-container" id="TH66">
+        </div>
+
+        <!-- 新井川 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">新井川</div>
+                    <div class="kana-romaji">
+                        <div class="kana">あらいがわ</div>
+                        <div class="romaji">Araigawa</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                </div>
+                <div class="train-icon-container" id="TH68">
+                    <!-- 生成する -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH68-TH69">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 羽衣橋 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">羽衣橋</div>
+                    <div class="kana-romaji">
+                        <div class="kana">はごろもばし</div>
+                        <div class="romaji">Hagoromobashi</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                </div>
+                <div class="train-icon-container" id="TH69">
+                    <!-- 生成する -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH69-TH70">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 浜園 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">浜園</div>
+                    <div class="kana-romaji">
+                        <div class="kana">はまぞの</div>
+                        <div class="romaji">Hamazono</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                    <div class="stop-semiexp">
+                        <div class="stop-name">準</div>
+                    </div>
+                </div>
+                <div class="train-icon-container" id="TH70">
+                    <!-- 生成する -->
+                </div>
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH70-TH71">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 津崎 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">津崎</div>
+                    <div class="kana-romaji">
+                        <div class="kana">つざき</div>
+                        <div class="romaji">Tsuzaki</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH71">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH71-TH72">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 虹ケ浜 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">虹ケ浜</div>
+                    <div class="kana-romaji">
+                        <div class="kana">にじがはま</div>
+                        <div class="romaji">Nijigahama</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH72">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH72-TH73">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 海岸公園 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">海岸公園</div>
+                    <div class="kana-romaji">
+                        <div class="kana">かいがんこうえん</div>
+                        <div class="romaji">Kaigankoen</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH73">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH73-TH74">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 河原崎 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">河原崎</div>
+                    <div class="kana-romaji">
+                        <div class="kana">かわらざき</div>
+                        <div class="romaji">Kawarazaki</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH74">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH74-TH75">
+                <!-- 生成する -->
+            </div>
+        </div>
+
+        <!-- 駒野 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">駒野</div>
+                    <div class="kana-romaji">
+                        <div class="kana">こまの</div>
+                        <div class="romaji">Komano</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                    <div class="stop-semiexp">
+                        <div class="stop-name">準</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH75">
+                <!-- 生成する -->
+            </div>
+        </div>
+        <!-- 駅間 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+            <div class="train-icon-container" id="TH75-TH76">
+            </div>
+        </div>
+        <!-- 館浜 -->
+        <div class="station-group">
+            <div class="station-background"></div>
+            <div class="central-line-end"></div>
+            <div class="station-node"></div>
+            <div class="station-data">
+                <div class="station-name">
+                    <div class="kanji">館浜</div>
+                    <div class="kana-romaji">
+                        <div class="kana">たてはま</div>
+                        <div class="romaji">Tatehama</div>
+                    </div>
+                </div>
+                <div class="station-stop">
+                    <div class="stop-local">
+                        <div class="stop-name">普</div>
+                    </div>
+                    <div class="stop-semiexp">
+                        <div class="stop-name">準</div>
+                    </div>
+                    <div class="stop-exp">
+                        <div class="stop-name">急</div>
+                    </div>
+                    <div class="stop-rpd">
+                        <div class="stop-name">快</div>
+                    </div>
+                    <div class="stop-ltd">
+                        <div class="stop-name">特</div>
+                    </div>
+                </div>
+            </div>
+            <div class="train-icon-container" id="TH76">
                 <!-- 生成する -->
             </div>
         </div>
     </div>
-</div>
 
 
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH66-TH67">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 新野崎 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">新野崎</div>
-            <div class="kana-romaji">
-                <div class="kana">しんのざき</div>
-                <div class="romaji">Shin-Nozaki</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-            <div class="stop-semiexp">
-                <div class="stop-name">準</div>
-            </div>
-            <div class="stop-exp">
-                <div class="stop-name">急</div>
-            </div>
-            <div class="stop-rpd">
-                <div class="stop-name">快</div>
-            </div>
-            <div class="train-icon-container" id="TH67">
-                <!-- 生成する -->
-            </div>
-        </div>
-    </div>
-</div>
 
 
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH67-TH68">
-        <!-- 生成する -->
-    </div>
-</div>
+    <div id="train-detail-modal" class="train-detail-modal" style="display:none;">
+        <div class="train-detail-content">
+            <span class="train-detail-close" id="train-detail-close">&times;</span>
+            <div id="train-detail-body"></div>
+        </div>
 
-<!-- 新井川 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">新井川</div>
-            <div class="kana-romaji">
-                <div class="kana">あらいがわ</div>
-                <div class="romaji">Araigawa</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-        </div>
-        <div class="train-icon-container" id="TH68">
-            <!-- 生成する -->
-        </div>
-    </div>
-</div>
 
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH68-TH69">
-        <!-- 生成する -->
-    </div>
-</div>
 
-<!-- 羽衣橋 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">羽衣橋</div>
-            <div class="kana-romaji">
-                <div class="kana">はごろもばし</div>
-                <div class="romaji">Hagoromobashi</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-        </div>
-        <div class="train-icon-container" id="TH69">
-            <!-- 生成する -->
-        </div>
     </div>
-</div>
-
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH69-TH70">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 浜園 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">浜園</div>
-            <div class="kana-romaji">
-                <div class="kana">はまぞの</div>
-                <div class="romaji">Hamazono</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-            <div class="stop-semiexp">
-                <div class="stop-name">準</div>
-            </div>
-        </div>
-        <div class="train-icon-container" id="TH70">
-            <!-- 生成する -->
-        </div>
-    </div>
-</div>
-
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH70-TH71">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 津崎 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">津崎</div>
-            <div class="kana-romaji">
-                <div class="kana">つざき</div>
-                <div class="romaji">Tsuzaki</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-        </div>
-    </div>
-    <div class="train-icon-container" id="TH71">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH71-TH72">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 虹ケ浜 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">虹ケ浜</div>
-            <div class="kana-romaji">
-                <div class="kana">にじがはま</div>
-                <div class="romaji">Nijigahama</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-        </div>
-    </div>
-    <div class="train-icon-container" id="TH72">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH72-TH73">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 海岸公園 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">海岸公園</div>
-            <div class="kana-romaji">
-                <div class="kana">かいがんこうえん</div>
-                <div class="romaji">Kaigankoen</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-        </div>
-    </div>
-    <div class="train-icon-container" id="TH73">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH73-TH74">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 河原崎 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">河原崎</div>
-            <div class="kana-romaji">
-                <div class="kana">かわらざき</div>
-                <div class="romaji">Kawarazaki</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-        </div>
-    </div>
-    <div class="train-icon-container" id="TH74">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH74-TH75">
-        <!-- 生成する -->
-    </div>
-</div>
-
-<!-- 駒野 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">駒野</div>
-            <div class="kana-romaji">
-                <div class="kana">こまの</div>
-                <div class="romaji">Komano</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-            <div class="stop-semiexp">
-                <div class="stop-name">準</div>
-            </div>
-        </div>
-    </div>
-    <div class="train-icon-container" id="TH75">
-        <!-- 生成する -->
-    </div>
-</div>
-<!-- 駅間 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line"></div>
-    <div class="train-icon-container" id="TH75-TH76">
-    </div>
-</div>
-<!-- 館浜 -->
-<div class="station-group">
-    <div class="station-background"></div>
-    <div class="central-line-end"></div>
-    <div class="station-node"></div>
-    <div class="station-data">
-        <div class="station-name">
-            <div class="kanji">館浜</div>
-            <div class="kana-romaji">
-                <div class="kana">たてはま</div>
-                <div class="romaji">Tatehama</div>
-            </div>
-        </div>
-        <div class="station-stop">
-            <div class="stop-local">
-                <div class="stop-name">普</div>
-            </div>
-            <div class="stop-semiexp">
-                <div class="stop-name">準</div>
-            </div>
-            <div class="stop-exp">
-                <div class="stop-name">急</div>
-            </div>
-            <div class="stop-rpd">
-                <div class="stop-name">快</div>
-            </div>
-            <div class="stop-ltd">
-                <div class="stop-name">特</div>
-            </div>
-        </div>
-    </div>
-    <div class="train-icon-container" id="TH76">
-        <!-- 生成する -->
-    </div>
-</div>
-</div>
-
 </body>
 </html>

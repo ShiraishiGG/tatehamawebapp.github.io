@@ -42,7 +42,9 @@ function TrainPlace(sta1, sta2, updown, count, position, type, dianame) {
 
 
     //探した場所にアイコンを置く//
-    Train_icon_container.innerHTML += '<div class="' + Train_icon + ' ' + Train_icon_position + '"></div>';
+    Train_icon_container.innerHTML +=
+      '<div class="train-icon ' + Train_icon + ' ' + Train_icon_position + '" data-train-id="' + dianame + '"></div>';
+
 
 
     // <div class="train-icon-ss1-up1"></div>   <!-- 上り1-1 -->

@@ -122,7 +122,7 @@ function Gettest() {
          "Delay": 10
       },
       "回9143": {
-         "Name": "1283C",
+         "Name": "回9143",
          "CarStates": [
             {
                "CarModel": "4300",
@@ -284,8 +284,8 @@ function Gettest() {
             }
          ],
          "TrainClass": 3,
-         "FromStation": "TH76",
-         "Destinaton": "TH65",
+         "FromStation": "TH65",
+         "Destinaton": "TH76",
          "Delay": 3
       },
       "臨5236A": {

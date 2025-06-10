@@ -41,6 +41,7 @@
     border: 4px solid #3a86ff;
     border-radius: 50%;
     z-index: 2;
+    pointer-events: none;
 }
 
 
@@ -72,6 +73,7 @@
     width: 8px;
     background-color: #3a86ff;
     z-index: 1;
+    pointer-events: none;
 }
 .central-line-end {
     position: absolute;
@@ -82,6 +84,7 @@
     width: 8px;
     background-color: #3a86ff;
     z-index: 1;
+    pointer-events: none;
 }
 
 .station-data {
@@ -92,6 +95,7 @@
     justify-content: left;
     width: 30%;
     z-index: 2;
+    pointer-events: none;
 }
 
 .station-name {
@@ -100,6 +104,7 @@
     align-items: center;
     gap: 8px;
     z-index: 2;
+    pointer-events: none;
 }
 
 .kanji {
@@ -107,6 +112,7 @@
     font-size: 34px;
     font-weight: 300;
     line-height: 1.2;
+    pointer-events: none;
 }
 
 .kana-romaji {
@@ -116,6 +122,7 @@
     margin: 0;
     padding: 0;
     line-height: 1;
+    pointer-events: none;
 }
 
 .kana {
@@ -123,6 +130,7 @@
     margin: 0;
     padding: 0;
     line-height: 1;
+    pointer-events: none;
 }
 
 .romaji {
@@ -130,6 +138,7 @@
     margin: 0;
     padding: 0;
     line-height: 1;
+    pointer-events: none;
 }
 
 
@@ -285,6 +294,22 @@ background-image: url("icons/d_ex_ltd.png");
     border: none;
     font-size: 1em;
 }
+
+.station-link-btn-oji {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    font-size: 1em;
+    pointer-events: none;
+}
+
 
     .station-link-btn:hover,
     .station-link-btn:focus {
