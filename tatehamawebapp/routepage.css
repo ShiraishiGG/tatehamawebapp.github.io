@@ -55,11 +55,11 @@
 }
 
 .station-group:nth-of-type(even) .station-background {
-    background-color: #ffffff;
+    background-color: #eeeeee;
 }
 
 .station-group:nth-of-type(odd) .station-background {
-    background-color: #eeeeee;
+    background-color: #ffffff;
 }
 
 /* 中央線を最前面に */
@@ -252,3 +252,73 @@ background-image: url("icons/d_ex_ltd.png");
 .black {
     font-weight: 900;
 }
+
+/* ボタン配置用 */
+.station-link-btn-wrapper {
+    margin: 16px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .station-link-btn-wrapper.left {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .station-link-btn-wrapper.right {
+        justify-content: flex-end;
+        text-align: right;
+    }
+
+.station-link-btn {
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    font-size: 1em;
+}
+
+    .station-link-btn:hover,
+    .station-link-btn:focus {
+        background: #1565c0;
+        color: #fff;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+    }
+
+/* 駅ノード上に絶対配置するボタン */
+.station-link-btn-absolute {
+    position: absolute;
+    left: 50%;
+    top: 25%; /* 必要に応じて調整 */
+    transform: translateX(-50%);
+    z-index: 10;
+    display: inline-block;
+    background: #1976d2;
+    color: #fff;
+    font-weight: bold;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    border: none;
+    font-size: 1em;
+}
+
+    .station-link-btn-absolute:hover,
+    .station-link-btn-absolute:focus {
+        background: #1565c0;
+        color: #fff;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(25, 118, 210, 0.15);
+    }
+
