@@ -18,6 +18,8 @@ function GetManyTest(seed) {
 
 	console.log(FormationData);
 
+	TrackDataNokori = [...FormationData];
+
 	// 先頭や末尾の空白行を除去
 	const rows = RetsubanData.trim().split('\n');
 	// 各行をタブで分割
@@ -30,13 +32,29 @@ function GetManyTest(seed) {
 		if (row.length < 4) return; // データ不備行はスキップ
 		trainInfos[row[0]] = {
 			Name: row[0],
-			CarStates: GetFormationData(random),
+			CarStates: null,
 			TrainClass: row[1],
 			FromStation: row[2],
 			Destinaton: row[3],
 			Delay: Math.max(random.nextInt(-15, 15),0) // ランダムな遅延時間を設定
 		};
 	});
+
+	// TrackDataのLastに基づいてTrainInfosをフィルタリング
+	TrackData.forEach(track => {
+		if (track.Last && trainInfos[track.Last]) {
+			// TrainInfosに存在する場合、CarStatesを設定
+			trainInfos[track.Last].CarStates = GetFormationData(random);
+		}
+	});
+
+	// trainInfosからCarStatesがnullのものを削除
+	Object.keys(trainInfos).forEach(key => {
+		if (!trainInfos[key].CarStates) {
+			delete trainInfos[key];
+		}
+    });
+	
 
     Location_data = {
         "TrackCircuits": TrackData,
@@ -66,17 +84,26 @@ function GetFormationData(random) {
 	var formationData = [];
 	max = 6;
 
-    while (formationData.length <= max) {
-		let randomIndex = random.nextInt(0, FormationData.length - 1);
-		let randomFormation = FormationData[randomIndex];
+
+	while (formationData.length <= max) {
+		let randomFormation;
+		if (TrackDataNokori.length === 0) {
+			let randomIndex = random.nextInt(0, FormationData.length - 1);
+			randomFormation = FormationData[randomIndex];
+		}
+		else {
+			let randomIndex = random.nextInt(0, TrackDataNokori.length - 1);
+			randomFormation = TrackDataNokori[randomIndex];
+		}
 		if (randomFormation.length + formationData.length <= max) {
 			formationData = formationData.concat(randomFormation);
 		}
 		else {
-            return formationData;
+			return formationData;
 		}
 	}
 	return formationData;
+
 }
 
 function Gettest() {
@@ -1112,7 +1139,6 @@ FormationData = [
 ]
 
 RetsubanData = `
-試9094	18	TH66S	TH75	1
 907A	12	TH01	TH76	1
 1049	1	TH45	TH66S	1
 1065	1	TH67	TH76	1
@@ -1153,8 +1179,6 @@ RetsubanData = `
 1209A	12	TH01	TH76	1
 回9043	0	TH66S	TH76	1
 9041	6	TH58	TH65	1
-回9091	0	TH66S	TH76	1
-試9095	18	TH66S	TH76	1
 回9049	0	TH66S	TH75	1
 回9141	0	TH65	TH76	1
 9143	6	TH58	TH65	1
@@ -1205,8 +1229,14 @@ RetsubanData = `
 回9240	0	TH75	TH66S	1
 回9244	0	TH75	TH66S	1
 9242B	8	TH76	TH58	1
-試9190	18	TH76	TH61	1
-試9194	18	TH75	TH61	1
+試9091	18	TH66S	TH75	1
+試9190	18	TH75	TH61	1
+試9191	18	TH61	TH75	1
+試9290	18	TH75	TH66S	1
+試9095	18	TH66S	TH76	1
+試9194	18	TH76	TH61	1
+試9195	18	TH61	TH75	1
+試9294	18	TH75	TH66S	1
 `
 
 TrackData = [

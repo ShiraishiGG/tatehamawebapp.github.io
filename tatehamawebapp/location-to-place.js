@@ -8,12 +8,12 @@ function location_to_place() {
    
     Location_data.TrackCircuits.forEach(function (TrackCircuit) {
 
-        console.log(TrackCircuit.Name + ' ' + TrackCircuit.Last + ' ' + TrackCircuit.On + ' ' + TrackCircuit.Lock);
+        //console.log(TrackCircuit.Name + ' ' + TrackCircuit.Last + ' ' + TrackCircuit.On + ' ' + TrackCircuit.Lock);
 
         ss.filter(Trackname => Trackname[0] == TrackCircuit.Name);
 
         var Trainlocation = ss.filter(Trackname => Trackname[0] == TrackCircuit.Name)[0]; //êŠ–¼‚ğæ“¾
-        console.log(Trainlocation);
+        //console.log(Trainlocation);
 
 
 

@@ -33,7 +33,7 @@ function getCarImageFileNames(carStates, isUp) {
             car.CarModel === "50000" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
+            car.HasConductorCab === false &&
             car.HasMotor === false
         ) {
             count50000++;
