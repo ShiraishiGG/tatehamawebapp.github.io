@@ -10,20 +10,6 @@ async function Getdata() {
 
     Location_data = JSON.parse(datastring);
 
-
-    // 上り下りの判定
-    if (Location_data && Location_data.TrainInfos) {
-        Object.values(Location_data.TrainInfos).forEach(train => {
-            // Nameの末尾の数字を抽出
-            const match = train.Name && train.Name.match(/(\d+)[^\d]*$/);
-            if (match) {
-                const num = parseInt(match[1], 10);
-                if (num % 2 === 0 && Array.isArray(train.CarStates)) {
-                    train.CarStates.reverse();
-                }
-            }
-        });
-    }
 }
 
 function GetManyTest(seed) {
@@ -53,7 +39,22 @@ function GetManyTest(seed) {
     Location_data = {
         "TrackCircuits": TrackData,
 		"TrainInfos": trainInfos
-    }
+	}
+
+	// 上り下りの判定
+	if (Location_data && Location_data.TrainInfos) {
+		Object.values(Location_data.TrainInfos).forEach(train => {
+			// Nameの末尾の数字を抽出
+			const match = train.Name && train.Name.match(/(\d+)[^\d]*$/);
+			if (match) {
+				const num = parseInt(match[1], 10);
+				if (num % 2 === 0 && Array.isArray(train.CarStates)) {
+					train.CarStates.reverse();
+				}
+			}
+		});
+	}
+
     console.log(Location_data);
 }
 
@@ -466,75 +467,13 @@ function Gettest() {
 FormationData = [
 	[
 		{
-			"CarModel": "50000",
-			"HasPantograph": false,
-			"HasDriverCab": true,
-			"HasConductorCab": true,
-			"HasMotor": false,
-			"DoorClose": true,
-			"BC_Press": 0,
-			"Ampare": 0
-		},
-		{
-			"CarModel": "50000",
-			"HasPantograph": true,
-			"HasDriverCab": false,
-			"HasConductorCab": false,
-			"HasMotor": true,
-			"DoorClose": true,
-			"BC_Press": 0,
-			"Ampare": 0
-		},
-		{
-			"CarModel": "50000",
-			"HasPantograph": false,
-			"HasDriverCab": false,
-			"HasConductorCab": false,
-			"HasMotor": true,
-			"DoorClose": true,
-			"BC_Press": 0,
-			"Ampare": 0
-		},
-		{
-			"CarModel": "50000",
-			"HasPantograph": true,
-			"HasDriverCab": false,
-			"HasConductorCab": true,
-			"HasMotor": true,
-			"DoorClose": true,
-			"BC_Press": 0,
-			"Ampare": 0
-		},
-		{
-			"CarModel": "50000",
-			"HasPantograph": true,
-			"HasDriverCab": false,
-			"HasConductorCab": false,
-			"HasMotor": true,
-			"DoorClose": true,
-			"BC_Press": 0,
-			"Ampare": 0
-		},
-		{
-			"CarModel": "50000",
-			"HasPantograph": false,
-			"HasDriverCab": true,
-			"HasConductorCab": true,
-			"HasMotor": false,
-			"DoorClose": true,
-			"BC_Press": 0,
-			"Ampare": 0
-		}
-	],
-	[
-		{
 			"CarModel": "4300",
 			"HasPantograph": true,
 			"HasDriverCab": true,
 			"HasConductorCab": true,
 			"HasMotor": true,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
 			"Ampare": 0
 		},
 		{
@@ -544,49 +483,349 @@ FormationData = [
 			"HasConductorCab": true,
 			"HasMotor": false,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
 			"Ampare": 0
 		}
 	],
 	[
 		{
-			"CarModel": "5320",
+			"CarModel": "4000R",
 			"HasPantograph": true,
 			"HasDriverCab": true,
 			"HasConductorCab": true,
 			"HasMotor": true,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
 			"Ampare": 0
 		},
 		{
-			"CarModel": "5320",
+			"CarModel": "4000R",
 			"HasPantograph": false,
 			"HasDriverCab": false,
 			"HasConductorCab": false,
 			"HasMotor": false,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
 			"Ampare": 0
 		},
 		{
-			"CarModel": "5320",
+			"CarModel": "4000R",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000R",
 			"HasPantograph": false,
 			"HasDriverCab": false,
 			"HasConductorCab": false,
 			"HasMotor": false,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
 			"Ampare": 0
 		},
 		{
-			"CarModel": "5320",
+			"CarModel": "4000R",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000R",
 			"HasPantograph": true,
 			"HasDriverCab": true,
 			"HasConductorCab": true,
 			"HasMotor": true,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "4000",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4000",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "3300V",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3300V",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3300V",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "3020",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3020",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3020",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3020",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3020",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3020",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "3000",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "3000",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 395.9998,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "50000",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 439.1578,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 439.9999,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 439.9999,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 439.9999,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 439.9999,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 439.1578,
 			"Ampare": 0
 		}
 	],
@@ -598,7 +837,7 @@ FormationData = [
 			"HasConductorCab": true,
 			"HasMotor": true,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
 			"Ampare": 0
 		},
 		{
@@ -608,7 +847,261 @@ FormationData = [
 			"HasConductorCab": true,
 			"HasMotor": true,
 			"DoorClose": true,
-			"BC_Press": 0,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "5320",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5320",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5320",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5320",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "5300",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5300",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5300",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5300",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "5300",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5300",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "4600",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4600",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4600",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4600",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "4600",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4600",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "4321",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4321",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4321",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4321",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "4300",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4300",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4300",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 440,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4300",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 440,
 			"Ampare": 0
 		}
 	]
@@ -2554,8 +3047,8 @@ TrackData = [
 		"Name": "TH75_6T"
 	},
 	{
-		"On": true,
-		"Last": "回1221A",
+		"On": false,
+		"Last": "",
 		"Name": "TH75_5T"
 	}
 ]
