@@ -74,6 +74,7 @@ function showTrainDetail(trainId) {
     if (train) {
         body.innerHTML = `
       <h2>列車詳細</h2>
+            ${carImagesHtml}
       <table>
         <tr><th>列車番号</th><td>${train.Name || trainId}</td></tr>
         <tr><th>種別</th><td><span class="${kindClass}">${kind}</span></td></tr>
@@ -82,7 +83,7 @@ function showTrainDetail(trainId) {
 
         <tr><th>走行位置</th><td>${trackDisplay || trackName}</td></tr>
       </table>
-      ${carImagesHtml}
+
     `;
     } else {
         body.innerHTML = `<h2>列車詳細</h2><p>列番: ${trainId}</p><p>詳細データがありません。</p>`;
