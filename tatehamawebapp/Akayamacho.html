@@ -1,19 +1,63 @@
 ﻿<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>運行情報（赤山町～大道寺）</title>
-<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
-<link rel="stylesheet" href="routepage.css">
-<link rel="stylesheet" href="train-box.css">
-<link rel="stylesheet" href="train-icon.css">
-<link rel="stylesheet" href="station-stop.css">
+    <meta charset="UTF-8">
+    <title>列車走行位置（赤山町～大道寺）</title>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="routepage.css">
+    <link rel="stylesheet" href="train-box.css">
+    <link rel="stylesheet" href="train-icon.css">
+    <link rel="stylesheet" href="station-stop.css">
+    <link rel="stylesheet" href="fixed-tab.css">
+    <link rel="stylesheet" href="train-detail-modal.css">
+    <script type="text/javascript" src="setting.js" charset="utf-8"></script>
+    <script type="text/javascript" src="train-place.js" charset="utf-8"></script>
+    <script type="text/javascript" src="receivedata.js" charset="utf-8"></script>
+    <script type="text/javascript" src="location-to-place.js" charset="utf-8"></script>
+    <script type="text/javascript" src="train-set.js" charset="utf-8"></script>
+    <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
+    <script type="text/javascript" src="train-detail-modal.js" charset="utf-8"></script>
+    <script type="text/javascript" src="car-icons.js" charset="utf-8"></script>
+    <script type="text/javascript" src="scrolling-text.js" charset="utf-8"></script>
 </head>
 <body>
-<!-- <div class="central-line"></div> -->
-<!-- 駅 -->
-<div class="stations-wrapper">
+
+    <!-- 上部固定タブ -->
+    <div id="fixed-tab">
+
+        <a href="index.html" id="fixed-home-link">戻る</a>
+        <span id="fixed-message" class="fixed-message-absolute">
+            館浜本線 列車走行位置
+        </span>
+    </div>
+
+    <div id="time-text-area">
+        <span id="fixed-message" class="fixed-message-absolute">
+            <div class="fixed-message-subtitle">赤山町～大道寺</div>
+            <span class="fixed-update-row">
+                <span class="fixed-update-label"></span>
+                <span id="fixed-time"></span><span id="fixed-time-label"></span>
+            </span>
+        </span>
+    </div>
+
+    <!-- スクロールテキストエリアをfixed-tabの直下に移動 -->
+    <div class="scrolling-text-area">
+        <span class="scrolling-text-wrapper">
+            <span class="scrolling-text" id="scrolling-text-bottom"></span>
+        </span>
+    </div>
+
+    <!-- 駅 -->
     <div class="stations-data">
+
+        <div class="station-group">
+            <div class="station-link-btn-oji station-link-btn-absolute">
+                大路方面
+            </div>
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+        </div>
 
         <!-- 赤山町 -->
         <div class="station-group">
@@ -338,7 +382,35 @@
                 <!-- 生成する -->
             </div>
         </div>
+
+        <div class="station-group">
+            <a href="daidoji.html" class="station-link-btn station-link-btn-absolute">
+                館浜方面
+            </a>
+            <div class="station-background"></div>
+            <div class="central-line"></div>
+        </div>
+
+
     </div>
-</div>
+
+    <div id="fixed-tab-bottom-end"></div>
+
+    <!-- ページ最下部の固定タブ -->
+    <div id="fixed-tab-bottom">
+        <div class="fixed-bottom-note-area">
+            <span class="fixed-bottom-note">
+                ● 実際の走行位置、種別と異なる場合があります。
+            </span>
+        </div>
+    </div>
+
+    <div id="train-detail-modal" class="train-detail-modal" style="display:none;">
+        <div class="train-detail-content">
+            <span class="train-detail-close" id="train-detail-close">&times;</span>
+            <div id="train-detail-body"></div>
+        </div>
+
 </body>
+
 </html>

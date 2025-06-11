@@ -11,7 +11,19 @@ async function Getdata() {
     Location_data = JSON.parse(datastring);
 
 
-
+    // 上り下りの判定
+    if (Location_data && Location_data.TrainInfos) {
+        Object.values(Location_data.TrainInfos).forEach(train => {
+            // Nameの末尾の数字を抽出
+            const match = train.Name && train.Name.match(/(\d+)[^\d]*$/);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                if (num % 2 === 0 && Array.isArray(train.CarStates)) {
+                    train.CarStates.reverse();
+                }
+            }
+        });
+    }
 }
 
 function GetManyTest(seed) {
@@ -88,61 +100,61 @@ function Gettest() {
          "Name": "1113A",
          "CarStates": [
             {
-               "CarModel": "50000",
-               "HasPantograph": false,
+               "CarModel": "3000",
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3000",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
+               "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+                        {
+               "CarModel": "3000",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
                "HasMotor": false,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "CarModel": "3000",
                "HasPantograph": true,
-               "HasDriverCab": false,
-               "HasConductorCab": false,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": false,
-               "HasDriverCab": false,
-               "HasConductorCab": false,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": true,
-               "HasDriverCab": false,
-               "HasConductorCab": true,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": true,
-               "HasDriverCab": false,
-               "HasConductorCab": false,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3000",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
                "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+                        {
+               "CarModel": "3000",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0
@@ -154,10 +166,10 @@ function Gettest() {
          "Delay": 10
       },
       "回9143": {
-         "Name": "1283C",
+         "Name": "回9143",
          "CarStates": [
             {
-               "CarModel": "4300",
+               "CarModel": "3300",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -167,17 +179,57 @@ function Gettest() {
                "Ampare": 0
             },
             {
-               "CarModel": "4300",
+               "CarModel": "3300",
                "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
+               "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
                "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0
             }
          ],
-         "TrainClass": 3,
+         "TrainClass": 0,
          "FromStation": "TH76",
          "Destinaton": "TH65",
          "Delay": 7
@@ -316,8 +368,8 @@ function Gettest() {
             }
          ],
          "TrainClass": 3,
-         "FromStation": "TH76",
-         "Destinaton": "TH65",
+         "FromStation": "TH65",
+         "Destinaton": "TH76",
          "Delay": 3
       },
       "臨5236A": {
@@ -325,7 +377,7 @@ function Gettest() {
          "CarStates": [
             {
                "CarModel": "5600",
-               "HasPantograph": false,
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
                "HasMotor": true,
@@ -345,7 +397,7 @@ function Gettest() {
             },
             {
                "CarModel": "5600",
-               "HasPantograph": false,
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
                "HasMotor": true,
@@ -365,7 +417,7 @@ function Gettest() {
             },
             {
                "CarModel": "5600",
-               "HasPantograph": false,
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
                "HasMotor": true,
@@ -384,14 +436,14 @@ function Gettest() {
                "Ampare": 0
             }
          ],
-         "TrainClass": "ExtraLtdExp",
+         "TrainClass": "17",
          "FromStation": "TH76",
          "DestinatonStation": "TH14",
          "Delay": 0
       }
    }
 }
-    `);
+    `)
     ;
 }
 
