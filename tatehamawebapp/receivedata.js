@@ -762,7 +762,7 @@ FormationData = [
 			"HasPantograph": true,
 			"HasDriverCab": false,
 			"HasConductorCab": false,
-			"HasMotor": false,
+			"HasMotor": true,
 			"DoorClose": true,
 			"BC_Press": 395.9998,
 			"Ampare": 0
@@ -772,7 +772,7 @@ FormationData = [
 			"HasPantograph": false,
 			"HasDriverCab": false,
 			"HasConductorCab": false,
-			"HasMotor": true,
+			"HasMotor": false,
 			"DoorClose": true,
 			"BC_Press": 395.9998,
 			"Ampare": 0
@@ -991,7 +991,7 @@ FormationData = [
 	[
 		{
 			"CarModel": "4600",
-			"HasPantograph": true,
+			"HasPantograph": false,
 			"HasDriverCab": true,
 			"HasConductorCab": true,
 			"HasMotor": true,
