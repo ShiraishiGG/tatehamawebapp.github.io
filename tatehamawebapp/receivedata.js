@@ -27,8 +27,10 @@ async function Getdata() {
 }
 
 function GetManyTest(seed) {
-    Random = new Random(seed);
-    TrackData = TrackData.filter(item => item.On === true);
+    random = new Random(seed);
+	TrackData = TrackData.filter(item => item.On === true);
+
+	console.log(FormationData);
 
 	// 先頭や末尾の空白行を除去
 	const rows = RetsubanData.trim().split('\n');
@@ -40,22 +42,36 @@ function GetManyTest(seed) {
 		if (row.length < 4) return; // データ不備行はスキップ
 		trainInfos[row[0]] = {
 			Name: row[0],
-			CarStates: null,
+			CarStates: GetFormationData(random),
 			TrainClass: row[1],
 			FromStation: row[2],
 			Destinaton: row[3],
-			Delay: Random.nextInt(0, 15) // ランダムな遅延時間を設定
+			Delay: Math.max(random.nextInt(-15, 15),0) // ランダムな遅延時間を設定
 		};
 	});
-
-	// 例: 結果を確認
-	console.log(trainInfos);
 
     Location_data = {
         "TrackCircuits": TrackData,
 		"TrainInfos": trainInfos
     }
     console.log(Location_data);
+}
+
+function GetFormationData(random) {
+	var formationData = [];
+	max = 6;
+
+    while (formationData.length <= max) {
+		let randomIndex = random.nextInt(0, FormationData.length - 1);
+		let randomFormation = FormationData[randomIndex];
+		if (randomFormation.length + formationData.length <= max) {
+			formationData = formationData.concat(randomFormation);
+		}
+		else {
+            return formationData;
+		}
+	}
+	return formationData;
 }
 
 function Gettest() {
@@ -446,6 +462,157 @@ function Gettest() {
     `)
     ;
 }
+
+FormationData = [
+	[
+		{
+			"CarModel": "50000",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": true,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "50000",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "4300",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "4300",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "5320",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5320",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5320",
+			"HasPantograph": false,
+			"HasDriverCab": false,
+			"HasConductorCab": false,
+			"HasMotor": false,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5320",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		}
+	],
+	[
+		{
+			"CarModel": "5600",
+			"HasPantograph": true,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		},
+		{
+			"CarModel": "5600",
+			"HasPantograph": false,
+			"HasDriverCab": true,
+			"HasConductorCab": true,
+			"HasMotor": true,
+			"DoorClose": true,
+			"BC_Press": 0,
+			"Ampare": 0
+		}
+	]
+]
 
 RetsubanData = `
 試9094	18	TH66S	TH75	1
@@ -1042,8 +1209,8 @@ TrackData = [
 		"Name": "TH57_21T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "1140",
 		"Name": "TH59_21ロT"
 	},
 	{
@@ -1097,7 +1264,7 @@ TrackData = [
 		"Name": "TH55S_21イT"
 	},
 	{
-		"On": false,
+		"On": true,
 		"Last": "",
 		"Name": "TH59_21イT"
 	},
@@ -1167,13 +1334,13 @@ TrackData = [
 		"Name": "TH61_2RT"
 	},
 	{
-		"On": false,
-		"Last": "1113A",
+		"On": true,
+		"Last": "試9191",
 		"Name": "TH2T"
 	},
 	{
-		"On": false,
-		"Last": "1113A",
+		"On": true,
+		"Last": "試9191",
 		"Name": "TH1T"
 	},
 	{
@@ -1422,13 +1589,13 @@ TrackData = [
 		"Name": "下り117T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "1165",
 		"Name": "下り111T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "1165",
 		"Name": "下り105T"
 	},
 	{
@@ -1462,8 +1629,8 @@ TrackData = [
 		"Name": "上り114T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "9140B",
 		"Name": "上り120T"
 	},
 	{
@@ -1627,8 +1794,8 @@ TrackData = [
 		"Name": "上り30T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "1166",
 		"Name": "上り36T"
 	},
 	{
@@ -1827,8 +1994,8 @@ TrackData = [
 		"Name": "下り143T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "回9143",
 		"Name": "下り137T"
 	},
 	{
@@ -2212,8 +2379,8 @@ TrackData = [
 		"Name": "TH76_24T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "1021A",
 		"Name": "TH76_5LBT"
 	},
 	{
@@ -2227,8 +2394,8 @@ TrackData = [
 		"Name": "TH76_22T"
 	},
 	{
-		"On": false,
-		"Last": "",
+		"On": true,
+		"Last": "1206A",
 		"Name": "TH76_5LAT"
 	},
 	{
