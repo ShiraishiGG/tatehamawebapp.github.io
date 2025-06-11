@@ -366,7 +366,7 @@ function Gettest() {
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
-               "HasMotor": true,
+               "HasMotor": false,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0

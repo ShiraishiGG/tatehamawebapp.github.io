@@ -470,10 +470,10 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
-            count3020m++;
-            if (count3020m === 1) return "caricons/TC_3000.png";
-            if (count3020m === 2) return "caricons/TC_3100.png";
-            if (count3020m === 3) return "caricons/TC_3100.png";
+            count3000m++;
+            if (count3000m === 1) return "caricons/TC_3000.png";
+            if (count3000m === 2) return "caricons/TC_3100.png";
+            if (count3000m === 3) return "caricons/TC_3100.png";
         }
         // 3000 - 2 3 or 4
         if (
@@ -483,10 +483,10 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === false &&
             car.HasMotor === false
         ) {
-            count3020t++;
-            if (count3020t === 1) return "caricons/TC_3500.png";
-            if (count3020t === 2) return "caricons/TC_3600.png";
-            if (count3020t === 3) return "caricons/TC_3600.png";
+            count3000t++;
+            if (count3000t === 1) return "caricons/TC_3500.png";
+            if (count3000t === 2) return "caricons/TC_3600.png";
+            if (count3000t === 3) return "caricons/TC_3600.png";
         }
 
 

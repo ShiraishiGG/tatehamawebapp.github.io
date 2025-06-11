@@ -63,7 +63,7 @@ function showTrainDetail(trainId) {
     if (Array.isArray(train?.CarStates)) {
         // 画像ファイル名のリストを取得
         const imgList = getCarImageFileNames(train.CarStates);
-        carImagesHtml = `<div class="train-car-image-row" style="margin-top:0.5em; margin-bottom:0.5em; text-align:center;">` +
+        carImagesHtml = `<div class="train-car-image-row" style="margin-bottom:0.5em; text-align:center;">` +
             imgList.map((imgSrc, idx) => {
                 const alt = train.CarStates[idx]?.CarModel ?? "";
                 return `<img src="${imgSrc}" alt="${alt}" class="car-image" style="height:60px; margin:0 0px; vertical-align:middle;" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
