@@ -77,7 +77,6 @@
 
 
 .train-car-image-row {
-    margin-top: 1em;
     text-align: center;
 }
 
@@ -86,3 +85,48 @@
     margin: 0 2px;
     vertical-align: middle;
 }
+
+
+.train-direction-u {
+    text-align: right; /* 中央揃え */
+    margin-top: 0.1em; /* 上マージン */
+    font-size: 0.2em; /* 文字サイズ */
+    font-weight: 500; /* 太字 */
+    color: #222; /* 文字色（青系） */
+    letter-spacing: 0.1em; /* 文字間隔 */
+}
+
+.train-direction-d {
+    text-align: left; /* 中央揃え */
+    margin-top: 0.1em; /* 上マージン */
+    font-size: 0.2em; /* 文字サイズ */
+    font-weight: 500; /* 太字 */
+    color: #222; /* 文字色（青系） */
+    letter-spacing: 0.1em; /* 文字間隔 */
+}
+
+.route-direction {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.2em;
+}
+
+.route-direction-u {
+    text-align: right; /* 中央揃え */
+    margin-top: 0.1em; /* 上マージン */
+    font-size: 0.2em; /* 文字サイズ */
+    font-weight: 500; /* 太字 */
+    color: #222; /* 文字色（青系） */
+    letter-spacing: 0.1em; /* 文字間隔 */
+}
+
+.route-direction-d {
+    text-align: left; /* 中央揃え */
+    margin-top: 0.1em; /* 上マージン */
+    font-size: 0.2em; /* 文字サイズ */
+    font-weight: 500; /* 太字 */
+    color: #222; /* 文字色（青系） */
+    letter-spacing: 0.1em; /* 文字間隔 */
+}
+

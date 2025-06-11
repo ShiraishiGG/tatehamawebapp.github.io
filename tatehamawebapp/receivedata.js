@@ -56,61 +56,61 @@ function Gettest() {
          "Name": "1113A",
          "CarStates": [
             {
-               "CarModel": "50000",
-               "HasPantograph": false,
+               "CarModel": "3000",
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3000",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
+               "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+                        {
+               "CarModel": "3000",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
                "HasMotor": false,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "CarModel": "3000",
                "HasPantograph": true,
-               "HasDriverCab": false,
-               "HasConductorCab": false,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": false,
-               "HasDriverCab": false,
-               "HasConductorCab": false,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": true,
-               "HasDriverCab": false,
-               "HasConductorCab": true,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": true,
-               "HasDriverCab": false,
-               "HasConductorCab": false,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "50000",
-               "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3000",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
                "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+                        {
+               "CarModel": "3000",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0
@@ -125,7 +125,7 @@ function Gettest() {
          "Name": "回9143",
          "CarStates": [
             {
-               "CarModel": "4300",
+               "CarModel": "3300",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -135,11 +135,51 @@ function Gettest() {
                "Ampare": 0
             },
             {
-               "CarModel": "4300",
+               "CarModel": "3300",
                "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
+               "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": false,
+               "HasDriverCab": false,
+               "HasConductorCab": false,
                "HasMotor": false,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "3300",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0
@@ -293,7 +333,7 @@ function Gettest() {
          "CarStates": [
             {
                "CarModel": "5600",
-               "HasPantograph": false,
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
                "HasMotor": true,
@@ -312,7 +352,17 @@ function Gettest() {
                "Ampare": 0
             },
             {
-               "CarModel": "5600",
+               "CarModel": "4600",
+               "HasPantograph": true,
+               "HasDriverCab": true,
+               "HasConductorCab": true,
+               "HasMotor": true,
+               "DoorClose": true,
+               "BC_Press": 0,
+               "Ampare": 0
+            },
+            {
+               "CarModel": "4600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -323,17 +373,7 @@ function Gettest() {
             },
             {
                "CarModel": "5600",
-               "HasPantograph": false,
-               "HasDriverCab": true,
-               "HasConductorCab": true,
-               "HasMotor": true,
-               "DoorClose": true,
-               "BC_Press": 0,
-               "Ampare": 0
-            },
-            {
-               "CarModel": "5600",
-               "HasPantograph": false,
+               "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
                "HasMotor": true,

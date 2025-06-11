@@ -63,7 +63,7 @@ function showTrainDetail(trainId) {
     if (Array.isArray(train?.CarStates)) {
         // 画像ファイル名のリストを取得
         const imgList = getCarImageFileNames(train.CarStates);
-        carImagesHtml = `<div class="train-car-image-row" style="margin-top:1em; text-align:center;">` +
+        carImagesHtml = `<div class="train-car-image-row" style="margin-top:0.5em; margin-bottom:0.5em; text-align:center;">` +
             imgList.map((imgSrc, idx) => {
                 const alt = train.CarStates[idx]?.CarModel ?? "";
                 return `<img src="${imgSrc}" alt="${alt}" class="car-image" style="height:60px; margin:0 0px; vertical-align:middle;" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
@@ -71,10 +71,37 @@ function showTrainDetail(trainId) {
             `</div>`;
     }
 
+
+
     if (train) {
+
+        // 進行方向の判定
+        let directionHtml = '';
+        const name = train.Name || trainId;
+        const match = name.match(/(\d+)[^\d]*$/); // 末尾の数字を抽出
+        if (match) {
+            const num = parseInt(match[1], 10);
+            if (num % 2 === 0) {
+                directionHtml = `<div class="train-direction-u">進行方向▶</div>`;
+            } else {
+                directionHtml = `<div class="train-direction-d">◀進行方向</div>`;
+            }
+        }
+
+        // ラベル行を追加
+        const carLabelHtml = `
+      <div class="route-direction">
+        <span class="route-direction-d">館浜側</span>
+        <span class="route-direction-u">大手橋側</span>
+      </div>
+
+    `;
+
         body.innerHTML = `
       <h2>列車詳細</h2>
+            ${carLabelHtml}
             ${carImagesHtml}
+            ${directionHtml}
       <table>
         <tr><th>列車番号</th><td>${train.Name || trainId}</td></tr>
         <tr><th>種別</th><td><span class="${kindClass}">${kind}</span></td></tr>
