@@ -3,6 +3,24 @@ body {
     background: #f5f5f5;
 }
 
+.main-title-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.7em;
+}
+
+.main-title {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    font-weight: 800;
+    color: #222;
+    font-size: 20px;
+    margin-bottom: 1em;
+}
+
 .pw-container {
     max-width: 320px;
     margin: 80px auto;
@@ -20,6 +38,7 @@ input[type="password"], input[type="text"] {
 }
 
 button {
+    align-items: center;
     width: 100%;
     padding: 0.7em;
     background: #1976d2;
@@ -28,7 +47,36 @@ button {
     border-radius: 4px;
 }
 
+.backindex {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top:0.7em;
+}
+
 .error {
     color: #e53935;
     margin-bottom: 1em;
+}
+
+.fixed-home-link-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 0.7em;
+    display: flex;
+    gap: 160px
+}
+
+#fixed-home-link {
+    background: #fff; /* óŒêF */
+    color: #222; /* îíï∂éö */
+    border-radius: 6px;
+    padding: 6px 18px;
+    font-weight: bold;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    text-align: right;
+
 }
