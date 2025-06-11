@@ -2,8 +2,10 @@
 function getCarImageFileNames(carStates, isUp) {
     if (!Array.isArray(carStates)) return [];
 
+    var copyCarStates = JSON.parse(JSON.stringify(carStates));
+
     if (isUp) {
-        let copyCarStates = JSON.parse(JSON.stringify(carStates));
+        copyCarStates.reverse();
     }
 
     let count50000 = 0;
