@@ -70,11 +70,12 @@ function showTrainDetail(trainId) {
             const num = parseInt(match[1], 10);
             isUp = num % 2 === 0
         }
+
         const imgList = getCarImageFileNames(train.CarStates, isUp);
-        carImagesHtml = `<div class="train-car-image-row" style="margin-bottom:0.5em; text-align:center;">` +
+        carImagesHtml = `<div class="train-car-image-row">` +
             imgList.map((imgSrc, idx) => {
                 const alt = train.CarStates[idx]?.CarModel ?? "";
-                return `<img src="${imgSrc}" alt="${alt}" class="car-image" style="height:60px; margin:0 0px; vertical-align:middle;" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
+                return `<img src="${imgSrc}" alt="${alt}" class="car-image" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
             }).join('') +
             `</div>`;
     }
