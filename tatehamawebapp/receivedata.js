@@ -11,7 +11,19 @@ async function Getdata() {
     Location_data = JSON.parse(datastring);
 
 
-
+    // 上り下りの判定
+    if (Location_data && Location_data.TrainInfos) {
+        Object.values(Location_data.TrainInfos).forEach(train => {
+            // Nameの末尾の数字を抽出
+            const match = train.Name && train.Name.match(/(\d+)[^\d]*$/);
+            if (match) {
+                const num = parseInt(match[1], 10);
+                if (num % 2 === 0 && Array.isArray(train.CarStates)) {
+                    train.CarStates.reverse();
+                }
+            }
+        });
+    }
 }
 
 function Gettest() {
@@ -400,6 +412,3 @@ function Gettest() {
    }
 }
     `);
-
-
-}
