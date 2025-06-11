@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const user = document.getElementById('user-input').value;
         const pw = document.getElementById('pw-input').value;
         if (users[user] && users[user] === pw) {
-            window.location.href = "tatehama.html";
+            window.location.href = " tatehama.html#TH65 ";
         } else {
             document.getElementById('pw-error').textContent = "ユーザー名またはパスワードが違います";
             document.getElementById('pw-error').style.display = "block";

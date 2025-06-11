@@ -1,14 +1,66 @@
 body {
 	font-family: 'M PLUS 1', sans-serif;
 	text-align: center;
-	margin: 30px;
-	background-color: #fff;
+	background-color: #eee;
 }
 
-h1 {
-	font-size: 2em;
-	margin-bottom: 20px;
+
+
+.main-title-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
+
+.main-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.0em;
+	font-weight: 800;
+	color: #222;
+	background: #fff;
+	letter-spacing: 0.08em;
+	width: 100%;
+	padding: 0.5em 1.2em;
+	gap: 10px; /* 画像とテキストの間隔 */
+	font-size: 2em;
+}
+
+.routeitem-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.routename-item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.7em;
+	font-weight: 700;
+	color: #fff; /* 文字色を白に変更 */
+	background-color: #1976d2; /* 背景色を追加 */
+	letter-spacing: 0.08em;
+	width: 100%;
+	padding: 0.5em 1.2em;
+	margin-bottom: 0.5em; /* 下余白 */
+}
+
+
+.logo-link-inline {
+	display: flex;
+	align-items: center;
+}
+
+.logo-img-inline {
+	margin-top: 0.5ex;
+	width: 48px;
+	height: auto;
+}
+
 
 .divider {
 	border: none;
@@ -21,31 +73,22 @@ h1 {
 .station-list {
 	display: flex;
 	flex-direction: column;
-	gap: 1em;
-	max-width: 300px;
-	margin: 0 auto 50px auto;
+	gap: 0.5em;
+	margin-bottom: 20px;
 	text-align: left;
+	align-items: center;
 }
 
-.station-item {
+.station-item, .station-item-no {
 	display: flex;
 	align-items: center;
 	font-size: 1.2em;
+	box-sizing: border-box;
+	width: 30%
 }
 
-.station-item-no {
-	display: flex;
-	align-items: center;
-	font-size: 1.2em;
-	pointer-events: none;
-}
 
-.routename-item {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-size: 1.7em;
-}
+
 
 .subtitle-item {
 	display: flex;
@@ -55,18 +98,16 @@ h1 {
 }
 
 
-.btn-link {
+/* .btn-link {
 	display: inline-block;
-	background: #eee;
+	background: #fff;
 	color: #1976d2;
 	padding: 0.5em 0.5em;
-	border-radius: 24px;
 	text-decoration: none;
 	font-weight: 500;
 	font-size: 1.1em;
 	box-shadow: 0 2px 8px #0001;
 	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-	margin: 0.1em 0;
 }
 
 	.btn-link:hover, .btn-link:focus {
@@ -75,28 +116,23 @@ h1 {
 		box-shadow: 0 4px 16px #1976d233;
 		border: 1.5px solid #1976d2;
 		outline: none;
-	}
+	}: */
 
-
-.main-title {
-	display: flex;
+.btn-link {
+	display: flex; /* フレックスで中身（色箱とテキスト）を配置 */
 	align-items: center;
-	justify-content: center;
-	gap: 18px; /* 画像とテキストの間隔 */
-	font-size: 2em;
-	margin-bottom: 20px;
+	background: #fff;
+	color: #000;
+	padding: 1em;
+	width: 100%; /* 親要素の幅に合わせる */
+	box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+	border-radius: 8px;
+	box-sizing: border-box;
+	text-align: left; /* テキストは左寄せ */
 }
 
-.logo-link-inline {
-	display: flex;
-	align-items: center;
-}
 
-.logo-img-inline {
-	margin-top: 0.5ex;
-	width: 48px;
-	height: auto;
-}
+
 
 
 
