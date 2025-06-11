@@ -55,7 +55,9 @@ function GetManyTest(seed) {
 		});
 	}
 
-    console.log(Location_data);
+	console.log(Location_data);
+
+	placeAllTrainIconsByLocation();
 }
 
 function GetFormationData(random) {
