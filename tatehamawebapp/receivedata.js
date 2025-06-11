@@ -28,7 +28,7 @@ async function Getdata() {
 
 function Gettest() {
 
-	Location_data = JSON.parse(`
+    Location_data = JSON.parse(`
 
 {
    "TrackCircuits": [
@@ -412,3 +412,4 @@ function Gettest() {
    }
 }
     `);
+}
