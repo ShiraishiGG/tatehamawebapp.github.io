@@ -25,6 +25,8 @@ function GetManyTest(seed) {
 
 	const trainInfos = {};
 	retsubanArray.forEach(row => {
+		random.next();
+		random.next();
 		if (row.length < 4) return; // データ不備行はスキップ
 		trainInfos[row[0]] = {
 			Name: row[0],
