@@ -352,7 +352,7 @@ function Gettest() {
                "Ampare": 0
             },
             {
-               "CarModel": "4600",
+               "CarModel": "5600",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -362,11 +362,11 @@ function Gettest() {
                "Ampare": 0
             },
             {
-               "CarModel": "4600",
+               "CarModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
-               "HasMotor": false,
+               "HasMotor": true,
                "DoorClose": true,
                "BC_Press": 0,
                "Ampare": 0

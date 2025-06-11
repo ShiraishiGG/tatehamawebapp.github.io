@@ -20,6 +20,7 @@ function getCarImageFileNames(carStates) {
     let count3000t = 0; // 追加: 3000 T車用カウンタ
 
     return carStates.map((car, idx) => {
+        const lastIdx = carStates.length - 1;
 
         // 50000
         // 先頭車判別
@@ -78,8 +79,17 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count5320++;
-            return count5320 === 1 ? "caricons/TC_5320.png" : "caricons/TC_5370.png";
+
+            if (idx === 0)
+                return count5320 === 1 ? "caricons/TC_5320.png" : "caricons/TC_5370.png";
+
+            if (idx === lastIdx)
+                return count5320 === 1 ? "caricons/TC_5320.png" : "caricons/TC_5370.png";
+
+
+            return count5320 === 1 ? "caricons/TC_5320h.png" : "caricons/TC_5370h.png";
         }
+
 
         if (
             car.CarModel === "5320" &&
@@ -103,7 +113,15 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count5300++;
-            return count5300 === 1 ? "caricons/TC_5300.png" : "caricons/TC_5350.png";
+
+            if (idx === 0)
+                return count5300 === 1 ? "caricons/TC_5300.png" : "caricons/TC_5350.png";
+
+            if (idx === lastIdx)
+                return count5300 === 1 ? "caricons/TC_5300.png" : "caricons/TC_5350.png";
+
+
+            return count5300 === 1 ? "caricons/TC_5300h.png" : "caricons/TC_5350h.png";
         }
 
 
@@ -139,7 +157,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
-            return "caricons/TC_5500.png";
+            if (idx === 0)
+                return "caricons/TC_5500.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_5500.png";
+            return "caricons/TC_5500h.png";
+
         }
         // 5500 - 2
         if (
@@ -149,8 +173,15 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === false
         ) {
-            return "caricons/TC_5500.png";
+            if (idx === 0)
+                return "caricons/TC_5550.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_5550.png";
+            return "caricons/TC_5550h.png";
+
         }
+
 
         // 5600 - 1
         if (
@@ -160,7 +191,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
-            return "caricons/TC_5600.png";
+            if (idx === 0)
+                return "caricons/TC_5600.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_5600.png";
+            return "caricons/TC_5600h.png";
+
         }
         // 5600 - 2
         if (
@@ -170,7 +207,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
-            return "caricons/TC_5650.png";
+            if (idx === 0)
+                return "caricons/TC_5650.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_5650.png";
+            return "caricons/TC_5650h.png";
+
         }
 
 
@@ -184,8 +227,20 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count4321++;
-            return count4321 === 1 ? "caricons/TC_4321.png" : "caricons/TC_4371.png";
+
+            if (idx === 0)
+                return count4321 === 1 ? "caricons/TC_4321.png" : "caricons/TC_4371.png";
+
+
+            if (idx === lastIdx)
+                return count4321 === 1 ? "caricons/TC_4321.png" : "caricons/TC_4371.png";
+
+
+
+            return count4321 === 1 ? "caricons/TC_4321h.png" : "caricons/TC_4371h.png";
         }
+
+
 
 
         // 4321 - 2
@@ -221,7 +276,17 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count4300++;
-            return count4300 === 1 ? "caricons/TC_4300.png" : "caricons/TC_4350.png";
+
+            if (idx === 0)
+                return count4300 === 1 ? "caricons/TC_4300.png" : "caricons/TC_4350.png";
+
+
+            if (idx === lastIdx)
+                return count4300 === 1 ? "caricons/TC_4300.png" : "caricons/TC_4350.png";
+
+
+
+            return count4300 === 1 ? "caricons/TC_4300h.png" : "caricons/TC_4350h.png";
         }
 
 
@@ -257,7 +322,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
-            return "caricons/TC_4500.png";
+            if (idx === 0)
+                return "caricons/TC_4500.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_4500.png";
+            return "caricons/TC_4500h.png";
+
         }
         // 4500 - 2
         if (
@@ -267,7 +338,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === false
         ) {
-            return "caricons/TC_4550.png";
+            if (idx === 0)
+                return "caricons/TC_4550.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_4550.png";
+            return "caricons/TC_4550h.png";
+
         }
 
 
@@ -281,7 +358,17 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count4600++;
-            return count4600 === 1 ? "caricons/TC_4600.png" : "caricons/TC_4650.png";
+
+            if (idx === 0)
+                return count4600 === 1 ? "caricons/TC_4600.png" : "caricons/TC_4650.png";
+
+
+            if (idx === lastIdx)
+                return count4600 === 1 ? "caricons/TC_4600.png" : "caricons/TC_4650.png";
+
+
+
+            return count4600 === 1 ? "caricons/TC_4360h.png" : "caricons/TC_4650h.png";
         }
 
 
@@ -317,7 +404,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
-            return "caricons/TC_4800.png";
+            if (idx === 0)
+                return "caricons/TC_4800.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_4800.png";
+            return "caricons/TC_4800h.png";
+
         }
         // 4800 - 2
         if (
@@ -327,7 +420,13 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === false
         ) {
-            return "caricons/TC_4850.png";
+            if (idx === 0)
+                return "caricons/TC_4850.png";
+
+            if (idx === lastIdx)
+                return "caricons/TC_4850.png";
+            return "caricons/TC_4850h.png";
+
         }
 
 
@@ -340,9 +439,21 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
+
             count4000++;
-            return count4000 === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
+
+            if (idx === 0)
+                return count4000 === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
+
+
+            if (idx === lastIdx)
+                return count4000 === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
+
+
+
+            return count4000 === 1 ? "caricons/TC_4000h.png" : "caricons/TC_4050h.png";
         }
+
         // 4000 - T車
         if (
             car.CarModel === "4000" &&
@@ -377,8 +488,19 @@ function getCarImageFileNames(carStates) {
             car.HasConductorCab === true &&
             car.HasMotor === true
         ) {
+
             count4000R++;
-            return count4000R === 1 ? "caricons/TC_4000r.png" : "caricons/TC_4050r.png";
+
+            if (idx === 0)
+                return count4000R === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
+
+
+            if (idx === lastIdx)
+                return count4000R === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
+
+
+
+            return count4000R === 1 ? "caricons/TC_4000h.png" : "caricons/TC_4050h.png";
         }
         // 4000R - T車
         if (
@@ -415,10 +537,31 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count3300++;
-            if (count3300 === 1) return "caricons/TC_3300.png";
-            if (count3300 === 2) return "caricons/TC_3400.png";
-            if (count3300 === 3) return "caricons/TC_3300.png";
-            if (count3300 === 4) return "caricons/TC_3400.png";
+
+            if (idx === 0)
+                if (count3300 === 1) return "caricons/TC_3300.png";
+            if (idx === lastIdx)
+                if (count3300 === 2) return "caricons/TC_3400.png";
+            if (idx === lastIdx)
+                if (count3300 === 3) return "caricons/TC_3300.png";
+            if (idx === lastIdx)
+                if (count3300 === 4) return "caricons/TC_3400.png";
+
+            if (idx === lastIdx)
+                if (count3300 === 1) return "caricons/TC_3300.png";
+            if (idx === lastIdx)
+                if (count3300 === 2) return "caricons/TC_3400.png";
+            if (idx === lastIdx)
+                if (count3300 === 3) return "caricons/TC_3300.png";
+            if (idx === lastIdx)
+                if (count3300 === 4) return "caricons/TC_3400.png";
+            if (idx === lastIdx)
+
+            if (count3300 === 1) return "caricons/TC_3300h.png";
+            if (count3300 === 2) return "caricons/TC_3400h.png";
+            if (count3300 === 3) return "caricons/TC_3300h.png";
+            if (count3300 === 4) return "caricons/TC_3400h.png";
+
         }
         // 3300 - T
         if (
@@ -433,6 +576,7 @@ function getCarImageFileNames(carStates) {
 
 
 
+
         // 3020 - 1 3 or 6
         if (
             car.CarModel === "3020" &&
@@ -442,9 +586,23 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count3020m++;
-            if (count3020m === 1) return "caricons/TC_3020.png";
-            if (count3020m === 2) return "caricons/TC_3020.png";
-            if (count3020m === 3) return "caricons/TC_3120.png";
+            if (idx === 0)
+                if (count3020m === 1) return "caricons/TC_3020.png";
+            if (idx === 0)
+                if (count3020m === 2) return "caricons/TC_3020.png";
+            if (idx === 0)
+                if (count3020m === 3) return "caricons/TC_3120.png";
+
+            if (idx === lastIdx)
+                if (count3020m === 1) return "caricons/TC_3020.png";
+            if (idx === lastIdx)
+                if (count3020m === 2) return "caricons/TC_3020.png";
+            if (idx === lastIdx)
+                if (count3020m === 3) return "caricons/TC_3120.png";
+
+            if (count3020m === 1) return "caricons/TC_3020h.png";
+            if (count3020m === 2) return "caricons/TC_3020h.png";
+            if (count3020m === 3) return "caricons/TC_3120h.png";
         }
         // 3020 - 2 4
         if (
@@ -471,9 +629,23 @@ function getCarImageFileNames(carStates) {
             car.HasMotor === true
         ) {
             count3000m++;
-            if (count3000m === 1) return "caricons/TC_3000.png";
-            if (count3000m === 2) return "caricons/TC_3100.png";
+            if (idx === 0)
+                if (count3000m === 1) return "caricons/TC_3000.png";
+            if (idx === 0)
+                if (count3000m === 2) return "caricons/TC_3100.png";
+            if (idx === 0)
+                if (count3000m === 3) return "caricons/TC_3100.png";
+
+            if (idx === lastIdx)
+                if (count3000m === 1) return "caricons/TC_3000.png";
+            if (idx === lastIdx)
+                if (count3000m === 2) return "caricons/TC_3100.png";
+            if (idx === lastIdx)
             if (count3000m === 3) return "caricons/TC_3100.png";
+
+            if (count3000m === 1) return "caricons/TC_3000h.png";
+            if (count3000m === 2) return "caricons/TC_3100h.png";
+            if (count3000m === 3) return "caricons/TC_3100h.png";
         }
         // 3000 - 2 3 or 4
         if (
