@@ -62,7 +62,15 @@ function showTrainDetail(trainId) {
     let carImagesHtml = '';
     if (Array.isArray(train?.CarStates)) {
         // 画像ファイル名のリストを取得
-        const imgList = getCarImageFileNames(train.CarStates);
+
+        var isUp = false
+        // Nameの末尾の数字を抽出
+        const match = train.Name && train.Name.match(/(\d+)[^\d]*$/);
+        if (match) {
+            const num = parseInt(match[1], 10);
+            isUp = num % 2 === 0
+        }
+        const imgList = getCarImageFileNames(train.CarStates, isUp);
         carImagesHtml = `<div class="train-car-image-row" style="margin-bottom:0.5em; text-align:center;">` +
             imgList.map((imgSrc, idx) => {
                 const alt = train.CarStates[idx]?.CarModel ?? "";

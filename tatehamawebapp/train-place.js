@@ -20,6 +20,10 @@ function TrainPlace(sta1, sta2, updown, count, position, type, dianame) {
     //置く場所を探す//
     Train_icon_container = document.getElementById(Place_name);
 
+    if (Train_icon_container == null) {
+        console.error('Train icon container not found for place: ' + Place_name);
+        return; // 置く場所が見つからない場合は処理を中止
+    }
 
     if (sta2 == null) {  //駅に在線してる時//
         Train_icon_position = 'train-icon-' + updown + position; //例: train-icon-up1
@@ -34,10 +38,10 @@ function TrainPlace(sta1, sta2, updown, count, position, type, dianame) {
     Train_icon = 'train-' + updown + '-' + type;
 
 
-    console.log('Place_name: ' + Place_name);
-    console.log('Train_icon_position: ' + Train_icon_position);
-    console.log('Train_icon: ' + Train_icon)
-    console.log('Train_icon_container: ' + Train_icon_container);
+    //console.log('Place_name: ' + Place_name);
+    //console.log('Train_icon_position: ' + Train_icon_position);
+    //console.log('Train_icon: ' + Train_icon)
+    //console.log('Train_icon_container: ' + Train_icon_container);
 
 
 
