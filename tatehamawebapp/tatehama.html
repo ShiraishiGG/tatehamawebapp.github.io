@@ -1349,7 +1349,28 @@
             <div id="train-detail-body"></div>
         </div>
     </div>
+    <script>
+        function scrollToHashCenter() {
+            if (location.hash) {
+                const id = location.hash.substring(1);
+                const el = document.getElementById(id);
+                if (el) {
+                    setTimeout(function () {
+                        el.scrollIntoView({
+                            block: "center",
+                            inline: "center"
+                        });
+                    }, 10);
+                }
+            }
+        }
 
+        // 初回ロード時
+        window.onload = scrollToHashCenter;
+
+        // ハッシュ変更時
+        window.addEventListener("hashchange", scrollToHashCenter);
+    </script>
 </body>
 
 
