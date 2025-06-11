@@ -32,7 +32,7 @@ function showTrainDetail(trainId) {
     const train = Location_data.TrainInfos[trainId];
     let trackName = '';
     let trackDisplay = '';
-    if (Location_data.TrackCircuits) {
+    if (Location_data.TrackCircuits && train) {
         const track = Location_data.TrackCircuits.find(tc => tc.Last === trainId);
         if (track) {
             trackName = track.Name;
@@ -52,28 +52,45 @@ function showTrainDetail(trainId) {
     }
 
     // 行先駅名
-    let destName = train && train.Destinaton ? getStationNameById(train.Destinaton) : '';
+    let destName = train && train.Destination ? getStationNameById(train.Destination) : (train && train.Destinaton ? getStationNameById(train.Destinaton) : '');
 
     // 編成両数
     const carCount = Array.isArray(train?.CarStates) ? train.CarStates.length : 0;
+
+    // --- 車両画像のHTMLを生成 ---
+    // car-icons.jsのgetCarImageFileNamesを利用
+    let carImagesHtml = '';
+    if (Array.isArray(train?.CarStates)) {
+        // 画像ファイル名のリストを取得
+        const imgList = getCarImageFileNames(train.CarStates);
+        carImagesHtml = `<div class="train-car-image-row" style="margin-top:1em; text-align:center;">` +
+            imgList.map((imgSrc, idx) => {
+                const alt = train.CarStates[idx]?.CarModel ?? "";
+                return `<img src="${imgSrc}" alt="${alt}" class="car-image" style="height:60px; margin:0 0px; vertical-align:middle;" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
+            }).join('') +
+            `</div>`;
+    }
 
     if (train) {
         body.innerHTML = `
       <h2>列車詳細</h2>
       <table>
-        <tr><th>列番</th><td>${train.Name || trainId}</td></tr>
+        <tr><th>列車番号</th><td>${train.Name || trainId}</td></tr>
         <tr><th>種別</th><td><span class="${kindClass}">${kind}</span></td></tr>
         <tr><th>行先</th><td>${destName}</td></tr>
         <tr><th>編成両数</th><td>${carCount} 両</td></tr>
-        <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
+
         <tr><th>走行位置</th><td>${trackDisplay || trackName}</td></tr>
       </table>
+      ${carImagesHtml}
     `;
     } else {
         body.innerHTML = `<h2>列車詳細</h2><p>列番: ${trainId}</p><p>詳細データがありません。</p>`;
     }
     modal.style.display = 'flex';
 }
+
+//         <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
 
 // --- モーダルを閉じる ---
 function closeTrainDetail() {

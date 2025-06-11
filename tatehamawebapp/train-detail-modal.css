@@ -74,3 +74,15 @@
   color: #1976d2;
   width: 5em;
 }
+
+
+.train-car-image-row {
+    margin-top: 1em;
+    text-align: center;
+}
+
+.car-image {
+    height: 40px;
+    margin: 0 2px;
+    vertical-align: middle;
+}
