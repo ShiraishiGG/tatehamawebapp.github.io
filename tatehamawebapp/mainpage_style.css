@@ -30,13 +30,13 @@ h1 {
 .station-item {
 	display: flex;
 	align-items: center;
-	font-size: 1.4em;
+	font-size: 1.2em;
 }
 
 .station-item-no {
 	display: flex;
 	align-items: center;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	pointer-events: none;
 }
 
@@ -54,14 +54,62 @@ h1 {
 	font-size: 1.0em;
 }
 
-.color-box {
+
+.btn-link {
 	display: inline-block;
-	width: 24px;
-	height: 24px;
-	margin-right: 10px;
-	vertical-align: middle;
+	background: #eee;
+	color: #1976d2;
+	padding: 0.5em 0.5em;
+	border-radius: 24px;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 1.1em;
+	box-shadow: 0 2px 8px #0001;
+	transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+	margin: 0.1em 0;
 }
 
+	.btn-link:hover, .btn-link:focus {
+		background: #1976d2;
+		color: #fff;
+		box-shadow: 0 4px 16px #1976d233;
+		border: 1.5px solid #1976d2;
+		outline: none;
+	}
+
+
+.main-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 18px; /* 画像とテキストの間隔 */
+	font-size: 2em;
+	margin-bottom: 20px;
+}
+
+.logo-link-inline {
+	display: flex;
+	align-items: center;
+}
+
+.logo-img-inline {
+	margin-top: 0.5ex;
+	width: 48px;
+	height: auto;
+}
+
+
+
+
+
+.color-box {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	margin-right: 10px;
+	vertical-align: middle;
+	pointer-events: none;
+}
 /* 各路線の色 */
 .otebashi {
 	background-color: #8B0000;
@@ -134,4 +182,4 @@ a {
 .black {
 	font-weight: 900;
 }
-  
+

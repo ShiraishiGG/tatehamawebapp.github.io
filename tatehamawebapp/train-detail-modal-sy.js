@@ -110,17 +110,24 @@ function showTrainDetail(trainId) {
             } else if (numStr.length === 1) {
                 opNum = numStr;
             }
-            if (opNum) {
-                let opNumInt = parseInt(opNum, 10);
-                // 奇数なら-1
-                if (opNumInt % 2 === 1) {
-                    opNumInt = opNumInt - 1;
-                    // 2桁で表示（例: 01, 09, 11→10 など）
-                    operationNumber = opNumInt.toString().padStart(opNum.length, '0');
-                } else {
-                    operationNumber = opNum;
-                }
+            let opNumInt = parseInt(opNum, 10);
+
+            // 元の列番（数字部分）を取得
+            const baseNum = parseInt(numStr, 10);
+            // 奇数なら-1
+            if (opNumInt % 2 === 1) {
+                opNumInt = opNumInt - 1;
             }
+            if (baseNum > 9000) {
+                opNumInt += 300;
+            } else if (baseNum > 6000) {
+                opNumInt += 200;
+            } else if (baseNum > 3000) {
+                opNumInt += 100;
+            }
+            // 2桁以上の場合はゼロ埋め
+            operationNumber = opNumInt.toString().padStart(opNum.length, '0');
+
         }
 
         // ラベル行を追加
@@ -139,7 +146,7 @@ function showTrainDetail(trainId) {
             ${directionHtml}
       <table>
         <tr><th>列車番号</th><td>${train.Name || trainId}</td></tr>
-        <tr><th>運行番号</th><td>${operationNumber} 運行</td></tr>
+        <tr><th>運行番号</th><td>${operationNumber}運行</td></tr>
         <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
         <tr><th>種別</th><td><span class="${kindClass}">${kind}</span></td></tr>
         <tr><th>始発</th><td>${fromName}</td></tr>
