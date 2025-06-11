@@ -3,10 +3,10 @@ function getCarImageFileNames(carStates, isUp) {
     if (!Array.isArray(carStates)) return [];
 
     var copyCarStates = JSON.parse(JSON.stringify(carStates));
-
     if (isUp) {
         copyCarStates.reverse();
     }
+    console.log("CarState:", copyCarStates);
 
     let count50000 = 0;
     let count50100 = 0; // 追加: 2両目/5両目用カウンタ
