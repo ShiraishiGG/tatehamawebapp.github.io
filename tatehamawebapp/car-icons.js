@@ -1,6 +1,11 @@
 // 車両情報から画像ファイル名を決定する関数
-function getCarImageFileNames(carStates) {
+function getCarImageFileNames(carStates, isUp) {
     if (!Array.isArray(carStates)) return [];
+
+    if (isUp) {
+        carStates = carStates.reverse();
+    }
+
     let count50000 = 0;
     let count50100 = 0; // 追加: 2両目/5両目用カウンタ
     let count5320 = 0; // 追加: 5320用カウンタ
