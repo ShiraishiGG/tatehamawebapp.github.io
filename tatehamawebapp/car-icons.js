@@ -3,7 +3,7 @@ function getCarImageFileNames(carStates, isUp) {
     if (!Array.isArray(carStates)) return [];
 
     if (isUp) {
-        carStates = carStates.reverse();
+        let copyCarStates = JSON.parse(JSON.stringify(carStates));
     }
 
     let count50000 = 0;
@@ -24,8 +24,8 @@ function getCarImageFileNames(carStates, isUp) {
     let count3000m = 0; // 追加: 3000 M車用カウンタ
     let count3000t = 0; // 追加: 3000 T車用カウンタ
 
-    return carStates.map((car, idx) => {
-        const lastIdx = carStates.length - 1;
+    return copyCarStates.map((car, idx) => {
+        const lastIdx = copyCarStates.length - 1;
 
         // 50000
         // 先頭車判別
