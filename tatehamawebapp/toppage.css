@@ -1,3 +1,38 @@
+
+
+body {
+	margin: 0;
+}
+
+.main-title-wrapper {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	pointer-events: none;
+}
+
+.main-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2.0em;
+	font-weight: 800;
+	color: #222;
+	background: #fff;
+	letter-spacing: 0.08em;
+	width: 100%;
+	padding: 0.5em 1.2em;
+	gap: 10px;
+	font-size: 2em;
+}
+
+.logo {
+	margin-top: 0.5ex;
+	width: 48px;
+	height: auto;
+}
+
 .siteHeader {
 	width: 100%;
 	position: relative;
@@ -9,3 +44,67 @@
 	min-height: 46px;
 	border: none;
 }
+
+/* 細いヘッダー */
+.thin-header {
+	width: 100%;
+	height: 36px;
+	background: #f8f8f8;
+	display: flex;
+	align-items: center;
+	padding-left: 12px;
+	box-sizing: border-box;
+	border-bottom: 1px solid #ddd;
+}
+
+	.thin-header img {
+		height: 28px;
+		width: auto;
+	}
+
+/* フェード画像スライダー */
+.slider-container {
+	width: 100%;
+	max-width: 100vw;
+	height: 240px;
+	position: relative;
+	overflow: hidden;
+	margin: 0 auto 24px auto;
+	background: #eee;
+}
+
+.slider-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	opacity: 0;
+	transition: opacity 1.2s;
+	z-index: 1;
+}
+
+	.slider-image.active {
+		opacity: 1;
+		z-index: 2;
+	}
+
+/* リンクアイコンエリア */
+.link-icons {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	gap: 32px;
+	margin: 32px 0;
+}
+
+	.link-icons img {
+		width: 48px;
+		height: 48px;
+		object-fit: contain;
+		cursor: pointer;
+		transition: transform 0.2s;
+	}
+
+		.link-icons img:hover {
+			transform: scale(1.1);
+		}

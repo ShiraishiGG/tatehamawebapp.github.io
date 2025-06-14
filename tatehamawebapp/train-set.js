@@ -34,9 +34,6 @@ function checkTrainClassKind() {
     Object.values(Location_data.TrainInfos).forEach(train => {
         let kind = "";
         switch (String(train.TrainClass)) {
-            case "0":
-                kind = "回送";
-                break;
             case "1":
                 kind = "普通";
                 break;
@@ -93,6 +90,9 @@ function checkTrainClassKind() {
                 break;
             case "19":
                 kind = "臨時";
+                break;
+            case "20":
+                kind = "回送";
                 break;
 
             default:
