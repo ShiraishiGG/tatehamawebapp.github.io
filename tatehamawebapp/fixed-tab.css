@@ -304,6 +304,7 @@ body {
     background: rgba(0,0,0,0.4);
     justify-content: center;
     align-items: center;
+    pointer-events: none;
 }
 
 .info-modal-content {
@@ -324,6 +325,7 @@ body {
     border-bottom: 1px solid #eee;
     padding-bottom: 8px;
     margin-bottom: 10px;
+    pointer-events: none;
 }
 
 .info-modal-close {
@@ -333,6 +335,7 @@ body {
     font-size: 2em;
     color: #888;
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .info-modal-body {
@@ -343,5 +346,5 @@ body {
 .info-modal-message {
     font-size: 1.0em;
     color: #222;
-    text-align: left; 
+    text-align: left;
 }
