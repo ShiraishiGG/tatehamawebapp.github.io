@@ -5,6 +5,9 @@
     <title>館浜電鉄 列車走行位置</title>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
     <link rel="stylesheet" href="mainpage_style.css">
+    <link rel="stylesheet" href="fixed-tab.css">
+    <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
+    <script type="text/javascript" src="information.js" charset="utf-8"></script>
 </head>
 <body>
     <div class="main-title-wrapper">
@@ -12,6 +15,22 @@
             <a href="index2.html" class="logo-link-inline">
                 <img src="icons/tatehama.png" alt="館浜ロゴ" class="logo-img-inline">
             </a>館浜電鉄 列車走行位置
+        </div>
+    </div>
+
+    <!-- スクロールテキストエリア -->
+    <div class="scrolling-text-area-mainpage" id="scrolling-text">
+        <img src="design/information.png" alt="運行情報" class="info-icon">
+        <span class="scrolling-text-wrapper">
+            <span class="scrolling-text" id="scrolling-text-bottom"></span>
+        </span>
+    </div>
+
+    <!-- 運行情報モーダル -->
+    <div id="info-modal" class="info-modal" style="display:none;">
+        <div class="info-modal-content">
+            <span class="info-modal-close" id="info-modal-close">&times;</span>
+            <div class="info-modal-body" id="info-modal-body"></div>
         </div>
     </div>
 

@@ -1,8 +1,4 @@
-body {
-	font-family: 'M PLUS 1', sans-serif;
-	text-align: center;
-	background-color: #eee;
-}
+
 
 
 
@@ -130,7 +126,6 @@ body {
 	box-sizing: border-box;
 	text-align: left; /* テキストは左寄せ */
 }
-
 
 
 
