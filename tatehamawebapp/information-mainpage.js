@@ -1,18 +1,16 @@
 // JavaScript source code
-
-
-// é‹è¡Œæƒ…å ±ãƒ†ã‚­ã‚¹ãƒˆ
-window.informationtext = "ã€è¨­å‚™ç‚¹æ¤œã€€åˆ—è»Šã®é…ã‚Œã€‘ <br> é¤¨æµœæœ¬ç·šã€€æµ·å²¸å…¬åœ’ï½è™¹ã‚±æµœé§…é–“ã§ã®ä¿å®‰è£…ç½®ç‚¹æ¤œã®ãŸã‚ã€é¤¨æµœæœ¬ç·šã€€å¤§é“å¯ºï½é¤¨æµœé–“ã§å¤§å¹…ãªãƒ€ã‚¤ãƒ¤ä¹±ã‚ŒãŒç™ºç”Ÿã—ã¦ã„ã¾ã™ã€‚<br>ã”è¿·æƒ‘ã‚’ãŠæ›ã‘ã—ã¾ã™ã“ã¨ã‚’ãŠè©«ã³ç”³ã—ä¸Šã’ã¾ã™ã€‚<br>æŒ¯æ›¿è¼¸é€ã¯æ‹’å¦ã•ã‚Œã¾ã—ãŸã€‚";
+// ‰^sî•ñƒeƒLƒXƒg ƒƒCƒ“ƒy[ƒW
+window.informationtext = "yİ”õ“_ŒŸ@—ñÔ‚Ì’x‚êz <br> ŠÙ•l–{ü@ŠCŠİŒö‰€`“øƒP•l‰wŠÔ‚Å‚Ì•ÛˆÀ‘•’u“_ŒŸ‚Ì‚½‚ßAŠÙ•l–{ü@‘å“¹›`ŠÙ•lŠÔ‚Å‘å•‚Èƒ_ƒCƒ„—‚ê‚ª”­¶‚µ‚Ä‚¢‚Ü‚·B<br>‚²–À˜f‚ğ‚¨Š|‚¯‚µ‚Ü‚·‚±‚Æ‚ğ‚¨˜l‚Ñ\‚µã‚°‚Ü‚·B<br>U‘Ö—A‘—‚Í‹‘”Û‚³‚ê‚Ü‚µ‚½B";
 
 document.addEventListener('DOMContentLoaded', function () {
     const elBottom = document.getElementById('scrolling-text-bottom');
     if (elBottom) {
-        // <br>ã‚¿ã‚°ã‚’é™¤å»ã—ã¦ãƒ†ã‚­ã‚¹ãƒˆã®ã¿è¡¨ç¤º
+        // <br>ƒ^ƒO‚ğœ‹‚µ‚ÄƒeƒLƒXƒg‚Ì‚İ•\¦
         elBottom.textContent = window.informationtext.replace(/<br\s*\/?>/gi, "");
     }
 
-    // ãƒ¢ãƒ¼ãƒ€ãƒ«è¡¨ç¤ºå‡¦ç†
-    const area = document.getElementById('scrolling-text-area');
+    // ƒ‚[ƒ_ƒ‹•\¦ˆ—
+    const area = document.getElementById('scrolling-text-area-mainpage');
     const modal = document.getElementById('info-modal');
     const modalBody = document.getElementById('info-modal-body');
     const modalClose = document.getElementById('info-modal-close');
@@ -20,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (area && modal && modalBody && modalClose) {
         area.addEventListener('click', function () {
             modalBody.innerHTML = `
-        <h2>é‹è¡Œæƒ…å ±</h2>
+        <h2>‰^sî•ñ</h2>
         <div class="info-modal-message">${window.informationtext}</div>
     `;
             modal.style.display = 'flex';
@@ -28,10 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
         modalClose.addEventListener('click', function () {
             modal.style.display = 'none';
         });
-        // ãƒ¢ãƒ¼ãƒ€ãƒ«å¤–ã‚¯ãƒªãƒƒã‚¯ã§é–‰ã˜ã‚‹
+        // ƒ‚[ƒ_ƒ‹ŠOƒNƒŠƒbƒN‚Å•Â‚¶‚é
         modal.addEventListener('click', function (e) {
             if (e.target === modal) modal.style.display = 'none';
         });
     }
 });
-
