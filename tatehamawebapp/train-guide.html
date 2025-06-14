@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>館浜電鉄 列車走行位置</title>
+    <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
+    <link rel="stylesheet" href="mainpage_style.css">
+    <link rel="stylesheet" href="fixed-tab.css">
+    <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
+    <script type="text/javascript" src="information.js" charset="utf-8"></script>
+
+</head>
+<body>
+    <div class="main-title-wrapper">
+        <div class="main-title">
+            <a href="login.html" class="logo-link-inline">
+                <img src="icons/tatehama.png" alt="館浜ロゴ" class="logo-img-inline">
+            </a>館浜電鉄 列車走行位置
+        </div>
+    </div>
+
+    <!-- スクロールテキストエリア -->
+    <div class="scrolling-text-area-mainpage" id="scrolling-text-area">
+        <img src="design/information.png" alt="運行情報" class="info-icon">
+        <span class="scrolling-text-wrapper">
+            <span class="scrolling-text" id="scrolling-text-bottom"></span>
+        </span>
+    </div>
+
+    <!-- 運行情報モーダル -->
+    <div id="info-modal" class="info-modal" style="display:none;">
+        <div class="info-modal-content">
+            <span class="info-modal-close" id="info-modal-close">&times;</span>
+            <div class="info-modal-body" id="info-modal-body"></div>
+        </div>
+    </div>
+
+
+    <div class="station-list">
+        <div class="main-title-wrapper">
+            <div class="routename-item">館浜本線</div>
+        </div>
+
+        <div class="station-item-no"><a href="train-guide.html" class="btn-link"><span class="color-box otebashi"></span>大手橋 〜 高井戸八幡</a></div>
+        <div class="station-item-no"><a href="train-guide.html" class="btn-link"><span class="color-box takaido"></span>高井戸八幡 〜 新長野公園</a></div>
+        <div class="station-item-no"><a href="train-guide.html" class="btn-link"><span class="color-box shincho"></span>新長野公園 〜 大路</a></div>
+        <div class="station-item-no"><a href="train-guide.html" class="btn-link"><span class="color-box dairoku"></span>大路 〜 赤山町</a></div>
+        <div class="station-item"><a href="akayamacho.html" class="btn-link"><span class="color-box akayamacho"></span>赤山町 〜 大道寺</a></div>
+        <div class="station-item"><a href="daidoji.html" class="btn-link"><span class="color-box daidoji"></span>大道寺 〜 館浜</a></div>
+    </div>
+
+    <div class="station-list">
+        <div class="main-title-wrapper">
+            <div class="routename-item">六日市線</div>
+        </div>
+        <div class="station-item-no"><a href="train-guide.html" class="btn-link"><span class="color-box mukkaichi"></span>六日市町 〜 見原台</a></div>
+    </div>
+
+    <div class="station-list">
+        <div class="main-title-wrapper">
+            <div class="routename-item">大師線</div>
+        </div>
+        <div class="station-item-no"><a href="train-guide.html" class="btn-link"><span class="color-box daishi"></span>長野本町 〜 大師</a></div>
+    </div>
+
+
+</body>
+</html>

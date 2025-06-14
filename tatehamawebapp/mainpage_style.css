@@ -1,13 +1,18 @@
 
 
-
+body {
+	margin: 0;
+}
 
 .main-title-wrapper {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	pointer-events: none;
 }
+
+
 
 .main-title {
 	display: flex;
@@ -20,15 +25,18 @@
 	letter-spacing: 0.08em;
 	width: 100%;
 	padding: 0.5em 1.2em;
-	gap: 10px; /* 画像とテキストの間隔 */
+	gap: 10px;
 	font-size: 2em;
 }
+
+
 
 .routeitem-wrapper {
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	pointer-events: none;
 }
 
 .routename-item {
@@ -43,12 +51,14 @@
 	width: 100%;
 	padding: 0.5em 1.2em;
 	margin-bottom: 0.5em; /* 下余白 */
+	pointer-events: none;
 }
 
 
 .logo-link-inline {
 	display: flex;
 	align-items: center;
+	pointer-events: auto;
 }
 
 .logo-img-inline {

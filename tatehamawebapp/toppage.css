@@ -1,0 +1,11 @@
+.siteHeader {
+	width: 100%;
+	position: relative;
+	z-index: 1000;
+	top: 0;
+	background-color: #fff;
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .1);
+	margin-bottom: 0;
+	min-height: 46px;
+	border: none;
+}

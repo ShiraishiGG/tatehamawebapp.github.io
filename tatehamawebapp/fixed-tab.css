@@ -80,6 +80,7 @@
 /* スクロールテキストも上部に固定 */
 
 .scrolling-text-area-mainpage {
+    width: 100%;
     top: 100px;
     left: 0;
     height: 32px;
