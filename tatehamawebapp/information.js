@@ -20,9 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (area && modal && modalBody && modalClose) {
         area.addEventListener('click', function () {
             modalBody.innerHTML = `
-                <h2>運行情報</h2>
-                <div>${window.informationtext}</div>
-            `;
+        <h2>運行情報</h2>
+        <div class="info-modal-message">${window.informationtext}</div>
+    `;
             modal.style.display = 'flex';
         });
         modalClose.addEventListener('click', function () {

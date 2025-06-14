@@ -338,5 +338,10 @@ body {
 .info-modal-body {
     font-size: 1.1em;
     color: #222;
-    white-space: pre-line;
+}
+
+.info-modal-message {
+    font-size: 1.0em;
+    color: #222;
+    text-align: left; 
 }
