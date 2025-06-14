@@ -18,7 +18,7 @@
     <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
     <script type="text/javascript" src="train-detail-modal.js" charset="utf-8"></script>
     <script type="text/javascript" src="car-icons.js" charset="utf-8"></script>
-    <script type="text/javascript" src="scrolling-text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="information.js" charset="utf-8"></script>
     <script type="text/javascript" src="random.js" charset="utf-8"></script>
     <script type="text/javascript" src="interval.js" charset="utf-8"></script>
 </head>
@@ -42,11 +42,21 @@
         </span>
     </div>
 
-    <!-- スクロールテキストエリアをfixed-tabの直下に移動 -->
-    <div class="scrolling-text-area">
+    <!-- スクロールテキストエリア -->
+    <div class="scrolling-text-area" id="scrolling-text-area">
+        <img src="design/information.png" alt="運行情報" class="info-icon">
         <span class="scrolling-text-wrapper">
             <span class="scrolling-text" id="scrolling-text-bottom"></span>
         </span>
+    </div>
+
+    <!-- 運行情報モーダル -->
+    <div id="info-modal" class="info-modal" style="display:none;">
+        <div class="info-modal-content">
+            <span class="info-modal-close" id="info-modal-close">&times;</span>
+            <div class="info-modal-title">運行情報</div>
+            <div class="info-modal-body" id="info-modal-body"></div>
+        </div>
     </div>
 
 

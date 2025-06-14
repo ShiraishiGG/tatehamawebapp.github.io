@@ -18,24 +18,23 @@
     <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
     <script type="text/javascript" src="train-detail-modal-sy.js" charset="utf-8"></script>
     <script type="text/javascript" src="car-icons.js" charset="utf-8"></script>
-    <script type="text/javascript" src="scrolling-text.js" charset="utf-8"></script>
+    <script type="text/javascript" src="information.js" charset="utf-8"></script>
     <script type="text/javascript" src="random.js" charset="utf-8"></script>
     <script type="text/javascript" src="interval.js" charset="utf-8"></script>
 </head>
 <body>
 
     <!-- 上部固定タブ -->
+
     <div id="fixed-tab">
-
-        <a href="index.html" id="fixed-home-link">戻る</a>
-        <span id="fixed-message" class="fixed-message-absolute">
-            館浜本線 列車走行位置
-        </span>
+        <div class="fixed-home-link-wrapper">
+            <a href="index.html" id="fixed-home-link">戻る</a>
+        </div>
+        <div class="fixed-tab-title">館浜本線 列車走行位置</div>
     </div>
-
     <div id="time-text-area">
         <span id="fixed-message" class="fixed-message-absolute">
-            <div class="fixed-message-subtitle">大路～館浜</div>
+            <div class="fixed-message-subtitle">赤山町～館浜　</div>
             <span class="fixed-update-row">
                 <span class="fixed-update-label"></span>
                 <span id="fixed-time"></span><span id="fixed-time-label"></span>
@@ -43,11 +42,21 @@
         </span>
     </div>
 
-    <!-- スクロールテキストエリアをfixed-tabの直下に移動 -->
-    <div class="scrolling-text-area">
+    <!-- スクロールテキストエリア -->
+    <div class="scrolling-text-area" id="scrolling-text-area">
+        <img src="design/information.png" alt="運行情報" class="info-icon">
         <span class="scrolling-text-wrapper">
             <span class="scrolling-text" id="scrolling-text-bottom"></span>
         </span>
+    </div>
+
+    <!-- 運行情報モーダル -->
+    <div id="info-modal" class="info-modal" style="display:none;">
+        <div class="info-modal-content">
+            <span class="info-modal-close" id="info-modal-close">&times;</span>
+            <div class="info-modal-title">運行情報</div>
+            <div class="info-modal-body" id="info-modal-body"></div>
+        </div>
     </div>
 
 

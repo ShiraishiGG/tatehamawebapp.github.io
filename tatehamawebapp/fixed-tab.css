@@ -90,6 +90,7 @@
     display: flex;
     align-items: center;
     margin: 0 auto;
+    pointer-events: none;
 }
 
 .scrolling-text {
@@ -100,6 +101,7 @@
     font-size: 1.1em;
     color: #fff;
     line-height: 1.5;
+    pointer-events: none;
 }
 
 @keyframes scroll-text {
@@ -140,7 +142,7 @@
 .fixed-message-absolute {
     position: absolute;
     left: 50%;
-    transform: translateX(-36%);
+    transform: translateX(-40%);
     background: none;
     color: #fff;
     font-size: 1.1em;
@@ -272,4 +274,66 @@ body {
     padding-left: 20px;
     box-sizing: border-box;
     display: block;
+}
+
+.info-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+    margin-left: 12px;
+    flex-shrink: 0;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.scrolling-text-area {
+    cursor: pointer;
+    /* Šù‘¶‚Ìdisplay:flex;‚ª‚È‚¯‚ê‚Î’Ç‰Á */
+    display: flex;
+    align-items: center;
+}
+
+.info-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.4);
+    justify-content: center;
+    align-items: center;
+}
+
+.info-modal-content {
+    background: #fff;
+    border-radius: 10px;
+    padding: 2em 2em 1.5em 2em;
+    max-width: 40vw;
+    box-shadow: 0 4px 24px #0003;
+    position: relative;
+    text-align: left;
+}
+
+.info-modal-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 1em;
+    color: #1976d2;
+}
+
+.info-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+}
+
+.info-modal-body {
+    font-size: 1.1em;
+    color: #222;
+    white-space: pre-line;
 }
