@@ -129,6 +129,9 @@ function showTrainDetail(trainId) {
 
 //         <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
 
+
+
+
 // --- モーダルを閉じる ---
 function closeTrainDetail() {
     document.getElementById('train-detail-modal').style.display = 'none';
@@ -153,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('train-detail-modal');
     if (modal) {
         modal.addEventListener('click', function (e) {
+            // モーダルの外側（オーバーレイ）をクリックした場合のみ閉じる
             if (e.target === modal) closeTrainDetail();
         });
     }

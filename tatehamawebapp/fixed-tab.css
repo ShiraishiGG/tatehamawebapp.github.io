@@ -316,11 +316,14 @@ body {
     text-align: left;
 }
 
-.info-modal-title {
+
+#info-modal-body h2 {
+    margin-top: 0;
     font-size: 1.3em;
-    font-weight: bold;
-    margin-bottom: 1em;
     color: #1976d2;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .info-modal-close {

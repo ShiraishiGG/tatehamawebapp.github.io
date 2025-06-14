@@ -161,6 +161,7 @@ function showTrainDetail(trainId) {
         body.innerHTML = `<h2>列車詳細</h2><p>列番: ${trainId}</p><p>詳細データがありません。</p>`;
     }
     modal.style.display = 'flex';
+
 }
 
 
