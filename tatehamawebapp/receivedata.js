@@ -8,7 +8,8 @@ async function Getdata() {
     const responce = await fetch(reqest);
     const datastring = await responce.text(); // レスポンスをテキストとして取得
 
-    Location_data = JSON.parse(datastring);
+	Location_data = JSON.parse(datastring);
+    console.log(Location_data);
 
 }
 
