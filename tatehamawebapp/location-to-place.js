@@ -6,14 +6,22 @@ function location_to_place() {
     var dianame_location = {}; // ダイヤ名と場所の対応を格納するオブジェクト
 
    
-    Location_data.TrackCircuits.forEach(function (TrackCircuit) {
+    Location_data.trackCircuitData.forEach(function (TrackCircuit) {
 
-        //console.log(TrackCircuit.Name + ' ' + TrackCircuit.Last + ' ' + TrackCircuit.On + ' ' + TrackCircuit.Lock);
+        //console.log(TrackCircuit.name + ' ' + TrackCircuit.last + ' ' + TrackCircuit.on + ' ' + TrackCircuit.lock);
 
-        ss.filter(Trackname => Trackname[0] == TrackCircuit.Name);
+        if (!TrackCircuit.on) {
+            return;
+        }
 
-        var Trainlocation = ss.filter(Trackname => Trackname[0] == TrackCircuit.Name)[0]; //場所名を取得
+        ss.filter(Trackname => Trackname[0] == TrackCircuit.name);
+
+        var Trainlocation = ss.filter(Trackname => Trackname[0] == TrackCircuit.name)[0]; //場所名を取得
         //console.log(Trainlocation);
+
+        if (!Trainlocation) {
+            return;
+        }
 
 
 
@@ -29,11 +37,11 @@ function location_to_place() {
 
 
 
-        dianame_location[TrackCircuit.Last] = Place_name 
+        dianame_location[TrackCircuit.last] = Place_name 
 
     }
     )
-    console.log(dianame_location);
+    //console.log(dianame_location);
 
 
 
