@@ -6,7 +6,7 @@ function location_to_place() {
     var dianame_location = {}; // ダイヤ名と場所の対応を格納するオブジェクト
 
    
-    Location_data.TrackCircuits.forEach(function (TrackCircuit) {
+    Location_data.TrackCircuitData.forEach(function (TrackCircuit) {
 
         //console.log(TrackCircuit.Name + ' ' + TrackCircuit.Last + ' ' + TrackCircuit.On + ' ' + TrackCircuit.Lock);
 
@@ -15,7 +15,9 @@ function location_to_place() {
         var Trainlocation = ss.filter(Trackname => Trackname[0] == TrackCircuit.Name)[0]; //場所名を取得
         //console.log(Trainlocation);
 
-
+        if (Trainlocation == null) {
+            return;
+        }
 
         //在線位置を探す//
 
@@ -26,6 +28,8 @@ function location_to_place() {
         else {   //駅間に在線してる時(nextstaがnullのとき)//
             Place_name = Trainlocation[1] + '-' + Trainlocation[2]
         }
+
+        Place_name = Place_name.replace("TH65-TH66S", "TH65-TH66").replace("TH66S-TH66", "TH65-TH66");
 
 
 

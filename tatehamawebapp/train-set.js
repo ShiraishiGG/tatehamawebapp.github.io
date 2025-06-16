@@ -6,9 +6,9 @@
 
 //取得したデータから置くアイコン、nameから上下を判別する//
 function checkLastEvenOdd() {
-    if (!Location_data || !Location_data.TrackCircuits) return;
+    if (!Location_data || !Location_data.TrackCircuitData) return;
 
-    Location_data.TrackCircuits.forEach(tc => {
+    Location_data.TrackCircuitData.forEach(tc => {
         // Lastから末尾の数字を抽出
         const match = tc.Last.match(/(\d+)(?!.*\d)/);
         if (match) {

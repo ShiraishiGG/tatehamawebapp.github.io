@@ -1,12 +1,12 @@
 // JavaScript source code
 async function Getdata() {
     const requestURL =
-        ""
+        "https://traincrew-multiats-server-passenger-dev.kesigomon.com/api/train"
 
     const reqest = new Request(requestURL);
 
     const responce = await fetch(reqest);
-    const datastring = await responce.text(); // レスポンスをテキストとして取得
+	const datastring = await responce.text(); // レスポンスをテキストとして取得
 
     Location_data = JSON.parse(datastring);
 
@@ -57,7 +57,7 @@ function GetManyTest(seed) {
 	
 
     Location_data = {
-        "TrackCircuits": TrackData,
+        "TrackCircuitData": TrackData,
 		"TrainInfos": trainInfos
 	}
 
@@ -111,7 +111,7 @@ function Gettest() {
     Location_data = JSON.parse(`
 
 {
-   "TrackCircuits": [
+   "TrackCircuitData": [
       {
          "Name": "TH76_5LAT",
          "Last": "1206A",

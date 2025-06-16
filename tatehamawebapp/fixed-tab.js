@@ -8,5 +8,3 @@ function updateTime() {
         timeElem.textContent = `最終更新 ${hh}:${mm}(TST) 現在`;
     }
 }
-setInterval(updateTime, 1000);
-updateTime();
