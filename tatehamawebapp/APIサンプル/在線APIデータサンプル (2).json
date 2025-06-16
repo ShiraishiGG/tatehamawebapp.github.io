@@ -36,7 +36,7 @@
          "Name": "1113A",
          "CarStates": [
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -46,7 +46,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": true,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -56,7 +56,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": false,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -66,7 +66,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": true,
                "HasDriverCab": false,
                "HasConductorCab": true,
@@ -76,7 +76,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": true,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -86,7 +86,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -105,7 +105,7 @@
          "Name": "1283C",
          "CarStates": [
             {
-               "CarModel": "4300",
+               "carModel": "4300",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -115,7 +115,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "4300",
+               "carModel": "4300",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -134,7 +134,7 @@
          "Name": "1206A",
          "CarStates": [
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -144,7 +144,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": true,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -154,7 +154,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": false,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -164,7 +164,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": true,
                "HasDriverCab": false,
                "HasConductorCab": true,
@@ -174,7 +174,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": true,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -184,7 +184,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "50000",
+               "carModel": "50000",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -203,7 +203,7 @@
          "Name": "1283C",
          "CarStates": [
             {
-               "CarModel": "4300",
+               "carModel": "4300",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -213,7 +213,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "4300",
+               "carModel": "4300",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -223,7 +223,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5320",
+               "carModel": "5320",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -233,7 +233,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5320",
+               "carModel": "5320",
                "HasPantograph": false,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -243,7 +243,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5320",
+               "carModel": "5320",
                "HasPantograph": false,
                "HasDriverCab": false,
                "HasConductorCab": false,
@@ -253,7 +253,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5320",
+               "carModel": "5320",
                "HasPantograph": true,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -272,7 +272,7 @@
          "Name": "臨5236A",
          "CarStates": [
             {
-               "CarModel": "5600",
+               "carModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -282,7 +282,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5600",
+               "carModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -292,7 +292,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5600",
+               "carModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -302,7 +302,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5600",
+               "carModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -312,7 +312,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5600",
+               "carModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,
@@ -322,7 +322,7 @@
                "Ampare": 0
             },
             {
-               "CarModel": "5600",
+               "carModel": "5600",
                "HasPantograph": false,
                "HasDriverCab": true,
                "HasConductorCab": true,

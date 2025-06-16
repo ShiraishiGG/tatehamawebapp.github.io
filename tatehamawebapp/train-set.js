@@ -180,7 +180,7 @@ function getDirectionByName(name) {
 }
 
 function placeAllTrainIconsByLocation() {
-    if (!Location_data || !Location_data.TrainInfos) return;
+    if (!Location_data || !Location_data.trainInfos) return;
 
     const locationDianame = location_to_place(); // 駅名や駅間名ごとのダイヤ名配列
 
@@ -189,11 +189,11 @@ function placeAllTrainIconsByLocation() {
         if (!Array.isArray(dianameList) || dianameList.length === 0) return;
 
         dianameList.forEach((dianame, idx) => {
-            const trainInfo = Location_data.TrainInfos[dianame];
+            const trainInfo = Location_data.trainInfos[dianame];
             if (!trainInfo) return;
 
-            const type = trainInfo.TrainClass;
-            const updown = getDirectionByName(trainInfo.Name);
+            const type = trainInfo.trainClass;
+            const updown = getDirectionByName(trainInfo.name);
 
             // 駅間かどうか判定
             let sta1 = placeName;
