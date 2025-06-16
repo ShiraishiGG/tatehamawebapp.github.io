@@ -32,8 +32,8 @@ function showTrainDetail(trainId) {
     const train = Location_data.TrainInfos[trainId];
     let trackName = '';
     let trackDisplay = '';
-    if (Location_data.TrackCircuits && train) {
-        const track = Location_data.TrackCircuits.find(tc => tc.Last === trainId);
+    if (Location_data.TrackCircuitData && train) {
+        const track = Location_data.TrackCircuitData.find(tc => tc.Last === trainId);
         if (track) {
             trackName = track.Name;
             trackDisplay = getTrackDisplayName(trackName);

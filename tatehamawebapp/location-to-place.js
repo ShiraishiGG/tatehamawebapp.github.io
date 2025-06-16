@@ -6,7 +6,7 @@ function location_to_place() {
     var dianame_location = {}; // ダイヤ名と場所の対応を格納するオブジェクト
 
    
-    Location_data.TrackCircuits.forEach(function (TrackCircuit) {
+    Location_data.TrackCircuitData.forEach(function (TrackCircuit) {
 
         //console.log(TrackCircuit.Name + ' ' + TrackCircuit.Last + ' ' + TrackCircuit.On + ' ' + TrackCircuit.Lock);
 
