@@ -37,7 +37,7 @@ function GetManyTest(seed) {
 			trainClass: row[1],
 			fromStation: row[2],
 			destinationStation: row[3],
-			Delay: Math.max(random.nextInt(-15, 15),0) // ランダムな遅延時間を設定
+			delay: Math.max(random.nextInt(-15, 15),0) // ランダムな遅延時間を設定
 		};
 	});
 
@@ -212,7 +212,7 @@ function Gettest() {
          "trainClass": 13,
          "fromStation": "TH01",
          "destinationStation": "TH76",
-         "Delay": 10
+         "delay": 10
       },
       "回9143": {
          "name": "回9143",
@@ -281,7 +281,7 @@ function Gettest() {
          "trainClass": 0,
          "fromStation": "TH76",
          "destinationStation": "TH65",
-         "Delay": 7
+         "delay": 7
       },
       "1206A": {
          "name": "1206A",
@@ -350,7 +350,7 @@ function Gettest() {
          "trainClass": 14,
          "fromStation": "TH76",
          "destinationStation": "TH01",
-         "Delay": 3
+         "delay": 3
       },
       "1283C": {
          "name": "1283C",
@@ -419,7 +419,7 @@ function Gettest() {
          "trainClass": 3,
          "fromStation": "TH65",
          "destinationStation": "TH76",
-         "Delay": 3
+         "delay": 3
       },
       "臨5236A": {
          "name": "臨5236A",
@@ -488,7 +488,7 @@ function Gettest() {
          "trainClass": "17",
          "fromStation": "TH76",
          "destinationStation": "TH14",
-         "Delay": 0
+         "delay": 0
       }
    }
 }
