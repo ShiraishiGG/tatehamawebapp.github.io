@@ -10,6 +10,7 @@
     <script type="text/javascript" src="slider.js" charset="utf-8"></script>
     <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
     <script type="text/javascript" src="information.js" charset="utf-8"></script>
+    <script type="text/javascript" src="index.js" charset="utf-8"></script>
 
 </head>
 <body>
@@ -23,13 +24,8 @@
 
     <!-- フェード画像スライダー -->
     <div class="slider-container">
-        <img src="toppage/1.jpg" class="slider-image active">
-        <img src="toppage/2.jpg" class="slider-image">
-        <img src="toppage/3.jpg" class="slider-image">
-        <img src="toppage/4.jpg" class="slider-image">
-        <img src="toppage/5.jpg" class="slider-image">
-        <img src="toppage/6.jpg" class="slider-image">
-        <img src="toppage/7.jpg" class="slider-image">
+        <img class="slider-image" id="slider-img-1">
+        <img class="slider-image" id="slider-img-2" style="opacity:0;">
     </div>
 
     <!-- スクロールテキストエリア -->
@@ -49,9 +45,9 @@
             </a>
         </div>
         <div class="link-icon">
-            <a href="train-guide.html">
+            <a href="#dia-info">
                 <img src="icons/dia.png">
-                <div class="icon-label">ダイヤ運転会とは</div>
+                <div class="icon-label">ダイヤ運転会<wbr>とは</div>
             </a>
         </div>
         <div class="link-icon">
@@ -69,7 +65,26 @@
     </div>
 
 
-
+    <!-- ページ下部に配置 -->
+    <div id="dia-info-content">
+        <h2 id="dia-info">ダイヤ運転会とは</h2>
+        <p>
+            館浜電鉄ダイヤ運転会。<br>
+            ここで行われているのは、TRAIN CREWという<wbr>ゲームを使用したロールプレイング。<br>
+            要は派手な電車ごっこです。<br>
+            <br>
+            しかし、一人一人がその職責を自覚し行動することで、<wbr>ただのごっこ遊びではなく全力のごっこ遊びになります。<br>
+            <br>
+            <br>
+            時間通りに運転をしなければならない。<br>
+            オーバーランをすると周りに迷惑がかかってしまう。<br>
+            やり直しの効かない、ゲームとしてのプレイだけでは味わえない緊張感<br>
+            <br>
+            そんな中で列車を走らせ、<wbr>共に全力のごっこ遊びを楽しみましょう！<br>
+            <br>
+            <br>
+        </p>
+    </div>
 
 
 

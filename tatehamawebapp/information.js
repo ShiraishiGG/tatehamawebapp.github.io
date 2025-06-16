@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target === modal) modal.style.display = 'none';
         });
     }
-});
+
+
 
 
