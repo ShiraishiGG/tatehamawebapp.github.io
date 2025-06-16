@@ -52,10 +52,10 @@ function showTrainDetail(trainId) {
     }
 
     // 行先駅名
-    let destName = train && train.Destination ? getStationNameById(train.Destination) : (train && train.Destinaton ? getStationNameById(train.Destinaton) : '');
+    let destName = train && train.DestinationStation ? getStationNameById(train.DestinationStation) : (train && train.Destinaton ? getStationNameById(train.Destinaton) : '');
 
     // 始発駅名
-    let fromName = train && train.Destination ? getStationNameById(train.FromStation) : (train && train.FromStation ? getStationNameById(train.FromStation) : '');
+    let fromName = train && train.DestinationStation ? getStationNameById(train.FromStation) : (train && train.FromStation ? getStationNameById(train.FromStation) : '');
 
     // 編成両数
     const carCount = Array.isArray(train?.CarStates) ? train.CarStates.length : 0;

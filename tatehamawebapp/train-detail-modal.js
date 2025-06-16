@@ -52,7 +52,7 @@ function showTrainDetail(trainId) {
     }
 
     // 行先駅名
-    let destName = train && train.Destination ? getStationNameById(train.Destination) : (train && train.Destinaton ? getStationNameById(train.Destinaton) : '');
+    let destName = train && train.DestinationStation ? getStationNameById(train.DestinationStation) : (train && train.Destinaton ? getStationNameById(train.Destinaton) : '');
 
     // 編成両数
     const carCount = Array.isArray(train?.CarStates) ? train.CarStates.length : 0;
