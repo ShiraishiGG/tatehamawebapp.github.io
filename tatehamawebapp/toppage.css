@@ -27,6 +27,7 @@ body {
 	font-size: 2em;
 }
 
+
 .logo {
 	margin-top: 0.5ex;
 	width: 48px;
@@ -48,28 +49,40 @@ body {
 /* 細いヘッダー */
 .thin-header {
 	width: 100%;
-	height: 36px;
+	height: 60px;
 	background: #f8f8f8;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
-	padding-left: 12px;
+	justify-content: center;
 	box-sizing: border-box;
 	border-bottom: 1px solid #ddd;
+	gap: 0px;
+	padding-left: 0;
 }
 
 	.thin-header img {
-		height: 28px;
+		height: 50px;
 		width: auto;
 	}
+
+.thin-title {
+	font-size: 1.2em;
+	font-weight: 300;
+	color: #222;
+	min-width: 0;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 
 /* フェード画像スライダー */
 .slider-container {
 	width: 100%;
 	max-width: 100vw;
-	height: 240px;
+	height: 500px;
 	position: relative;
 	overflow: hidden;
-	margin: 0 auto 24px auto;
 	background: #eee;
 }
 
@@ -93,18 +106,62 @@ body {
 	width: 100%;
 	display: flex;
 	justify-content: center;
-	gap: 32px;
+	gap: 90px;
 	margin: 32px 0;
 }
 
 	.link-icons img {
-		width: 48px;
+		width: 100px;
 		height: 48px;
 		object-fit: contain;
 		cursor: pointer;
 		transition: transform 0.2s;
+		text-align: center;
 	}
 
 		.link-icons img:hover {
 			transform: scale(1.1);
 		}
+
+.link-icon {
+	width: 120px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-right: 1em;
+	margin-left: 1em;
+}
+
+	.link-icon a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-decoration: none;
+	}
+
+
+.icon-label {
+	margin-top: 8px;
+	font-size: 0.95em;
+	color: #333;
+	text-align: center;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+
+.icon-label {
+	margin-top: 8px;
+	font-size: 0.95em;
+	color: #333;
+	text-align: center;
+	font-weight: 500;
+	letter-spacing: 0.05em;
+}
+
+.scrolling-text-area-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right:10px;
+}

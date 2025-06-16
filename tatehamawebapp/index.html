@@ -5,29 +5,67 @@
     <title>館浜電鉄 Tatehama Railway</title>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
     <link rel="stylesheet" href="toppage.css">
+    <link rel="stylesheet" href="mainpage_style.css">
+    <link rel="stylesheet" href="fixed-tab.css">
     <script type="text/javascript" src="slider.js" charset="utf-8"></script>
+    <script type="text/javascript" src="fixed-tab.js" charset="utf-8"></script>
+    <script type="text/javascript" src="information.js" charset="utf-8"></script>
 
 </head>
 <body>
 
     <!-- 細いヘッダー -->
     <div class="thin-header">
-        <img src="icons/tatehama2.png" alt="ロゴ">
+        <img src="icons/tatehama.png" alt="ロゴ">
+        <div class="thin-title">
+        </div>
     </div>
 
     <!-- フェード画像スライダー -->
     <div class="slider-container">
-        <img src="toppage/1.jpg" class="slider-image active" alt="スライド1">
-        <img src="toppage/2.jpg" class="slider-image" alt="スライド2">
-        <img src="toppage/3.jpg" class="slider-image" alt="スライド3">
+        <img src="toppage/1.jpg" class="slider-image active">
+        <img src="toppage/2.jpg" class="slider-image">
+        <img src="toppage/3.jpg" class="slider-image">
+        <img src="toppage/4.jpg" class="slider-image">
+        <img src="toppage/5.jpg" class="slider-image">
+        <img src="toppage/6.jpg" class="slider-image">
+        <img src="toppage/7.jpg" class="slider-image">
+    </div>
+
+    <!-- スクロールテキストエリア -->
+    <div class="scrolling-text-area-mainpage" id="scrolling-text-area">
+        <img src="design/information-th.png" class="link-icon">
+        <span class="scrolling-text-wrapper">
+            <span class="scrolling-text" id="scrolling-text-bottom"></span>
+        </span>
     </div>
 
     <!-- リンクアイコンエリア -->
     <div class="link-icons">
-        <img src="icons/tatehama2.png" alt="リンク1">
-        <img src="icons/tatehama2.png" alt="リンク2">
-        <img src="icons/tatehama2.png" alt="リンク3">
-        <img src="icons/tatehama2.png" alt="リンク4">
+        <div class="link-icon">
+            <a href="train-guide.html">
+                <img src="icons/train-guide.png">
+                <div class="icon-label">列車走行位置</div>
+            </a>
+        </div>
+        <div class="link-icon">
+            <a href="train-guide.html">
+                <img src="icons/dia.png">
+                <div class="icon-label">ダイヤ運転会とは</div>
+            </a>
+        </div>
+        <div class="link-icon">
+            <a href="https://acty-soft.com/">
+                <img src="icons/actylogo.png">
+                <div class="icon-label">acty</div>
+            </a>
+        </div>
+        <div class="link-icon">
+            <a href="https://store.steampowered.com/app/1618290/TRAIN_CREW/">
+                <img src="icons/Steam_logo.png">
+                <div class="icon-label">Steam</div>
+            </a>
+        </div>
     </div>
 
 
