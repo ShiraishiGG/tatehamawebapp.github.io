@@ -4,108 +4,28 @@
 
 
 
-//取得したデータから置くアイコン、nameから上下を判別する//
-function checkLastEvenOdd() {
-    if (!Location_data || !Location_data.TrackCircuitData) return;
+//取得したデータから置くアイコン、nameから上下を判別し、上下別にカウントする//
+function checkLastEvenOdd(dianameList, TrainInfos) {
+    // 上下別にカウント
+    let upCount = 0;
+    let downCount = 0;
+    // 各列車の上下情報を記録
+    const directionMap = {};
 
-    Location_data.TrackCircuitData.forEach(tc => {
-        // Lastから末尾の数字を抽出
-        const match = tc.Last.match(/(\d+)(?!.*\d)/);
-        if (match) {
-            const lastDigit = parseInt(match[1].slice(-1), 10);
-            if (!isNaN(lastDigit)) {
-                if (lastDigit % 2 === 0) {
-                    // 偶数の場合の処理
-                    console.log(`${tc.Last} は上りです`);
-                } else {
-                    // 奇数の場合の処理
-                    console.log(`${tc.Last} は下りです`);
-                }
-            }
+    dianameList.forEach(dianame => {
+        const train = TrainInfos[dianame];
+        if (!train) return;
+        const direction = getDirectionByName(train.Name);
+        directionMap[dianame] = direction;
+        if (direction === "up") {
+            upCount++;
+        } else if (direction === "down") {
+            downCount++;
         }
     });
+
+    return { upCount, downCount, directionMap };
 }
-
-
-
-function checkTrainClassKind() {
-    if (!Location_data || !Location_data.TrainInfos) return;
-
-    Object.values(Location_data.TrainInfos).forEach(train => {
-        let kind = "";
-        switch (String(train.TrainClass)) {
-            case "1":
-                kind = "普通";
-                break;
-            case "2":
-                kind = "区間準急";
-                break;
-            case "3":
-                kind = "準急";
-                break;
-            case "4":
-                kind = "急行";
-                break;
-            case "5":
-                kind = "快速急行";
-                break;
-            case "6":
-                kind = "臨時普通";
-                break;
-            case "7":
-                kind = "臨時準急";
-                break;
-            case "8":
-                kind = "臨時急行";
-                break;
-            case "9":
-                kind = "臨時快速急行";
-                break;
-            case "10":
-                kind = "D特";
-                break;
-            case "11":
-                kind = "C特1";
-                break;
-            case "12":
-                kind = "C特2";
-                break;
-            case "13":
-                kind = "C特3";
-                break;
-            case "14":
-                kind = "C特4";
-                break;
-            case "15":
-                kind = "B特";
-                break;
-            case "16":
-                kind = "A特";
-                break;
-            case "17":
-                kind = "臨時";
-                break;
-            case "18":
-                kind = "試運転";
-                break;
-            case "19":
-                kind = "臨時";
-                break;
-            case "20":
-                kind = "回送";
-                break;
-
-            default:
-                kind = "判別不能";
-                break;
-        }
-        console.log(`${train.Name} は${kind}です`);
-    });
-}
-
-
-
-//判別したデータをlocation_placeを元に配置する//
 
 function getTrainTypeByClass(trainClass) {
     switch (String(trainClass)) {
@@ -188,12 +108,19 @@ function placeAllTrainIconsByLocation() {
         const dianameList = locationDianame[placeName];
         if (!Array.isArray(dianameList) || dianameList.length === 0) return;
 
-        dianameList.forEach((dianame, idx) => {
+        // 上下別にカウント
+        const { upCount, downCount, directionMap } = checkLastEvenOdd(dianameList, Location_data.TrainInfos);
+
+        // 上下別の現在のインデックス
+        let upIndex = 0;
+        let downIndex = 0;
+
+        dianameList.forEach(dianame => {
             const trainInfo = Location_data.TrainInfos[dianame];
             if (!trainInfo) return;
 
             const type = trainInfo.TrainClass;
-            const updown = getDirectionByName(trainInfo.Name);
+            const updown = directionMap[dianame];
 
             // 駅間かどうか判定
             let sta1 = placeName;
@@ -202,9 +129,18 @@ function placeAllTrainIconsByLocation() {
                 [sta1, sta2] = placeName.split('-');
             }
 
-            // 複数アイコンの場合、positionやcountをidx+1でずらす
-            const position = idx + 1;
-            const count = dianameList.length;
+            // 上下別にposition, countを設定
+            let position = 1;
+            let count = 1;
+            if (updown === "up") {
+                upIndex++;
+                position = upIndex;
+                count = upCount;
+            } else if (updown === "down") {
+                downIndex++;
+                position = downIndex;
+                count = downCount;
+            }
 
             TrainPlace(sta1, sta2, updown, count, position, type, dianame);
         });
