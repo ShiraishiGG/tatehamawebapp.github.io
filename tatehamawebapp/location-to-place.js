@@ -15,7 +15,9 @@ function location_to_place() {
         var Trainlocation = ss.filter(Trackname => Trackname[0] == TrackCircuit.Name)[0]; //êŠ–¼‚ğæ“¾
         //console.log(Trainlocation);
 
-
+        if (Trainlocation == null) {
+            return;
+        }
 
         //İüˆÊ’u‚ğ’T‚·//
 
