@@ -100,7 +100,7 @@
 .train-icon-ss1-up1 {
     position: absolute;
     top: 50%;
-    left: calc(50% - 100px);
+    left: calc(50% - 70px);
     transform: translateY(-50%);
     width: 70px;
     height: 40px;
