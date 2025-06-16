@@ -32,7 +32,7 @@ function getCarImageFileNames(carStates, isUp) {
         // 50000
         // êÊì™é‘îªï 
         if (
-            car.CarModel === "50000" &&
+            car.carModel === "50000" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === false &&
@@ -44,7 +44,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 2óºñ⁄or5óºñ⁄îªï ÅiTC_50100/TC_50250Åj
         if (
-            car.CarModel === "50000" &&
+            car.carModel === "50000" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -57,7 +57,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3. TC_50300.png
         if (
-            car.CarModel === "50000" &&
+            car.carModel === "50000" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === true &&
@@ -67,7 +67,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 4. TC_50200.png
         if (
-            car.CarModel === "50000" &&
+            car.carModel === "50000" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -79,7 +79,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 5320
         if (
-            car.CarModel === "5320" &&
+            car.carModel === "5320" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -99,7 +99,7 @@ function getCarImageFileNames(carStates, isUp) {
 
 
         if (
-            car.CarModel === "5320" &&
+            car.carModel === "5320" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -113,7 +113,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 5300 - 1or4
         if (
-            car.CarModel === "5300" &&
+            car.carModel === "5300" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -134,7 +134,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 5300 - 2
         if (
-            car.CarModel === "5300" &&
+            car.carModel === "5300" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -145,7 +145,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 5300 - 3
         if (
-            car.CarModel === "5300" &&
+            car.carModel === "5300" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -158,7 +158,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 5500 - 1
         if (
-            car.CarModel === "5300" &&
+            car.carModel === "5300" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -174,7 +174,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 5500 - 2
         if (
-            car.CarModel === "5300" &&
+            car.carModel === "5300" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -192,7 +192,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 5600 - 1
         if (
-            car.CarModel === "5600" &&
+            car.carModel === "5600" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -208,7 +208,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 5600 - 2
         if (
-            car.CarModel === "5600" &&
+            car.carModel === "5600" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -227,7 +227,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4321 - 1or4
         if (
-            car.CarModel === "4321" &&
+            car.carModel === "4321" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -252,7 +252,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4321 - 2
         if (
-            car.CarModel === "4321" &&
+            car.carModel === "4321" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -263,7 +263,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4321 - 3
         if (
-            car.CarModel === "4321" &&
+            car.carModel === "4321" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -276,7 +276,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4300 - 1or4
         if (
-            car.CarModel === "4300" &&
+            car.carModel === "4300" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -299,7 +299,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4300 - 2
         if (
-            car.CarModel === "4300" &&
+            car.carModel === "4300" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -310,7 +310,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4300 - 3
         if (
-            car.CarModel === "4300" &&
+            car.carModel === "4300" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -323,7 +323,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4500 - 1
         if (
-            car.CarModel === "4300" &&
+            car.carModel === "4300" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -339,7 +339,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 4500 - 2
         if (
-            car.CarModel === "4300" &&
+            car.carModel === "4300" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -358,7 +358,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4600 - 1or4
         if (
-            car.CarModel === "4600" &&
+            car.carModel === "4600" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -381,7 +381,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4600 - 2
         if (
-            car.CarModel === "4600" &&
+            car.carModel === "4600" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -392,7 +392,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4600 - 3
         if (
-            car.CarModel === "4600" &&
+            car.carModel === "4600" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -405,7 +405,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4800 - 1
         if (
-            car.CarModel === "4600" &&
+            car.carModel === "4600" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -421,7 +421,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 4800 - 2
         if (
-            car.CarModel === "4600" &&
+            car.carModel === "4600" &&
             car.HasPantograph === false &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -440,7 +440,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4000 - 1or6
         if (
-            car.CarModel === "4000" &&
+            car.carModel === "4000" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -463,7 +463,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4000 - Té‘
         if (
-            car.CarModel === "4000" &&
+            car.carModel === "4000" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -476,7 +476,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 4000 - 3
         if (
-            car.CarModel === "4000" &&
+            car.carModel === "4000" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -489,7 +489,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 4000R - 1or6
         if (
-            car.CarModel === "4000R" &&
+            car.carModel === "4000R" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -511,7 +511,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 4000R - Té‘
         if (
-            car.CarModel === "4000R" &&
+            car.carModel === "4000R" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -524,7 +524,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 4000R - 3
         if (
-            car.CarModel === "4000R" &&
+            car.carModel === "4000R" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -537,7 +537,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3300 - 1or3
         if (
-            car.CarModel === "3300V" &&
+            car.carModel === "3300V" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -571,7 +571,7 @@ function getCarImageFileNames(carStates, isUp) {
         }
         // 3300 - T
         if (
-            car.CarModel === "3300V" &&
+            car.carModel === "3300V" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -585,7 +585,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3020 - 1 or 6
         if (
-            car.CarModel === "3020" &&
+            car.carModel === "3020" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -608,7 +608,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3020 - íÜä‘ïïÇ∂çûÇﬂ
         if (
-            car.CarModel === "3020" &&
+            car.carModel === "3020" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -620,7 +620,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3020 - 2 4
         if (
-            car.CarModel === "3020" &&
+            car.carModel === "3020" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -636,7 +636,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3000 - 1 4 or 6
         if (
-            car.CarModel === "3000" &&
+            car.carModel === "3000" &&
             car.HasPantograph === true &&
             car.HasDriverCab === true &&
             car.HasConductorCab === true &&
@@ -661,7 +661,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3000 -  íÜä‘ïïÇ∂çûÇﬂ
         if (
-            car.CarModel === "3000" &&
+            car.carModel === "3000" &&
             car.HasPantograph === true &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&
@@ -676,7 +676,7 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3000 - 2 3 or 4
         if (
-            car.CarModel === "3000" &&
+            car.carModel === "3000" &&
             car.HasPantograph === false &&
             car.HasDriverCab === false &&
             car.HasConductorCab === false &&

@@ -78,7 +78,7 @@ function showTrainDetail(trainId) {
         const imgList = getCarImageFileNames(train.CarStates, isUp);
         carImagesHtml = `<div class="train-car-image-row">` +
             imgList.map((imgSrc, idx) => {
-                const alt = train.carStates[idx]?.CarModel ?? "";
+                const alt = train.carStates[idx]?.carModel ?? "";
                 return `<img src="${imgSrc}" alt="${alt}" class="car-image" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
             }).join('') +
             `</div>`;
@@ -146,9 +146,9 @@ function showTrainDetail(trainId) {
             ${carImagesHtml}
             ${directionHtml}
       <table>
-        <tr><th>列車番号</th><td>${train.Name || trainId}</td></tr>
+        <tr><th>列車番号</th><td>${train.name || trainId}</td></tr>
         <tr><th>運行番号</th><td>${operationNumber}運行</td></tr>
-        <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
+        <tr><th>遅延</th><td>${train.delay ?? ''} 分</td></tr>
         <tr><th>種別</th><td><span class="${kindClass}">${kind}</span></td></tr>
         <tr><th>始発</th><td>${fromName}</td></tr>
         <tr><th>行先</th><td>${destName}</td></tr>

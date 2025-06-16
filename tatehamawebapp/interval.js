@@ -4,6 +4,6 @@ async function Interval() {
     placeAllTrainIconsByLocation();
     updateTime();
 }
-Interval();
+//Interval();
 // 10ïbÇ≤Ç∆Ç…é¿çs
-setInterval(Interval, 10000);
+//setInterval(Interval, 10000);
