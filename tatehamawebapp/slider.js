@@ -1,13 +1,5 @@
-// toppageディレクトリ内の画像ファイル名リスト
-const toppageImages = [
-    "1.jpg",
-    "2.jpg",
-    "3.jpg",
-    "4.jpg",
-    "5.jpg",
-    "6.jpg",
-    "7.jpg"
-];
+// toppageディレクトリ内の画像ファイル名リスト（1.jpg～24.jpgを自動生成）
+const toppageImages = Array.from({ length: 23 }, (_, i) => `${i + 1}.jpg`);
 
 // 配列をランダムにシャッフルする関数
 function shuffle(array) {

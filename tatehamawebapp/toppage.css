@@ -103,8 +103,37 @@ body {
 		opacity: 0;
 	}
 
-/* リンクアイコンエリア */
-.link-icons {
+
+.scrolling-text-area-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-right:10px;
+}
+
+.dia-line {
+	opacity: 0;
+	transition: opacity 0.7s;
+}
+
+	.dia-line.visible {
+		opacity: 1;
+	}
+
+	.dia-line.empty {
+		margin-bottom: 2em; /* 空行は大きめの隙間 */
+		min-height: 1em;
+	}
+
+#dia-info-slider {
+	transition: opacity 0.7s;
+}
+
+
+/* .role-icons と .link-icons の重複を共通化推奨 */
+.link-icons,
+.role-icons,
+.icon-group {
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -112,7 +141,9 @@ body {
 	margin: 32px 0;
 }
 
-	.link-icons img {
+	.link-icons img,
+	.role-icons img,
+	.icon-group img {
 		width: 100px;
 		height: 48px;
 		object-fit: contain;
@@ -121,7 +152,9 @@ body {
 		text-align: center;
 	}
 
-		.link-icons img:hover {
+		.link-icons img:hover,
+		.role-icons img:hover,
+		.icon-group img:hover {
 			transform: scale(1.1);
 		}
 
@@ -133,6 +166,8 @@ body {
 	justify-content: center;
 	margin-right: 1em;
 	margin-left: 1em;
+	pointer-events: auto;
+
 }
 
 	.link-icon a {
@@ -141,7 +176,6 @@ body {
 		align-items: center;
 		text-decoration: none;
 	}
-
 
 .icon-label {
 	margin-top: 8px;
@@ -152,10 +186,128 @@ body {
 	letter-spacing: 0.05em;
 }
 
-
-.scrolling-text-area-title {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-right:10px;
+/* dia-line: 1行ずつフェードイン用 */
+.dia-line {
+	opacity: 0;
+	transition: opacity 0.7s;
+	display: block;
+	margin-bottom: 0.7em;
 }
+
+	.dia-line.visible {
+		opacity: 1;
+	}
+
+	.dia-line.empty {
+		margin-bottom: 2em; /* 空行は大きめの隙間 */
+		min-height: 1em;
+	}
+
+/* 画像スライダー・role-iconsのフェードイン */
+#dia-info-slider,
+#role-icons {
+	transition: opacity 0.7s;
+}
+
+
+#role-icons {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.7s;
+}
+
+#role-icons.visible {
+	display: flex !important;
+	opacity: 1 !important;
+}
+
+/* 役割説明テキスト */
+.role-detail-lines {
+	margin-top: 1.5em;
+	font-size: 1.2em;
+	color: #222;
+	text-align: center;
+	align-items: center;
+}
+
+/* 役割説明エリア */
+#role-info-content {
+	display: none;
+	opacity: 0;
+	transition: opacity 0.7s;
+	margin-top: 80px;
+	margin-left: 50px;
+	margin-bottom: 10em;
+	pointer-events: none;
+}
+
+	#role-info-content.visible {
+		display: block;
+		opacity: 1;
+	}
+
+#role-info-image-area img {
+	width: 120px;
+	height: auto;
+	margin: 0 auto;
+	display: block;
+}
+
+#role-detail-title {
+	font-size: 1.2em;
+	font-weight: 700;
+	color: #222;
+	margin-top: 32px;
+	margin-bottom: 12px;
+	letter-spacing: 0.05em;
+	line-height: 1.3;
+	opacity: 0;
+	transition: opacity 0.7s;
+	display: none;
+	text-align: center;
+	align-items: center;
+}
+
+	#role-detail-title.visible {
+		opacity: 1;
+		display: block;
+	}
+
+#role-info-text {
+	font-size: 1.1em;
+	color: #222;
+	border-radius: 8px;
+	padding: 18px 20px;
+	margin-bottom: 24px;
+	line-height: 1.7;
+	opacity: 0;
+	transition: opacity 0.7s;
+	display: none;
+}
+
+	#role-info-text.visible {
+		opacity: 1;
+		display: block;
+	}
+
+#role-detail-lines .dia-line {
+	color: #222; /* 文字色 */
+	line-height: 1.7; /* 行の高さ */
+	text-align: left; /* 左寄せ */
+	transition: opacity 0.7s;
+	opacity: 0;
+	display: block;
+	text-align: center;
+	align-items: center;
+}
+
+	#role-detail-lines .dia-line.visible {
+		opacity: 1;
+	}
+
+	#role-detail-lines .dia-line.empty {
+		background: none;
+		padding: 0;
+		margin-bottom: 2em;
+		min-height: 1em;
+	}

@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>館浜電鉄 Tatehama Railway</title>
+    <title>館浜電鉄 ダイヤ運転会(非公式)</title>
     <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:100,300,400,500,700,800,900;subset=japanese" rel="stylesheet">
     <link rel="stylesheet" href="toppage.css">
     <link rel="stylesheet" href="mainpage_style.css">
@@ -68,24 +68,35 @@
     <!-- ページ下部に配置 -->
     <div id="dia-info-content">
         <h2 id="dia-info">ダイヤ運転会とは</h2>
-        <p>
-            館浜電鉄ダイヤ運転会。<br>
-            ここで行われているのは、TRAIN CREWという<wbr>ゲームを使用したロールプレイング。<br>
-            要は派手な電車ごっこです。<br>
-            <br>
-            しかし、一人一人がその職責を自覚し行動することで、<wbr>ただのごっこ遊びではなく全力のごっこ遊びになります。<br>
-            <br>
-            <br>
-            時間通りに運転をしなければならない。<br>
-            オーバーランをすると周りに迷惑がかかってしまう。<br>
-            やり直しの効かない、ゲームとしてのプレイだけでは味わえない緊張感<br>
-            <br>
-            そんな中で列車を走らせ、<wbr>共に全力のごっこ遊びを楽しみましょう！<br>
-            <br>
-            <br>
-        </p>
+        <div id="dia-info-lines"></div>
+        <div id="dia-info-slider" class="slider-container" style="display:none; opacity:0;">
+            <img src="toppage/4.jpg" class="slider-image">
+        </div>
+        <!-- ここに3つのアイコンをlink-icons形式で追加 -->
+        <div id="role-icons" class="role-icons" style="display:none; opacity:0;">
+            <div class="link-icon">
+                <a href="#role-untenshi">
+                    <img src="icons/M.png">
+                    <div class="icon-label">運転士</div>
+                </a>
+            </div>
+            <div class="link-icon">
+                <a href="#role-signal">
+                    <img src="icons/signal.png">
+                    <div class="icon-label">信号扱い者</div>
+                </a>
+            </div>
+            <div class="link-icon">
+                <a href="#role-shirei">
+                    <img src="icons/shirei.png">
+                    <div class="icon-label">司令員</div>
+                </a>
+            </div>
+        </div>
+        <!-- 役割詳細表示エリア -->
+        <h2 id="role-detail-title"></h2>
+        <div id="role-detail-lines"></div>
     </div>
-
 
 
 </body>
