@@ -44,7 +44,13 @@ function showTrainDetail(trainId) {
     let kind = '';
     let kindClass = '';
     if (typeof getTrainTypeByClass === 'function' && train) {
-        kind = getTrainTypeByClass(train.TrainClass);
+        let type = TypeString(train.Name);
+
+        if (1 <= train.TrainClass && train.TrainClass <= 23) {
+            type = train.TrainClass;
+        }
+
+        kind = getTrainTypeByClass(type);
         kindClass = 'train-kind-' + kind;
     } else if (train) {
         kind = train.TrainClass ?? '';
