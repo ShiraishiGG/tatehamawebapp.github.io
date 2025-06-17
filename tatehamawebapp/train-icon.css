@@ -120,6 +120,13 @@
     background-repeat: no-repeat;
 }
 
+/* 上り臨時特急 */
+.train-up-23 {
+    background-image: url("icons/u_ex_ltd.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 
 
 
@@ -244,6 +251,13 @@
 /* 下り臨時 */
 .train-down-20 {
     background-image: url("icons/d_outserv.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* 下り臨時特急 */
+.train-down-23 {
+    background-image: url("icons/d_ex_ltd.png");
     background-size: contain;
     background-repeat: no-repeat;
 }
