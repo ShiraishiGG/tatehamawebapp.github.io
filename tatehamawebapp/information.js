@@ -13,11 +13,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (elBottom) {
         elBottom.textContent = textToShow.replace(/<br\s*\/?>/gi, "");
-        // デフォルト文言の場合はスクロール用クラスを外す
         if (textToShow === DEFAULT_INFORMATION_TEXT) {
             elBottom.classList.remove('scrolling-text');
+            elBottom.classList.add('default-info-text'); // 追加
         } else {
             elBottom.classList.add('scrolling-text');
+            elBottom.classList.remove('default-info-text'); // 追加
         }
     }
 
