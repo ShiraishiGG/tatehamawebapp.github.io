@@ -1,13 +1,25 @@
 // JavaScript source code
 
 
+// デフォルト文言
+const DEFAULT_INFORMATION_TEXT = "現在、30分以上の遅れはありません。";
+
 // 運行情報テキスト
-window.informationtext = "現在、30分以上の遅れはございません。";
+window.informationtext = window.informationtext ?? ""; // 他で上書きされている場合も考慮
 
 document.addEventListener('DOMContentLoaded', function () {
     const elBottom = document.getElementById('scrolling-text-bottom');
+    let textToShow = (window.informationtext && window.informationtext.trim()) ? window.informationtext : DEFAULT_INFORMATION_TEXT;
+
     if (elBottom) {
-        elBottom.textContent = window.informationtext.replace(/<br\s*\/?>/gi, "");
+        elBottom.textContent = textToShow.replace(/<br\s*\/?>/gi, "");
+        if (textToShow === DEFAULT_INFORMATION_TEXT) {
+            elBottom.classList.remove('scrolling-text');
+            elBottom.classList.add('default-info-text'); // 追加
+        } else {
+            elBottom.classList.add('scrolling-text');
+            elBottom.classList.remove('default-info-text'); // 追加
+        }
     }
 
     const areaIds = ['scrolling-text-area'];
@@ -21,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
             area.addEventListener('click', function () {
                 modalBody.innerHTML = `
         <h2>運行情報</h2>
-        <div class="info-modal-message">${window.informationtext}</div>
+        <div class="info-modal-message">${textToShow}</div>
     `;
                 modal.style.display = 'flex';
             });
@@ -36,8 +48,4 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target === modal) modal.style.display = 'none';
         });
     }
-
-
-
-
 });
