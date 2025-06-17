@@ -113,7 +113,7 @@ function TypeString(retsuban) {
 
     if (Retsuban.startsWith("臨")) {
         if (Retsuban.includes("A")) {
-            return 23ri;
+            return 23;
         }
         if (Retsuban.includes("K")) {
             return 9;
