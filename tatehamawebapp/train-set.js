@@ -176,7 +176,7 @@ function placeAllTrainIconsByLocation() {
             if (!trainInfo) return;
             let type = TypeString(dianame);
 
-            if (1 <= trainInfo.TrainClass && trainInfo.TrainClass <= 21) {
+            if (1 <= trainInfo.TrainClass && trainInfo.TrainClass <= 23) {
                 type = trainInfo.TrainClass;
             }
 
