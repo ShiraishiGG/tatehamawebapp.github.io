@@ -86,6 +86,52 @@ function getTrainTypeByClass(trainClass) {
 
     }
 
+function TypeString(retsuban) {
+    let Retsuban = retsuban.replace(/X|Y|Z/g, "");
+    if (Retsuban === "9999") {
+        return 0;
+    }
+    if (Retsuban.includes("溝月")) {
+        return 0;
+    }
+    if (Retsuban.startsWith("回")) {
+        return 20;
+    }
+    if (Retsuban.startsWith("試")) {
+        return 18;
+    }
+
+    if (Retsuban.startsWith("臨")) {
+        if (Retsuban.includes("A")) {
+            return 17;
+        }
+        if (Retsuban.includes("K")) {
+            return 9;
+        }
+        if (Retsuban.includes("B")) {
+            return 8;
+        }
+        if (Retsuban.includes("C")) {
+            return 7;
+        }
+        return 6;
+    } else {
+        if (Retsuban.includes("A")) {
+            return 16;
+        }
+        if (Retsuban.includes("K")) {
+            return 5;
+        }
+        if (Retsuban.includes("B")) {
+            return 4;
+        }
+        if (Retsuban.includes("C")) {
+            return 3;
+        }
+    }
+    return 1;
+}
+
 function getDirectionByName(name) {
     // 末尾の数字を抽出
     const match = name.match(/(\d+)(?!.*\d)/);
@@ -118,8 +164,12 @@ function placeAllTrainIconsByLocation() {
         dianameList.forEach(dianame => {
             const trainInfo = Location_data.TrainInfos[dianame];
             if (!trainInfo) return;
+            let type = TypeString(dianame);
 
-            const type = trainInfo.TrainClass;
+            if (1 <= trainInfo.TrainClass && trainInfo.TrainClass <= 21) {
+                type = trainInfo.TrainClass;
+            }
+
             const updown = directionMap[dianame];
 
             // 駅間かどうか判定
