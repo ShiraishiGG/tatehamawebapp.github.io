@@ -55,9 +55,11 @@ document.addEventListener('DOMContentLoaded', function () {
             untenshiLink.addEventListener('click', function (e) {
                 e.preventDefault();
                 const untenshiLines = [
-                    "あ",
-                    "い",
-                    "う"
+                    "シングルプレイと違い、オーバーランや早発・延着などをすると",
+                    "周りに迷惑がかかってしまうため、一定の技量が必要とされる。",
+                    "",
+                    "信号現示などの環境がリアルタイムで変化する中、持ち前の技術をフルに活かし",
+                    "『大道寺列車区の運転士』として、全力でその職務を全うしよう！"
                 ];
                 roleDetailTitle.textContent = 'ダイヤ運転会における『運転士』';
                 roleDetailTitle.classList.add('visible');
@@ -70,9 +72,11 @@ document.addEventListener('DOMContentLoaded', function () {
             signalLink.addEventListener('click', function (e) {
                 e.preventDefault();
                 const signalLines = [
-                    "あ",
-                    "い",
-                    "う"
+                    "車両・列車の動きを想像できる程度に運転士を経験すると",
+                    "信号扱い者を目指すことができる。",
+                    "",
+                    "自分が行った信号制御盤の操作によって、実際に進路構成がされるためその責任は重大。",
+                    "他のゲームではなかなか味わえない体験をしよう！" 
                 ];
                 roleDetailTitle.textContent = 'ダイヤ運転会における『信号扱い者』';
                 roleDetailTitle.classList.add('visible');
@@ -85,9 +89,11 @@ document.addEventListener('DOMContentLoaded', function () {
             shireiLink.addEventListener('click', function (e) {
                 e.preventDefault();
                 const shireiLines = [
-                    "あ",
-                    "い",
-                    "う"
+                    "運転会実施中は、列車無線としてボイスチャットを用い実際に運転整理が行われている。",
+                    "通告を担当する司令員は、わかりやすく簡潔に情報を伝える必要がある。",
+                    "",
+                    "様々な要因で発生するダイヤ乱れに、様々な制約の中で対処していき",
+                    "運転会をスムーズに進行させよう！"
                 ];
                 roleDetailTitle.textContent = 'ダイヤ運転会における『司令員』';
                 roleDetailTitle.classList.add('visible');

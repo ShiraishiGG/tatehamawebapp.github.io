@@ -2,7 +2,7 @@
 
 
 // 運行情報テキスト
-window.informationtext = "【設備点検　列車の遅れ】 <br> 館浜本線　海岸公園～虹ケ浜駅間での保安装置点検のため、館浜本線　大道寺～館浜間で大幅なダイヤ乱れが発生しています。<br>ご迷惑をお掛けしますことをお詫び申し上げます。<br>振替輸送は拒否されました。";
+window.informationtext = "現在、30分以上の遅れはございません。";
 
 document.addEventListener('DOMContentLoaded', function () {
     const elBottom = document.getElementById('scrolling-text-bottom');
