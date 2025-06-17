@@ -29,9 +29,7 @@ function checkLastEvenOdd(dianameList, TrainInfos) {
 
 function getTrainTypeByClass(trainClass) {
     switch (String(trainClass)) {
-        case "0":
-            kind = "回送";
-            break;
+
         case "1":
             kind = "普通";
             break;
@@ -76,6 +74,18 @@ function getTrainTypeByClass(trainClass) {
             break;
         case "19":
             kind = "臨時";
+            break;
+        case "20":
+            kind = "回送";
+            break;
+        case "21":
+            kind = "区間急行";
+            break;
+        case "22":
+            kind = "臨時区間急行";
+            break;
+        case "23":
+            kind = "臨時特急";
             break;
 
         default:
