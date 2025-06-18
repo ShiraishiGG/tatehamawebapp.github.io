@@ -22,23 +22,34 @@ document.addEventListener('DOMContentLoaded', () => {
     img1.style.opacity = 1;
     img2.style.opacity = 0;
 
-    setInterval(() => {
-        current = (current + 1) % shuffled.length;
-        const nextImg = "toppage/" + shuffled[current];
+    // 事前に次画像を非表示側にセット
+    let next = (current + 1) % shuffled.length;
+    img2.src = "toppage/" + shuffled[next];
 
+    setInterval(() => {
+        // 切り替え時は既に非表示側に次画像がセット済み
         if (showingFirst) {
-            img2.src = nextImg;
             img2.style.zIndex = 2;
             img1.style.zIndex = 1;
             img2.style.opacity = 1;
             img1.style.opacity = 0;
         } else {
-            img1.src = nextImg;
             img1.style.zIndex = 2;
             img2.style.zIndex = 1;
             img1.style.opacity = 1;
             img2.style.opacity = 0;
         }
         showingFirst = !showingFirst;
+
+        // 次の画像を事前に非表示側にセット
+        current = (current + 1) % shuffled.length;
+        next = (current + 1) % shuffled.length;
+        setTimeout(() => {
+            if (showingFirst) {
+                img2.src = "toppage/" + shuffled[next];
+            } else {
+                img1.src = "toppage/" + shuffled[next];
+            }
+        }, 1200);
     }, 3500);
 });
