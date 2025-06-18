@@ -1,0 +1,13 @@
+<Files ~ "\.(htaccess|htpasswd)$">
+
+deny from all
+
+</Files>
+
+RewriteEngine On
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule .* https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteEngine on
+RewriteCond %{HTTP_HOST} (.+)$ [NC]
+RewriteRule ^(.*)index\.htm http://%1/$1 [R=301,L]
