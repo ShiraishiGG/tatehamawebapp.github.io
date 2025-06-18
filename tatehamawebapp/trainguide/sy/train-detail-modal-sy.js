@@ -84,7 +84,7 @@ function showTrainDetail(trainId) {
         carImagesHtml = `<div class="train-car-image-row">` +
             imgList.map((imgSrc, idx) => {
                 const alt = train.CarStates[idx]?.CarModel ?? "";
-                return `<img src="../${imgSrc}" alt="${alt}" class="car-image" onerror="this.onerror=null;this.src='caricons/TC_9999.png';">`;
+                return `<img src="../${imgSrc}" alt="${alt}" class="car-image" onerror="this.onerror=null;this.src='../caricons/TC_9999.png';">`;
             }).join('') +
             `</div>`;
     }
