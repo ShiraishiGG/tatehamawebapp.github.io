@@ -4,7 +4,7 @@
 const DEFAULT_INFORMATION_TEXT = "本日の運転は終了しました。";
 
 // 運行情報テキスト
-window.informationtext = window.informationtext ?? ""; // 他で上書きされている場合も考慮
+window.informationtext = window.informationtext ?? ""; // ここが無かったらデフォルト
 
 function updateInformationText() {
     const elBottom = document.getElementById('scrolling-text-bottom');
