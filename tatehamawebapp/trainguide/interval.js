@@ -9,6 +9,7 @@ async function Interval() {
     }
     placeAllTrainIconsByLocation();
     updateTime();
+    updateInformationText();
 }
 Interval();
 // 10ïbÇ≤Ç∆Ç…é¿çs
