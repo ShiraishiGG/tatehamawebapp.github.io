@@ -8,9 +8,14 @@ async function Interval() {
         containers[i].innerHTML = '';
     }
     placeAllTrainIconsByLocation();
-    updateTime();
     updateInformationText();
+    updateTime();
 }
-Interval();
-// 10ïbÇ≤Ç∆Ç…é¿çs
-setInterval(Interval, 10000);
+
+document.addEventListener('DOMContentLoaded', async function () {
+    await Interval();
+    // 10ïbÇ≤Ç∆Ç…é¿çs
+    setInterval(Interval, 10000);
+    initInfo();
+}
+);
