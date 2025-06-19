@@ -636,56 +636,28 @@ function getCarImageFileNames(carStates, isUp) {
 
         // 3000 - 1 4 or 6
         if (
-            car.CarModel === "3000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
+            copyCarStates.length === 6 &&
+            copyCarStates.every(car => car.CarModel === "3000") &&
+            copyCarStates[0].HasPantograph === true && copyCarStates[0].HasDriverCab === true && copyCarStates[0].HasConductorCab === true && copyCarStates[0].HasMotor === true &&
+            copyCarStates[1].HasPantograph === false && copyCarStates[1].HasDriverCab === false && copyCarStates[1].HasConductorCab === false && copyCarStates[1].HasMotor === false &&
+            copyCarStates[2].HasPantograph === true && copyCarStates[2].HasDriverCab === false && copyCarStates[2].HasConductorCab === false && copyCarStates[2].HasMotor === false &&
+            copyCarStates[3].HasPantograph === false && copyCarStates[3].HasDriverCab === false && copyCarStates[3].HasConductorCab === false && copyCarStates[3].HasMotor === true &&
+            copyCarStates[4].HasPantograph === false && copyCarStates[4].HasDriverCab === false && copyCarStates[4].HasConductorCab === false && copyCarStates[4].HasMotor === false &&
+            copyCarStates[5].HasPantograph === true && copyCarStates[5].HasDriverCab === true && copyCarStates[5].HasConductorCab === true && copyCarStates[5].HasMotor === true
         ) {
-            count3000m++;
-            if (idx === 0)
-                if (count3000m === 1) return "caricons/TC_3000.png";
-            if (idx === 0)
-                if (count3000m === 2) return "caricons/TC_3100.png";
-
-            if (idx === lastIdx)
-                if (count3000m === 1) return "caricons/TC_3000.png";
-            if (idx === lastIdx)
-                if (count3000m === 2) return "caricons/TC_3100.png";
-
-            if (count3000m === 1) return "caricons/TC_3000h.png";
-            if (count3000m === 2) return "caricons/TC_3100h.png";
-        }
-
-
-
-        // 3000 -  ’†ŠÔ••‚¶‚ß
-        if (
-            car.CarModel === "3000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) {
-            count3000m++;
-
-            if (count3000m === 1) return "caricons/TC_3100h.png";
-        }
-
-
-
-        // 3000 - 2 3 or 4
-        if (
-            car.CarModel === "3000" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count3000t++;
-            if (count3000t === 1) return "caricons/TC_3500.png";
-            if (count3000t === 2) return "caricons/TC_3600.png";
-            if (count3000t === 3) return "caricons/TC_3600.png";
+            const iconList = [
+                "caricons/TC_3000.png",
+                "caricons/TC_3500.png",
+                "caricons/TC_3600.png",
+                "caricons/TC_3100.png",
+                "caricons/TC_3600.png",
+                "caricons/TC_3100.png"
+            ];
+            const result = [];
+            iconList.forEach((icon, idx) => {
+                result.push(icon);
+            });
+            return result;
         }
 
 
