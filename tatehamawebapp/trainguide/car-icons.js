@@ -653,10 +653,9 @@ function getCarImageFileNames(carStates, isUp) {
                 "caricons/TC_3600.png",
                 "caricons/TC_3100.png"
             ];
+            // forEach‚Å‡‚ÉŠi”[
             const result = [];
-            iconList.forEach((icon, idx) => {
-                result.push(icon);
-            });
+            iconList.forEach(icon => result.push(icon));
             return result;
         }
 
