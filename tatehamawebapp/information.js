@@ -1,8 +1,7 @@
 // JavaScript source code
 
 // デフォルト文言
-const DEFAULT_INFORMATION_TEXT = `【館浜本線 運転会時間外】
-館浜本線は、現在運転会時間外のため、運転を見合わせています。`;
+const DEFAULT_INFORMATION_TEXT = `【館浜本線 運転会時間外】`;
 
 // 運行情報テキスト
 window.informationtexts = [{ "Type": 1, Content: DEFAULT_INFORMATION_TEXT }];
@@ -28,11 +27,8 @@ function printInformationText() {
     if (window.informationtexts.length <= window.informationindex) {
         window.informationindex = 0;
     }
-
-    console.log("運行情報の表示番号: ", window.informationtexts);
-    console.log("運行情報の表示番号: ", window.informationindex);
     window.textToShow = (window.informationtexts[window.informationindex].Content.trim()) ? window.informationtexts[window.informationindex].Content : DEFAULT_INFORMATION_TEXT;
-
+    window.textType = window.informationtexts[window.informationindex].Type;
     if (elBottom) {
         elBottom.textContent = textToShow.replace("\n", "");
         //if (textToShow === DEFAULT_INFORMATION_TEXT) {
@@ -45,7 +41,7 @@ function printInformationText() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
+function initInfo() {
     printInformationText();
 
     // 20秒ごとに再表示
@@ -62,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             area.addEventListener('click', function () {
                 // モーダル表示時も最新内容に
                 modalBody.innerHTML = `
-                    <h2>運行情報</h2>
+                    <h2>${window.textType == 0 ? 'PR':'運行情報'}</h2>
                     <div class="info-modal-message">${textToShow.replace(/\r\n/g, '<br/>')}</div>
                 `;
                 modal.style.display = 'flex';
@@ -78,4 +74,4 @@ document.addEventListener('DOMContentLoaded', function () {
             if (e.target === modal) modal.style.display = 'none';
         });
     }
-});
+}

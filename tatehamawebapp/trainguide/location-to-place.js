@@ -37,13 +37,7 @@ function location_to_place() {
 
     }
     )
-    console.log(dianame_location);
-
-
-
-
-
-
+    //console.log(dianame_location);
 
     var location_dianame = {}; 
 
@@ -57,7 +51,7 @@ function location_to_place() {
             location_dianame[value].push(key); // 駅名をキー、ダイヤ名を値として格納
         }
     }
-    console.log(location_dianame);
+    //console.log(location_dianame);
 
     return location_dianame; // 駅名をキー、ダイヤ名を値として格納したオブジェクトを返す
 
