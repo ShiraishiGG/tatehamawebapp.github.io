@@ -9,19 +9,6 @@ async function Getdata() {
 	const datastring = await responce.text(); // レスポンスをテキストとして取得
 
 	Location_data = JSON.parse(datastring);
-
-	// OperationInformationsのContentをwindow.informationtextに反映
-	if (
-		Location_data.OperationInformations &&
-		Array.isArray(Location_data.OperationInformations) &&
-		Location_data.OperationInformations.length > 0 &&
-		typeof Location_data.OperationInformations[0].Content === "string"
-	) {
-		window.informationtext = Location_data.OperationInformations[0].Content;
-	} else {
-		window.informationtext = "";
-	}
-
 }
 
 function GetManyTest(seed) {
