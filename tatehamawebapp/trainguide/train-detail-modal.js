@@ -44,7 +44,13 @@ function showTrainDetail(trainId) {
     let kind = '';
     let kindClass = '';
     if (typeof getTrainTypeByClass === 'function' && train) {
-        kind = getTrainTypeByClass(train.TrainClass);
+        let type = TypeString(train.Name);
+
+        if (1 <= train.TrainClass && train.TrainClass <= 23) {
+            type = train.TrainClass;
+        }
+
+        kind = getTrainTypeByClass(type);
         kindClass = 'train-kind-' + kind;
     } else if (train) {
         kind = train.TrainClass ?? '';
@@ -53,9 +59,6 @@ function showTrainDetail(trainId) {
 
     // 行先駅名
     let destName = train && train.DestinationStation ? getStationNameById(train.DestinationStation) : (train && train.Destinaton ? getStationNameById(train.Destinaton) : '');
-
-    // 始発駅名
-    let fromName = train && train.DestinationStation ? getStationNameById(train.FromStation) : (train && train.FromStation ? getStationNameById(train.FromStation) : '');
 
     // 編成両数
     const carCount = Array.isArray(train?.CarStates) ? train.CarStates.length : 0;
@@ -100,36 +103,6 @@ function showTrainDetail(trainId) {
             }
         }
 
-        // 運行番号の抽出
-        let operationNumber = '';
-        if (match) {
-            const numStr = match[1];
-            let opNum = '';
-            if (numStr.length >= 2) {
-                opNum = numStr.slice(-2); // 10の位と1の位
-            } else if (numStr.length === 1) {
-                opNum = numStr;
-            }
-            let opNumInt = parseInt(opNum, 10);
-
-            // 元の列番（数字部分）を取得
-            const baseNum = parseInt(numStr, 10);
-            // 奇数なら-1
-            if (opNumInt % 2 === 1) {
-                opNumInt = opNumInt - 1;
-            }
-            if (baseNum > 9000) {
-                opNumInt += 300;
-            } else if (baseNum > 6000) {
-                opNumInt += 200;
-            } else if (baseNum > 3000) {
-                opNumInt += 100;
-            }
-            // 2桁以上の場合はゼロ埋め
-            operationNumber = opNumInt.toString().padStart(opNum.length, '0');
-
-        }
-
         // ラベル行を追加
         const carLabelHtml = `
       <div class="route-direction">
@@ -146,14 +119,11 @@ function showTrainDetail(trainId) {
             ${directionHtml}
       <table>
         <tr><th>列車番号</th><td>${train.Name || trainId}</td></tr>
-        <tr><th>運行番号</th><td>${operationNumber}運行</td></tr>
-        <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
         <tr><th>種別</th><td><span class="${kindClass}">${kind}</span></td></tr>
-        <tr><th>始発</th><td>${fromName}</td></tr>
         <tr><th>行先</th><td>${destName}</td></tr>
-        <tr><th>両数</th><td>${carCount} 両</td></tr>
-        <tr><th>位置</th><td>${trackDisplay || trackName}</td></tr>
+        <tr><th>編成両数</th><td>${carCount} 両</td></tr>
 
+        <tr><th>走行位置</th><td>${trackDisplay || trackName}</td></tr>
       </table>
 
     `;
@@ -161,8 +131,11 @@ function showTrainDetail(trainId) {
         body.innerHTML = `<h2>列車詳細</h2><p>列番: ${trainId}</p><p>詳細データがありません。</p>`;
     }
     modal.style.display = 'flex';
-
 }
+
+//         <tr><th>遅延</th><td>${train.Delay ?? ''} 分</td></tr>
+
+
 
 
 // --- モーダルを閉じる ---
@@ -189,6 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('train-detail-modal');
     if (modal) {
         modal.addEventListener('click', function (e) {
+            // モーダルの外側（オーバーレイ）をクリックした場合のみ閉じる
             if (e.target === modal) closeTrainDetail();
         });
     }

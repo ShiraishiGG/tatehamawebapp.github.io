@@ -23,6 +23,15 @@ document.addEventListener('DOMContentLoaded', function () {
         "そんな中で列車を走らせ、共に全力のごっこ遊びを楽しみましょう！",
         "",
         "",
+        "",
+        "サーバーへの参加はTRAIN CREWゲーム内のコミュニティDiscordから",
+        "ドキュメント > その他リンクより",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
     ];
 
     // 1行ずつテキストを表示（targetElementに）

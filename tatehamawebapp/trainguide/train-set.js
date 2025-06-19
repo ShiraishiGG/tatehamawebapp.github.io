@@ -29,9 +29,7 @@ function checkLastEvenOdd(dianameList, TrainInfos) {
 
 function getTrainTypeByClass(trainClass) {
     switch (String(trainClass)) {
-        case "0":
-            kind = "回送";
-            break;
+
         case "1":
             kind = "普通";
             break;
@@ -77,6 +75,18 @@ function getTrainTypeByClass(trainClass) {
         case "19":
             kind = "臨時";
             break;
+        case "20":
+            kind = "回送";
+            break;
+        case "21":
+            kind = "区間急行";
+            break;
+        case "22":
+            kind = "臨時区間急行";
+            break;
+        case "23":
+            kind = "臨時特急";
+            break;
 
         default:
             kind = "判別不能";
@@ -85,6 +95,52 @@ function getTrainTypeByClass(trainClass) {
     return kind;
 
     }
+
+function TypeString(retsuban) {
+    let Retsuban = retsuban.replace(/X|Y|Z/g, "");
+    if (Retsuban === "9999") {
+        return 0;
+    }
+    if (Retsuban.includes("溝月")) {
+        return 0;
+    }
+    if (Retsuban.startsWith("回")) {
+        return 20;
+    }
+    if (Retsuban.startsWith("試")) {
+        return 18;
+    }
+
+    if (Retsuban.startsWith("臨")) {
+        if (Retsuban.includes("A")) {
+            return 23;
+        }
+        if (Retsuban.includes("K")) {
+            return 9;
+        }
+        if (Retsuban.includes("B")) {
+            return 8;
+        }
+        if (Retsuban.includes("C")) {
+            return 7;
+        }
+        return 6;
+    } else {
+        if (Retsuban.includes("A")) {
+            return 16;
+        }
+        if (Retsuban.includes("K")) {
+            return 5;
+        }
+        if (Retsuban.includes("B")) {
+            return 4;
+        }
+        if (Retsuban.includes("C")) {
+            return 3;
+        }
+    }
+    return 1;
+}
 
 function getDirectionByName(name) {
     // 末尾の数字を抽出
@@ -118,8 +174,12 @@ function placeAllTrainIconsByLocation() {
         dianameList.forEach(dianame => {
             const trainInfo = Location_data.TrainInfos[dianame];
             if (!trainInfo) return;
+            let type = TypeString(dianame);
 
-            const type = trainInfo.TrainClass;
+            if (1 <= trainInfo.TrainClass && trainInfo.TrainClass <= 23) {
+                type = trainInfo.TrainClass;
+            }
+
             const updown = directionMap[dianame];
 
             // 駅間かどうか判定
