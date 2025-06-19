@@ -1,13 +1,12 @@
 // JavaScript source code
 
-
 // デフォルト文言
-const DEFAULT_INFORMATION_TEXT = "現在、30分以上の遅れはありません。";
+const DEFAULT_INFORMATION_TEXT = "本日の運転は終了しました。";
 
 // 運行情報テキスト
-window.informationtext = window.informationtext ?? "【運行情報】現在、だんじりが線路を占領しているため、大道寺駅～赤山町駅間で運転を見合わせています。<br>ご利用のお客さまにはご迷惑をおかけしますことをお詫び申し上げます。<br>振り替え輸送は拒否されました。<br><br>【運転見合わせ区間】大道寺駅～赤山町駅<br>【運転している区間】館浜駅～大道寺駅"; // 他で上書きされている場合も考慮
+window.informationtext = window.informationtext ?? ""; // 他で上書きされている場合も考慮
 
-document.addEventListener('DOMContentLoaded', function () {
+function updateInformationText() {
     const elBottom = document.getElementById('scrolling-text-bottom');
     let textToShow = (window.informationtext && window.informationtext.trim()) ? window.informationtext : DEFAULT_INFORMATION_TEXT;
 
@@ -15,12 +14,19 @@ document.addEventListener('DOMContentLoaded', function () {
         elBottom.textContent = textToShow.replace(/<br\s*\/?>/gi, "");
         if (textToShow === DEFAULT_INFORMATION_TEXT) {
             elBottom.classList.remove('scrolling-text');
-            elBottom.classList.add('default-info-text'); // 追加
+            elBottom.classList.add('default-info-text');
         } else {
             elBottom.classList.add('scrolling-text');
-            elBottom.classList.remove('default-info-text'); // 追加
+            elBottom.classList.remove('default-info-text');
         }
     }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    updateInformationText();
+
+    // 20秒ごとに再表示
+    setInterval(updateInformationText, 20000);
 
     const areaIds = ['scrolling-text-area'];
     const modal = document.getElementById('info-modal');
@@ -31,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
         const area = document.getElementById(id);
         if (area && modal && modalBody && modalClose) {
             area.addEventListener('click', function () {
+                // モーダル表示時も最新内容に
+                let textToShow = (window.informationtext && window.informationtext.trim()) ? window.informationtext : DEFAULT_INFORMATION_TEXT;
                 modalBody.innerHTML = `
         <h2>運行情報</h2>
         <div class="info-modal-message">${textToShow}</div>
