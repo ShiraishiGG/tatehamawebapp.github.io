@@ -8,702 +8,234 @@ function getCarImageFileNames(carStates, isUp) {
     }
     console.log("CarState:", copyCarStates);
 
-    let count50000 = 0;
-    let count50100 = 0; // 追加: 2両目/5両目用カウンタ
-    let count5320 = 0; // 追加: 5320用カウンタ
-    let count5420 = 0; // 追加: 5420用カウンタ
-    let count5300 = 0; // 追加: 5300用カウンタ
-    let count4321 = 0;  // 追加: 4321用カウンタ
-    let count4300 = 0; // 追加: 4300用カウンタ
-    let count4600 = 0; // 追加: 4600用カウンタ
-    let count4000 = 0; // 追加: 4000用カウンタ
-    let count4000t = 0; // 追加: 4000 T車用カウンタ
-    let count4000R = 0; // 追加: 4000R用カウンタ
-    let count4000Rt = 0; // 追加: 4000R T車用カウンタ
-    let count3300 = 0; // 追加: 3300用カウンタ
-    let count3020m = 0; // 追加: 3020 M車用カウンタ
-    let count3020t = 0; // 追加: 3020 T車用カウンタ
-    let count3000m = 0; // 追加: 3000 M車用カウンタ
-    let count3000t = 0; // 追加: 3000 T車用カウンタ
+    var formationList = formationComparison(copyCarStates);
+    console.log("formationList:", formationList);
+    if (formationList.length == 0) {
+        // 編成が見つからない、上下逆の可能性があるのでひっくり返して再度確認
+        copyCarStates2 = JSON.parse(JSON.stringify(carStates)).reverse();
+        console.log("reverseCarState:", copyCarStates2);
 
-    return copyCarStates.map((car, idx) => {
-        const lastIdx = copyCarStates.length - 1;
+        var formationList = formationComparison(copyCarStates2);
+    }
 
-        // 50000
-        // 先頭車判別
-        if (
-            car.CarModel === "50000" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count50000++;
-            return count50000 === 1 ? "caricons/TC_50000.png" : "caricons/TC_50050.png";
+    var iconList = [];
+    formationList.map((f) => {
+        console.log("f:", f);
+        switch (f) {
+            case "3000":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_3000.png",
+                    "caricons/TC_3500.png",
+                    "caricons/TC_3600.png",
+                    "caricons/TC_3100h.png",
+                    "caricons/TC_3600.png",
+                    "caricons/TC_3100.png"
+                ]);
+                break;
+            case "3020":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_3020.png",
+                    "caricons/TC_3520.png",
+                    "caricons/TC_3020h.png",
+                    "caricons/TC_3520.png",
+                    "caricons/TC_3620.png",
+                    "caricons/TC_3120.png"
+                ]);
+                break;
+            case "3300V":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_3300.png",
+                    "caricons/TC_3800.png",
+                    "caricons/TC_3400.png"
+                ]);
+                break;
+            case "4000":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4000.png",
+                    "caricons/TC_4100.png",
+                    "caricons/TC_4250.png",
+                    "caricons/TC_4200.png",
+                    "caricons/TC_4150.png",
+                    "caricons/TC_4050.png"
+                ]);
+                break;
+            case "4000R":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4000r.png",
+                    "caricons/TC_4100r.png",
+                    "caricons/TC_4250r.png",
+                    "caricons/TC_4200r.png",
+                    "caricons/TC_4150r.png",
+                    "caricons/TC_4050r.png"
+                ]);
+                break;
+            case "4300":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4300.png",
+                    "caricons/TC_4400.png",
+                    "caricons/TC_4450.png",
+                    "caricons/TC_4350.png"
+                ]);
+                break;
+            case "4500":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4500.png",
+                    "caricons/TC_4550.png"
+                ]);
+                break;
+            case "4321":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4321.png",
+                    "caricons/TC_4421.png",
+                    "caricons/TC_4471.png",
+                    "caricons/TC_4371.png"
+                ]);
+                break;
+            case "4600":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4600.png",
+                    "caricons/TC_4700.png",
+                    "caricons/TC_4750.png",
+                    "caricons/TC_4650.png"
+                ]);
+                break;
+            case "4800":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_4800.png",
+                    "caricons/TC_4850.png"
+                ]);
+                break;
+            case "5300":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_5300.png",
+                    "caricons/TC_5400.png",
+                    "caricons/TC_5450.png",
+                    "caricons/TC_5350.png"
+                ]);
+                break;
+            case "5500":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_5500.png",
+                    "caricons/TC_5550.png"
+                ]);
+                break;
+            case "5600":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_5600.png",
+                    "caricons/TC_5650.png"
+                ]);
+                break;
+            case "5320":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_5320.png",
+                    "caricons/TC_5420.png",
+                    "caricons/TC_5470.png",
+                    "caricons/TC_5370.png"
+                ]);
+                break;
+            case "50000":
+                iconList = iconListConcat(iconList, [
+                    "caricons/TC_50000.png",
+                    "caricons/TC_50100.png",
+                    "caricons/TC_50300.png",
+                    "caricons/TC_50200.png",
+                    "caricons/TC_50250.png",
+                    "caricons/TC_50050.png"
+                ]);
+                break;
+            default:
+                iconList = iconList.concat([
+                    "caricons/TC_9999.png"
+                ]);
         }
-
-        // 2両目or5両目判別（TC_50100/TC_50250）
-        if (
-            car.CarModel === "50000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) {
-            count50100++;
-            return count50100 === 1 ? "caricons/TC_50100.png" : "caricons/TC_50250.png";
-        }
-
-
-        // 3. TC_50300.png
-        if (
-            car.CarModel === "50000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            return "caricons/TC_50300.png";
-        }
-        // 4. TC_50200.png
-        if (
-            car.CarModel === "50000" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) {
-            return "caricons/TC_50200.png";
-        }
-
-
-        // 5320
-        if (
-            car.CarModel === "5320" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count5320++;
-
-            if (idx === 0)
-                return count5320 === 1 ? "caricons/TC_5320.png" : "caricons/TC_5370.png";
-
-            if (idx === lastIdx)
-                return count5320 === 1 ? "caricons/TC_5320.png" : "caricons/TC_5370.png";
-
-
-            return count5320 === 1 ? "caricons/TC_5320h.png" : "caricons/TC_5370h.png";
-        }
-
-
-        if (
-            car.CarModel === "5320" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count5420++;
-            return count5420 === 1 ? "caricons/TC_5420.png" : "caricons/TC_5470.png";
-        }
-
-
-
-        // 5300 - 1or4
-        if (
-            car.CarModel === "5300" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count5300++;
-
-            if (idx === 0)
-                return count5300 === 1 ? "caricons/TC_5300.png" : "caricons/TC_5350.png";
-
-            if (idx === lastIdx)
-                return count5300 === 1 ? "caricons/TC_5300.png" : "caricons/TC_5350.png";
-
-
-            return count5300 === 1 ? "caricons/TC_5300h.png" : "caricons/TC_5350h.png";
-        }
-
-
-        // 5300 - 2
-        if (
-            car.CarModel === "5300" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_5400.png";
-        }
-
-        // 5300 - 3
-        if (
-            car.CarModel === "5300" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_5450.png";
-        }
-
-
-
-        // 5500 - 1
-        if (
-            car.CarModel === "5300" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            if (idx === 0)
-                return "caricons/TC_5500.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_5500.png";
-            return "caricons/TC_5500h.png";
-
-        }
-        // 5500 - 2
-        if (
-            car.CarModel === "5300" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === false
-        ) {
-            if (idx === 0)
-                return "caricons/TC_5550.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_5550.png";
-            return "caricons/TC_5550h.png";
-
-        }
-
-
-        // 5600 - 1
-        if (
-            car.CarModel === "5600" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            if (idx === 0)
-                return "caricons/TC_5600.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_5600.png";
-            return "caricons/TC_5600h.png";
-
-        }
-        // 5600 - 2
-        if (
-            car.CarModel === "5600" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            if (idx === 0)
-                return "caricons/TC_5650.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_5650.png";
-            return "caricons/TC_5650h.png";
-
-        }
-
-
-
-        // 4321 - 1or4
-        if (
-            car.CarModel === "4321" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count4321++;
-
-            if (idx === 0)
-                return count4321 === 1 ? "caricons/TC_4321.png" : "caricons/TC_4371.png";
-
-
-            if (idx === lastIdx)
-                return count4321 === 1 ? "caricons/TC_4321.png" : "caricons/TC_4371.png";
-
-
-
-            return count4321 === 1 ? "caricons/TC_4321h.png" : "caricons/TC_4371h.png";
-        }
-
-
-
-
-        // 4321 - 2
-        if (
-            car.CarModel === "4321" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_4421.png";
-        }
-
-        // 4321 - 3
-        if (
-            car.CarModel === "4321" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_4471.png";
-        }
-
-
-
-        // 4300 - 1or4
-        if (
-            car.CarModel === "4300" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count4300++;
-
-            if (idx === 0)
-                return count4300 === 1 ? "caricons/TC_4300.png" : "caricons/TC_4350.png";
-
-
-            if (idx === lastIdx)
-                return count4300 === 1 ? "caricons/TC_4300.png" : "caricons/TC_4350.png";
-
-
-
-            return count4300 === 1 ? "caricons/TC_4300h.png" : "caricons/TC_4350h.png";
-        }
-
-
-        // 4300 - 2
-        if (
-            car.CarModel === "4300" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_4400.png";
-        }
-
-        // 4300 - 3
-        if (
-            car.CarModel === "4300" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_4450.png";
-        }
-
-
-
-        // 4500 - 1
-        if (
-            car.CarModel === "4300" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            if (idx === 0)
-                return "caricons/TC_4500.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_4500.png";
-            return "caricons/TC_4500h.png";
-
-        }
-        // 4500 - 2
-        if (
-            car.CarModel === "4300" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === false
-        ) {
-            if (idx === 0)
-                return "caricons/TC_4550.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_4550.png";
-            return "caricons/TC_4550h.png";
-
-        }
-
-
-
-        // 4600 - 1or4
-        if (
-            car.CarModel === "4600" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count4600++;
-
-            if (idx === 0)
-                return count4600 === 1 ? "caricons/TC_4600.png" : "caricons/TC_4650.png";
-
-
-            if (idx === lastIdx)
-                return count4600 === 1 ? "caricons/TC_4600.png" : "caricons/TC_4650.png";
-
-
-
-            return count4600 === 1 ? "caricons/TC_4600h.png" : "caricons/TC_4650h.png";
-        }
-
-
-        // 4600 - 2
-        if (
-            car.CarModel === "4600" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_4700.png";
-        }
-
-        // 4600 - 3
-        if (
-            car.CarModel === "4600" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_4750.png";
-        }
-
-
-
-        // 4800 - 1
-        if (
-            car.CarModel === "4600" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            if (idx === 0)
-                return "caricons/TC_4800.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_4800.png";
-            return "caricons/TC_4800h.png";
-
-        }
-        // 4800 - 2
-        if (
-            car.CarModel === "4600" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === false
-        ) {
-            if (idx === 0)
-                return "caricons/TC_4850.png";
-
-            if (idx === lastIdx)
-                return "caricons/TC_4850.png";
-            return "caricons/TC_4850h.png";
-
-        }
-
-
-
-        // 4000 - 1or6
-        if (
-            car.CarModel === "4000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-
-            count4000++;
-
-            if (idx === 0)
-                return count4000 === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
-
-
-            if (idx === lastIdx)
-                return count4000 === 1 ? "caricons/TC_4000.png" : "caricons/TC_4050.png";
-
-
-
-            return count4000 === 1 ? "caricons/TC_4000h.png" : "caricons/TC_4050h.png";
-        }
-
-        // 4000 - T車
-        if (
-            car.CarModel === "4000" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count4000t++;
-            if (count4000t === 1) return "caricons/TC_4100.png";
-            if (count4000t === 2) return "caricons/TC_4250.png";
-            if (count4000t === 3) return "caricons/TC_4150.png";
-        }
-        // 4000 - 3
-        if (
-            car.CarModel === "4000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) {
-            return "caricons/TC_4200.png";
-        }
-
-
-
-        // 4000R - 1or6
-        if (
-            car.CarModel === "4000R" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-
-            count4000R++;
-
-            if (idx === 0)
-                return count4000R === 1 ? "caricons/TC_4000r.png" : "caricons/TC_4050r.png";
-
-
-            if (idx === lastIdx)
-                return count4000R === 1 ? "caricons/TC_4000r.png" : "caricons/TC_4050r.png";
-
-
-
-            return count4000R === 1 ? "caricons/TC_4000rh.png" : "caricons/TC_4050rh.png";
-        }
-        // 4000R - T車
-        if (
-            car.CarModel === "4000R" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count4000Rt++;
-            if (count4000Rt === 1) return "caricons/TC_4100r.png";
-            if (count4000Rt === 2) return "caricons/TC_4250r.png";
-            if (count4000Rt === 3) return "caricons/TC_4150r.png";
-        }
-        // 4000R - 3
-        if (
-            car.CarModel === "4000R" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) {
-            return "caricons/TC_4200r.png";
-        }
-
-
-
-        // 3300 - 1or3
-        if (
-            car.CarModel === "3300V" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count3300++;
-
-            if (idx === 0)
-                if (count3300 === 1) return "caricons/TC_3300.png";
-            if (idx === lastIdx)
-                if (count3300 === 2) return "caricons/TC_3400.png";
-            if (idx === lastIdx)
-                if (count3300 === 3) return "caricons/TC_3300.png";
-            if (idx === lastIdx)
-                if (count3300 === 4) return "caricons/TC_3400.png";
-
-            if (idx === lastIdx)
-                if (count3300 === 1) return "caricons/TC_3300.png";
-            if (idx === lastIdx)
-                if (count3300 === 2) return "caricons/TC_3400.png";
-            if (idx === lastIdx)
-                if (count3300 === 3) return "caricons/TC_3300.png";
-            if (idx === lastIdx)
-                if (count3300 === 4) return "caricons/TC_3400.png";
-
-            if (count3300 === 1) return "caricons/TC_3300h.png";
-            if (count3300 === 2) return "caricons/TC_3400h.png";
-            if (count3300 === 3) return "caricons/TC_3300h.png";
-            if (count3300 === 4) return "caricons/TC_3400h.png";
-
-        }
-        // 3300 - T
-        if (
-            car.CarModel === "3300V" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            return "caricons/TC_3800.png";
-        }
-
-
-
-
-        // 3020 - 1 or 6
-        if (
-            car.CarModel === "3020" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count3020m++;
-            if (idx === 0)
-                if (count3020m === 1) return "caricons/TC_3020.png";
-            if (idx === 0)
-                if (count3020m === 2) return "caricons/TC_3120.png";
-
-            if (idx === lastIdx)
-                if (count3020m === 1) return "caricons/TC_3020.png";
-            if (idx === lastIdx)
-                if (count3020m === 2) return "caricons/TC_3120.png";
-
-            if (count3020m === 1) return "caricons/TC_3020h.png";
-            if (count3020m === 2) return "caricons/TC_3120h.png";
-        }
-
-        // 3020 - 中間封じ込め
-        if (
-            car.CarModel === "3020" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) { 
-                return "caricons/TC_3020h.png";
-        }
-
-
-        // 3020 - 2 4
-        if (
-            car.CarModel === "3020" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count3020t++;
-            if (count3020t === 1) return "caricons/TC_3520.png";
-            if (count3020t === 2) return "caricons/TC_3520.png";
-            if (count3020t === 3) return "caricons/TC_3620.png";
-        }
-
-
-
-        // 3000 - 1 4 or 6
-        if (
-            car.CarModel === "3000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === true &&
-            car.HasConductorCab === true &&
-            car.HasMotor === true
-        ) {
-            count3000m++;
-            if (idx === 0)
-                if (count3000m === 1) return "caricons/TC_3000.png";
-            if (idx === 0)
-                if (count3000m === 2) return "caricons/TC_3100.png";
-
-            if (idx === lastIdx)
-                if (count3000m === 1) return "caricons/TC_3000.png";
-            if (idx === lastIdx)
-                if (count3000m === 2) return "caricons/TC_3100.png";
-
-            if (count3000m === 1) return "caricons/TC_3000h.png";
-            if (count3000m === 2) return "caricons/TC_3100h.png";
-        }
-
-
-
-        // 3000 -  中間封じ込め
-        if (
-            car.CarModel === "3000" &&
-            car.HasPantograph === true &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === true
-        ) {
-            count3000m++;
-
-            if (count3000m === 1) return "caricons/TC_3100h.png";
-        }
-
-
-
-        // 3000 - 2 3 or 4
-        if (
-            car.CarModel === "3000" &&
-            car.HasPantograph === false &&
-            car.HasDriverCab === false &&
-            car.HasConductorCab === false &&
-            car.HasMotor === false
-        ) {
-            count3000t++;
-            if (count3000t === 1) return "caricons/TC_3500.png";
-            if (count3000t === 2) return "caricons/TC_3600.png";
-            if (count3000t === 3) return "caricons/TC_3600.png";
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        return "caricons/TC_9999.png";
     });
+
+    if (iconList.length != copyCarStates.length) {
+        // アイコン数と編成両数が合わない場合、逆の可能性があるのでひっくり返して再度確認
+        copyCarStates2 = JSON.parse(JSON.stringify(carStates)).reverse();
+        console.log("reverseCarState:", copyCarStates2);
+
+        var formationList = formationComparison(copyCarStates2);
+    }
+
+    console.log("iconList:", iconList);
+
+    return iconList;
+}
+
+function iconListConcat(iconList1, iconList2) {
+    // 配列が空でない場合のみ"h"を付加
+    if (iconList1.length > 0) {
+        iconList1 = iconList1.slice(); // 破壊的変更を避ける
+        iconList1[iconList1.length - 1] = addHtoFileName(iconList1[iconList1.length - 1]);
+        if (iconList2.length > 0) {
+            iconList2 = iconList2.slice();
+            iconList2[0] = addHtoFileName(iconList2[0]);
+        }
+    }
+    return iconList1.concat(iconList2);
+}
+
+// ファイル名の拡張子直前に"h"を挿入
+function addHtoFileName(filename) {
+    return filename.replace(/(\.[^.]+)$/, "h$1");
+}
+
+
+var MasterComparison = {
+    "3000": [{ "CarModel": "3000", "HasConductorCab": true, "HasDriverCab": true, "HasMotor": true, "HasPantograph": true }, { "CarModel": "3000", "HasConductorCab": false, "HasDriverCab": false, "HasMotor": false, "HasPantograph": false }, { "CarModel": "3000", "HasConductorCab": false, "HasDriverCab": false, "HasMotor": false, "HasPantograph": true }, { "CarModel": "3000", "HasConductorCab": false, "HasDriverCab": false, "HasMotor": true, "HasPantograph": false }, { "CarModel": "3000", "HasConductorCab": false, "HasDriverCab": false, "HasMotor": false, "HasPantograph": false }, { "CarModel": "3000", "HasConductorCab": true, "HasDriverCab": true, "HasMotor": true, "HasPantograph": true }],
+    "3020": [{ "CarModel": "3020", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "3020", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "3020", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": true }, { "CarModel": "3020", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "3020", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "3020", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "3300V": [{ "CarModel": "3300V", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true, }, { "CarModel": "3300V", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false, }, { "CarModel": "3300V", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true, }],
+    "4000": [{ "CarModel": "4000", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "4000", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4000", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": true }, { "CarModel": "4000", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4000", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4000", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true, }],
+    "4000R": [{ "CarModel": "4000R", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "4000R", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4000R", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": true }, { "CarModel": "4000R", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4000R", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4000R", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "4300": [{ "CarModel": "4300", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "4300", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4300", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4300", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "4500": [{ "CarModel": "4300", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "4300", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": false }],
+    "4321": [{ "CarModel": "4321", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "4321", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4321", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "4321", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "4600": [{ "CarModel": "4600", "HasConductorCab": true, "HasDriverCab": true, "HasMotor": true, "HasPantograph": true }, { "CarModel": "4600", "HasConductorCab": false, "HasDriverCab": false, "HasMotor": false, "HasPantograph": true }, { "CarModel": "4600", "HasConductorCab": false, "HasDriverCab": false, "HasMotor": false, "HasPantograph": false }, { "CarModel": "4600", "HasConductorCab": true, "HasDriverCab": true, "HasMotor": true, "HasPantograph": false }],
+    "4800": [{ "CarModel": "4600", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "4600", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": false }],
+    "5300": [{ "CarModel": "5300", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "5300", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "5300", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "5300", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "5500": [{ "CarModel": "5300", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "5300", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": false }],
+    "5600": [{ "CarModel": "5600", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "5600", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "5320": [{ "CarModel": "5320", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "5320", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "5320", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "5320", "HasPantograph": true, "HasDriverCab": true, "HasConductorCab": true, "HasMotor": true }],
+    "50000": [{ "CarModel": "50000", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": false, "HasMotor": false }, { "CarModel": "50000", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": true }, { "CarModel": "50000", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": true, "HasMotor": true }, { "CarModel": "50000", "HasPantograph": false, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": true }, { "CarModel": "50000", "HasPantograph": true, "HasDriverCab": false, "HasConductorCab": false, "HasMotor": true }, { "CarModel": "50000", "HasPantograph": false, "HasDriverCab": true, "HasConductorCab": false, "HasMotor": false }],
+}
+
+// 編成比較の評価関数（comparison基準・オフセット進行対応）
+function formationComparison(comparison) {
+    const result = [];
+    let offset = 0;
+    while (offset < comparison.length) {
+        let matched = false;
+        for (const key in MasterComparison) {
+            const masterArray = MasterComparison[key];
+            if (masterArray.length > comparison.length - offset) continue;
+
+            let allMatch = true;
+            for (let i = 0; i < masterArray.length; i++) {
+                const m = masterArray[i];
+                const c = comparison[offset + i];
+                if (
+                    m.CarModel !== c.CarModel ||
+                    m.HasConductorCab !== c.HasConductorCab ||
+                    m.HasDriverCab !== c.HasDriverCab ||
+                    m.HasMotor !== c.HasMotor ||
+                    m.HasPantograph !== c.HasPantograph
+                ) {
+                    allMatch = false;
+                    break;
+                }
+            }
+            if (allMatch) {
+                result.push(key);
+                offset += masterArray.length;
+                matched = true;
+                break; // 1つ見つかったら次の位置へ
+            }
+        }
+        if (!matched) {
+            // どの編成にも一致しない場合は1両進める
+            offset += 1;
+        }
+    }
+    return result;
 }
