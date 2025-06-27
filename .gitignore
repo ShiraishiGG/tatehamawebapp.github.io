@@ -4,3 +4,5 @@
 
 /.vs
 /tatehamawebapp/.vs
+**/node_modules
+**/.wrangler
